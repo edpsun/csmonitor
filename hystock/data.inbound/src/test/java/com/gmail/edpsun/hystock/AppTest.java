@@ -1,38 +1,27 @@
 package com.gmail.edpsun.hystock;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.Properties;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import org.junit.Test;
+import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+import com.gmail.edpsun.hystock.test.GreetMeBean;
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath:spring/app-beans.xml" })
+public class AppTest extends AbstractJUnit4SpringContextTests {
+
+    @Test
+    public void testApp() throws Exception {
+        assertTrue(true);
+        Properties p = new Properties();
+        p.load(this.getClass().getClassLoader()
+                .getSystemResourceAsStream("properties/conf.properties"));
+        System.out.println(p.get("scope"));
+        applicationContext.getBean("greetMeBean",GreetMeBean.class).execute();
     }
 }
