@@ -19,23 +19,13 @@
     <context:annotation-config />
     <context:component-scan base-package="com.gmail.edpsun.hystock" />
     <context:property-placeholder location="classpath:properties/conf.properties" />
+
     <tx:annotation-driven transaction-manager="transactionManager" />
     <aop:aspectj-autoproxy expose-proxy="true" />
 
     <bean id="transactionManager"
         class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
-
-    <!-- <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
-        <property name="location" value="classpath:properties/conf.properties" /> 
-        </bean> -->
-
-    <bean id="myGreeter" class="com.gmail.edpsun.hystock.test.EnglishGreeter" />
-
-    <bean id="greetMeBean" class="com.gmail.edpsun.hystock.test.GreetMeBean">
-        <property name="greeter" ref="myGreeter" />
-        <property name="scope" value="${scope}" />
     </bean>
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -51,9 +41,11 @@
         <property name="dataSource" ref="dataSource"></property>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.DerbyDialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.DerbyTenSevenDialect
+                </prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <!-- <prop key="hibernate.hbm2ddl.auto"></prop> -->
+                <!--  -->
                 <prop key="hibernate.jdbc.batch_size">20</prop>
             </props>
         </property>
@@ -61,8 +53,14 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.gmail.edpsun.hystock.model.MemReport</value>
+                <value>com.gmail.edpsun.hystock.model.Stock</value>
+                <value>com.gmail.edpsun.hystock.model.HolderStat</value>
             </list>
         </property>
+    </bean>
+
+    <bean id="inboundCollector"
+        class="com.gmail.edpsun.hystock.inbound.collect.InboundCollector">
     </bean>
 
 </beans>

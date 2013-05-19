@@ -1,0 +1,665 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>保定天鹅(000687)股东人数-行情中心-和讯网</title>
+		<link href="/2008/css/gegu.css" rel="stylesheet" type="text/css" />
+		<script language="javascript" src="/2008/js/stockdata2008.js"></script>
+		<script language="javascript" src="/2008/js/Common.js"></script>
+		<script language="javascript" src="/2008/js/switch.js"></script>
+	</head>
+	<body onload="HYRequest.Request();">
+		<div id="wrap">
+			<!-- head -->
+			<div><!--新头部-->
+<link type="text/css" rel="stylesheet" href="http://img.hexun.com/css/zt/data_head.css"/>
+<script src="http://img.hexun.com/js/2010/hexunjs.js"></script>
+<div class="detail_header2010">
+        <!-- 导航登录等 -->
+        <div id="newsHeaderNav">
+          <table width="100%" height="20" cellspacing="0" cellpadding="0" border="0">
+            <tbody><tr>
+              <td><ul class="homeword">
+<li><a target="_blank" href="http://www.hexun.com/">和讯首页</a></li>
+<li><a target="_blank" href="http://news.hexun.com/">新闻</a></li>
+<li><a target="_blank" href="http://stock.hexun.com/">股票</a></li>
+<li><a target="_blank" href="http://funds.hexun.com/">基金</a></li>
+<li><a target="_blank" href="http://datainfo.stock.hexun.com/">股票数据</a></li>
+<li><a target="_blank" href="http://vol.stock.hexun.com/">资金流向</a></li>
+<li><a target="_blank" href="http://funds.money.hexun.com/fundsdata/focus/data1.htm">基金数据</a></li>
+<li><a target="_blank" href="http://quote.hexun.com/default.htm#stock">行情中心</a></li>
+<li><a target="_blank" href="http://guba.hexun.com/default.htm">股吧</a></li>
+<li><a target="_blank" href="http://jijinba.hexun.com/">基金吧</a></li>
+<li class="none"><a target="_blank" href="http://t.hexun.com/" style="color:#f00">微博</a></li>
+              </ul></td>
+              <td align="center">
+<!--登录注册-->
+<div id="hexunMember_liveDisplay"></div>
+<link href='http://login.tool.hexun.com/OtherInterFace/style/newbase.css' rel='stylesheet' type='text/css' />
+<script src=http://login.tool.hexun.com/OtherInterFace/js/popup.js type="text/javascript" charset="gb2312"></script>
+<script charset="gb2312" type="text/javascript" language="javascript">
+var href=window.location.href;   
+hexunMember_loginSetup_signOutURL=href;//登出地址
+hexunMember_loginSetup_noLoginDisplayMsg=""; //没登陆的提示
+hexunMember_loginSetup_noLoginDisplayFlag="|";//登录和注册中间的分隔符号 或 用户名与登出中间的分隔符号，不需要分隔符可以为空
+hexunMember_loginSetup_islogined_isDisplay=true;//如果是登陆状态，true=显示用户名和登出按钮等信息,flase=不显示任何信息
+hexunMember_loginSetup_referrer=document.referrer;//请不要修改此项
+hexunMember_loginSetup_MastLogin=0;//如果需要不登陆就一直弹窗，在此设置一下弹窗时间间隔(秒)。如果等于0本项无效
+</script>
+<!--登录注册over-->      
+	</td>
+            </tr>
+          </tbody></table>
+          <div class="clear"></div>
+        </div>
+        <!-- logo等 -->
+        <div id="logoetc">
+          <div class="logo"><a target="_blank" href="http://www.hexun.com"><img border="0" alt="和讯" src="http://img.hexun.com/img/2010/logo-hexun.gif"/></a><a id="subChannelLogo" target="_blank" href="http://news.hexun.com"><img border="0" src="http://img.hexun.com/images2008/emp.gif"/></a></div>
+          <div id="hexunCalendar" class="date"></div>
+           <a href="http://3g.hexun.com/download_news/" target="_blank" style="background:url(http://img.hexun.com/2010/img/tel.gif) no-repeat;line-height: 15px; padding:2px 0 2px 13px; margin:17px 0 0 10px;float:left;display:none" id="phoneNewsText"></a>
+<script type="text/javascript">
+(function(){
+var obj = document.getElementById('phoneNewsText');
+var url = window.location.href;
+if(url.indexOf('stockdata.stock.hexun.com')>=0) {
+  obj.style.margin = '17px 0 0 20px';
+   obj.innerHTML = '掌上股票';
+   obj.href = 'http://3g.hexun.com/download_stock/';
+obj.style.display="block";
+}else if(url.indexOf('jingzhi.funds.hexun.com')>=0) {
+  obj.style.margin = '17px 0 0 20px';
+   obj.innerHTML = '掌上基金';
+   obj.href = 'http://3g.hexun.com/download_fund/';
+obj.style.display="block";
+}else if(url.indexOf('stock.hexun.com')>=0) {
+   obj.style.margin = '17px 0 0 20px';
+   obj.innerHTML = '免费手机股票客户端下载';
+   obj.href = 'http://3g.hexun.com/download_stock/';
+	obj.style.display="block";
+}else if(url.indexOf('funds.hexun.com')>=0) {
+  obj.style.margin = '17px 0 0 20px';
+   obj.innerHTML = '免费手机基金客户端下载';
+   obj.href = 'http://3g.hexun.com/download_fund/';
+obj.style.display="block";
+}else if(url.indexOf('news.hexun.com')>=0) {
+  obj.style.margin = '17px 0 0 20px';
+   obj.innerHTML = '免费手机资讯客户端下载';
+   obj.href = 'http://3g.hexun.com/download_news/';
+obj.style.display="block";
+}else if(url.indexOf('quote.hexun.com')>=0) {
+  obj.style.margin = '17px 0 0 20px';
+   obj.innerHTML = '掌上股票';
+   obj.href = 'http://3g.hexun.com/download_stock/';
+obj.style.display="block";
+}
+})();
+</script>
+          <div class="seach_head">
+          <form target="_blank" method="post" action="http://data.stock.hexun.com/search/default.aspx" onsubmit="return false" name="sb_form" id="formSearch">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0" id="Table1">
+							<tbody><tr>
+								<td>
+                                <input type="radio" value="stockdata" checked="" name="radio1" id="stockdata"/>股票/基金  
+                                <input type="radio" value="stockquote" name="radio1" id="stockquote"/>实时行情  
+                                <input type="radio" value="stockbar" name="radio1" id="stockbar"/>股吧 
+                                </td>
+                                <td>
+                                <div>
+                                <input type="text" onblur="Suggest.blurObj()" onfocus="Suggest.focusObj()" onkeydown="Suggest.keyDown(event);if(event.keyCode == 13) StockDataSearch2009_Submit()" autocomplete="off" value="代码/名称/拼音" class="input2" name="msn_stockid" id="ajaxinput" style="color: rgb(153, 153, 153);"/>
+                                </div>
+								<div class="floattable" id="ajaxdiv"></div>
+								</td>
+                                <td>
+                                <input type="hidden" id="typeqgwp" value="a" name="typeqgwp"/>
+                                <input type="hidden" value="" id="sw" name="sw"/>
+                                <input type="image" src="http://img.hexun.com/zt/2010/btn_cx.gif" name="ajaxbutton" onclick="StockDataSearch2009_Submit()" id="ajaxbutton" style="vertical-align:middle;"/>
+								<a target="_blank" href="http://mymoney.hexun.com/istock/default.aspx"><img border="0" align="absMiddle" src="http://img.hexun.com/zt/2010/btn_gp.gif"/></a>
+								<a target="_blank" href="http://wizard.stock.hexun.com/bigtrade/"><img border="0" align="absMiddle" src="http://img.hexun.com/zt/2010/btn_xzhq.gif"/></a>
+                                </td>
+							</tr>
+						</tbody></table>
+					</form>
+                    <script type="text/javascript" language="javascript" src="http://data.stock.hexun.com/js/stocksearch.js"></script>
+          </div>
+        </div>
+      </div>
+      <!--一级导航结束-->
+	  <div class="clear"></div>
+<!--新头部over-->
+<script src="http://login.tool.hexun.com/OtherInterFace/login_2010_Style02.aspx" type="text/javascript" charset="gb2312"></script></div>
+			<!-- head end -->
+			<div id="navigation">
+				<a href="http://www.hexun.com" target="_blank">和讯网</a> > <a href="http://quote.hexun.com/default.html" target="_blank">行情中心</a> > <a href="http://stockdata.stock.hexun.com/000687.shtml" target="_blank">保定天鹅(000687)</a>
+ > 股东人数
+			</div> <!-- navigation end -->
+			<div id="sub_nav"></div> <!-- sub_nav end -->
+			<div id="gegu_content">
+				<div id="leftpart">
+					<!-- caidan -->
+					<!-- js 代码 -->
+<!---->
+<div id="menu">
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt1">股市备忘</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jrts.shtml" id="a_leftmenu_dt1_1" target="_blank">
+				今日提示</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jrgg.shtml" id="a_leftmenu_dt1_2" target="_blank">
+				今日公告</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_yzjybw.shtml" id="a_leftmenu_dt1_3"
+				target="_blank">一周交易备忘</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/lhb/astock.aspx" id="a_leftmenu_dt1_4" target="_blank">
+				每日公开信息</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zdsxcx2.shtml" id="a_leftmenu_dt1_5"
+				target="_blank">重大事项查询</a></dd>
+		<dd>
+			<a href="http://stock.hexun.com/qiuzheng/" id="a_leftmenu_dt1_6" target="_blank">公司传闻</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt13"><a href="http://stockdata.stock.hexun.com/2008/qsjy.aspx" id="a_leftmenu_dt13_1" target="_blank">
+				券商交易</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt2">公司新闻</dt>
+		<dd>
+			<a href="http://ggzx.stock.hexun.com/more.jsp?t=0&k=000687" id="a_leftmenu_dt2_1" target="_blank">
+				公司新闻动态</a></dd>
+		<dd>
+			<a id="a_leftmenu_dt2_3" name="hyurl" target="_blank">相关行业新闻</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/lhb/gg000687.shtml" id="a_leftmenu_dt2_8">
+				龙虎榜</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_gszdsx_000687.shtml" id="a_leftmenu_dt2_4">
+				公司重大事项</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_ggzy_000687.shtml" id="a_leftmenu_dt2_5">
+				公告摘要</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_ggqw_000687.shtml" id="a_leftmenu_dt2_6">
+				公告全文</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_bgqbg_000687.shtml" id="a_leftmenu_dt2_7">
+				报告期报告</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt4">公司资料</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_gsgk_000687.shtml" id="a_leftmenu_dt4_1">
+				公司简介</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_hybk_000687.shtml" id="a_leftmenu_dt4_2">
+				行业板块</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2008/dzjy.aspx?stockid=000687" id="a_leftmenu_dt4_3">
+				大宗交易</a></dd>
+		<dd id="rzrqNav">
+			<a href="http://stockdata.stock.hexun.com/2008/rzrq.aspx?stockid=000687" id="a_leftmenu_dt4_4" target="_blank">
+				融资融券</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt3">网友互动</dt>
+		<dd>
+			<a href="http://guba.hexun.com/000687,guba.html" target="_blank">股吧</a></dd>
+		<dd>
+			<a href="http://stock.bbs.hexun.com/docidx1.aspx?bid=2" target="_blank">论坛</a></dd>
+		<dd>
+			<a href="http://salon.hexun.com/" target="_blank">沙龙</a></dd>
+		<dd>
+			<a href="http://fblog.hexun.com/" target="_blank">财经博客</a></dd>
+	</dl>
+	<dl id="zgmf">
+		<dt stadus="hidden" id="leftmenu_dt27"><a href="http://mf.hexun.com/" id="leftmenu_dt27_1" target="_blank">
+				智股魔方</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt7">资金流向</dt>
+		<dd>
+			<a href="http://vol.stock.hexun.com/000687.shtm" id="leftmenu_dt7_1" target="_blank">
+				实时资金流向</a></dd>
+		<dd>
+			<a href="http://vol.stock.hexun.com/Close/share/Info.aspx?rank=3&code=000687#bb" id="leftmenu_dt7_2" target="_blank">
+				盘后资金分析</a></dd>
+		<dd>
+			<a href="http://vol.stock.hexun.com/Now/Industry/InFlow.shtml?rank=2#bb" id="leftmenu_dt7_3"
+				target="_blank">行业资金流向排名</a></dd>
+		<dd>
+			<a href="http://vol.stock.hexun.com/Now/Share/InFlow.shtml?rank=3#bb" id="leftmenu_dt7_4"
+				target="_blank">个股资金流向排名</a></dd>
+		<dd>
+			<a href="http://vol.stock.hexun.com/Now/Index/Info.shtml#bb" id="leftmenu_dt7_5" target="_blank">
+				全市场资金流向</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt15" style="color:red">财务评估</dt>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/stocktotal.aspx?code=000687" id="leftmenu_dt15_6" target="_blank">
+				个股财务评估</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/AMarketOverview.aspx" id="leftmenu_dt15_1" target="_blank">
+				总体市场</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/IndustryOverview.aspx?itype=4" id="leftmenu_dt15_2"
+				target="_blank">标准行业</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/IndustryOverview.aspx?itype=1" id="leftmenu_dt15_3"
+				target="_blank">ICB行业</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/IndustryOverview.aspx?itype=6" id="leftmenu_dt15_4"
+				target="_blank">地域板块</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/StockOverview.aspx" id="leftmenu_dt15_5" target="_blank">
+				个股排行</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt24"><a href="http://stockdata.stock.hexun.com/lhb/gg000687.shtml" id="leftmenu_dt24_1" target="_blank">
+				龙虎榜</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt12">关 注 度</dt>
+		<dd>
+			<a href="http://focus.stock.hexun.com/000687.html" id="leftmenu_dt12_1" target="_blank">
+				保定天鹅
+				关注度</a></dd>
+		<dd>
+			<a href="http://focus.stock.hexun.com/index.html" id="leftmenu_dt12_2" target="_blank">
+				股票关注度排行</a></dd>
+		<dd>
+			<a href="http://focus.stock.hexun.com/industry.html" id="leftmenu_dt12_3" target="_blank">
+				行业关注度排行</a></dd>
+		<dd>
+			<a href="http://focus.stock.hexun.com/market.html" id="leftmenu_dt12_4" target="_blank">
+				Ａ股市场关注度</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt6">价值评估</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jspg_000687.shtml" id="a_leftmenu_dt6_1">
+				技术评估</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jzpg_000687.shtml" id="a_leftmenu_dt6_3">
+				价值评估</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zyfb_000687.shtml" id="a_leftmenu_dt6_5">
+				收入分布</a></dd>
+	</dl>
+	<dl id="jgcc">
+		<dt stadus="hidden" id="leftmenu_dt25"><a href="http://stockdata.stock.hexun.com/jgcc/s000687.shtml" id="leftmenu_dt25_1" target="_blank">
+				机构持仓</a></dt>
+	</dl>
+	<dl id="rzrqNav">
+		<dt stadus="hidden" id="leftmenu_dt17"><a href="/rzrq/s000687.shtml" id="a_leftmenu_dt17_1" target="_blank">
+				融资融券</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt16"><a href="http://stockdata.stock.hexun.com/dzjy/000687.shtml" id="a_leftmenu_dt16_1" target="_blank">
+				大宗交易</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt26"><a href="http://stockdata.stock.hexun.com/zlkp/s000687.shtml" id="a_leftmenu_dt26_1" target="_blank">
+				<font color="#ff0000">主力控盘</font></a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt8">股权分析</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_gbjg_000687.shtml" id="a_leftmenu_dt8_1">
+				股本结构</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_sdgd_000687.shtml" id="a_leftmenu_dt8_2">
+				十大股东</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_sdltgd_000687.shtml" id="a_leftmenu_dt8_3">
+				十大流通股东</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_gg_000687.shtml" id="a_leftmenu_dt8_4">
+				公司高管</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jjcg_000687.shtml" id="a_leftmenu_dt8_5">
+				基金持股</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_cgjzd_000687.shtml" id="a_leftmenu_dt8_6">
+				股东人数</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt9">分红融资</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_bgqfpya_000687.shtml" id="a_leftmenu_dt9_1">
+				分配预案</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_fhzzgb_000687.shtml" id="a_leftmenu_dt9_2">
+				分红/转增股本</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_pg_000687.shtml" id="a_leftmenu_dt9_3">
+				配股</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zf_000687.shtml" id="a_leftmenu_dt9_4">
+				增发</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_rz_000687.shtml" id="a_leftmenu_dt9_5">
+				转债</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_scfx_000687.shtml" id="a_leftmenu_dt9_6">
+				首次发行</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt10">财务数据</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zxcwzb_000687.shtml" id="a_leftmenu_dt10_1">
+				最新财务</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2008en/zxcwzb.aspx?stockid=000687" id="a_leftmenu_dt10_11" target="_blank">
+				ENGLISH</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_cwbl_000687.shtml" id="a_leftmenu_dt10_2">
+				财务比率</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zcfz_000687.shtml" id="a_leftmenu_dt10_3">
+				资产负债</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_lr_000687.shtml" id="a_leftmenu_dt10_4">
+				利润表</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_xjll_000687.shtml" id="a_leftmenu_dt10_5">
+				现金流量</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zysrfb_000687.shtml" id="a_leftmenu_dt10_6">
+				主营收入</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zcjz_000687.shtml" id="a_leftmenu_dt10_7">
+				资产减值</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_yszk_000687.shtml" id="a_leftmenu_dt10_8">
+				应收帐款</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_qtyszk_000687.shtml" id="a_leftmenu_dt10_9">
+				其他应收帐款</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt11">宏观数据</dt>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml" id="leftmenu_dt11_1">宏观数据首页</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=A" id="leftmenu_dt11_2">国民经济核算</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=B" id="leftmenu_dt11_3">价格指数</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=C" id="leftmenu_dt11_4">财政税收</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=D" id="leftmenu_dt11_5">金融保险</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=E" id="leftmenu_dt11_6">三大产业</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=F" id="leftmenu_dt11_7">人口与就业</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=G" id="leftmenu_dt11_8">行业数据</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=H" id="leftmenu_dt11_9">其他数据</a></dd>
+		<dd>
+			<a href="http://calendar.hexun.com/area/dqzb_110000.shtml" id="leftmenu_dt11_10">地区宏观数据</a></dd>
+	</dl>
+	<!--
+  <dl>
+  	<dt class="dt_closed"><a href="http://stockdata.stock.hexun.com/dynamic/default_2008.aspx?stockid=000687" target="_blank">旧版行情</a></dt>
+  </dl>
+  -->
+	<!--存放 url: stockid-->
+	<input type=hidden id="inc_leftmenuHidden" value="000687" NAME="inc_leftmenuHidden"/>
+</div>
+<script language="javascript">
+	SetLeftMenu_stockcode();
+	HYRequest.stockcode = '000687';
+</script>
+<script src="/2008/js/caidan.js"></script>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<!--合作方式-->
+<div id="mail_sub"><strong>数据合作电话</strong><br />
+	<img src="/2008/img/photo.gif" width="10" height="9" />
+	<span class="gray">010-85650749</span><br />
+	<strong>意见反馈</strong><br />
+	<img src="/2008/img/mail.gif" width="11" height="8" /> <a href="mailto:Datainfo@staff.hexun.com" class="gray">
+		datainfo#staff<br />
+		.hexun.com </a>
+	<span style="color:#666666; font-size:11px;">(注：发送时将#替换成@)</span>
+</div>
+<!--合作方式end-->
+
+					<!-- caidan end -->
+				</div>
+				<div id="rightpart">
+					<div id="stocktitle">
+						<div id="title"><h3>简称：<a href="http://stockdata.stock.hexun.com/000687.shtml" target="_blank">保定天鹅</a> 代码：<a href="http://stockdata.stock.hexun.com/000687.shtml" target="_blank">000687</a></h3>
+						</div>
+					</div>
+					<!-- stocktitle end --><br />
+					<br />
+					<!-- zaiyao end -->
+					<div id="zaiyaocontent">
+						<div class="add3" style=" padding-bottom:5px;">保定天鹅(000687)股东人数</div>
+						<div class="add5"><img src="/drawDefault/img4/000687.gif" alt="" border="0" /></div>
+						<br />
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="web2">
+							<tr>
+								<td height="1" colspan="8" bgcolor="#CFCFCF"></td>
+							</tr>
+							<tr align="center">
+								<td class="bgcolor"><strong>报告期</strong></td>
+								<td class="bgcolor"><strong>股东总数</strong></td>
+								<td class="bgcolor"><strong>人均持股</strong></td>
+								<td class="bgcolor"><strong>人均持股较上期变动</strong></td>
+								<td class="bgcolor"><strong>总股本（万股）</strong></td>
+								<td class="lastbgcolor"><strong>流通股（万股）</strong></td>
+							</tr>
+							<tr align="center"><td class="dotborder"><span class="font10">13年第1季</span></td><td class="dotborder"><span class="font10">53,463.00</span></td><td class="dotborder"><span class="font10">14,166.22</span></td><td class="dotborder"><span class="font10">-0.84%</span></td><td class="dotborder"><span class="font10">75,736.85</span></td><td><span class="font10">75,736.85</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">12年年度</span></td><td class="bgcolor"><span class="font10">53,016.00</span></td><td class="bgcolor"><span class="font10">14,285.66</span></td><td class="bgcolor"><span class="font10">0.20%</span></td><td class="bgcolor"><span class="font10">75,736.85</span></td><td class="lastbgcolor"><span class="font10">75,736.85</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">12年前3季</span></td><td class="dotborder"><span class="font10">53,123.00</span></td><td class="dotborder"><span class="font10">14,256.88</span></td><td class="dotborder"><span class="font10">3.19%</span></td><td class="dotborder"><span class="font10">75,736.85</span></td><td><span class="font10">75,736.85</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">12年中期</span></td><td class="bgcolor"><span class="font10">54,815.00</span></td><td class="bgcolor"><span class="font10">13,816.81</span></td><td class="bgcolor"><span class="font10">24.55%</span></td><td class="bgcolor"><span class="font10">75,736.85</span></td><td class="lastbgcolor"><span class="font10">75,736.85</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">12年第1季</span></td><td class="dotborder"><span class="font10">57,838.00</span></td><td class="dotborder"><span class="font10">11,093.05</span></td><td class="dotborder"><span class="font10">0.54%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">11年年度</span></td><td class="bgcolor"><span class="font10">58,152.00</span></td><td class="bgcolor"><span class="font10">11,033.15</span></td><td class="bgcolor"><span class="font10">0.61%</span></td><td class="bgcolor"><span class="font10">64,160.00</span></td><td class="lastbgcolor"><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">11年前3季</span></td><td class="dotborder"><span class="font10">58,505.00</span></td><td class="dotborder"><span class="font10">10,966.58</span></td><td class="dotborder"><span class="font10">-0.40%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">11年中期</span></td><td class="bgcolor"><span class="font10">58,273.00</span></td><td class="bgcolor"><span class="font10">11,010.24</span></td><td class="bgcolor"><span class="font10">2.94%</span></td><td class="bgcolor"><span class="font10">64,160.00</span></td><td class="lastbgcolor"><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">11年第1季</span></td><td class="dotborder"><span class="font10">59,986.00</span></td><td class="dotborder"><span class="font10">10,695.83</span></td><td class="dotborder"><span class="font10">11.16%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">10年年度</span></td><td class="bgcolor"><span class="font10">66,683.00</span></td><td class="bgcolor"><span class="font10">9,621.64</span></td><td class="bgcolor"><span class="font10">1.30%</span></td><td class="bgcolor"><span class="font10">64,160.00</span></td><td class="lastbgcolor"><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">10年前3季</span></td><td class="dotborder"><span class="font10">67,552.00</span></td><td class="dotborder"><span class="font10">9,497.87</span></td><td class="dotborder"><span class="font10">8.83%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">10年中期</span></td><td class="bgcolor"><span class="font10">73,514.00</span></td><td class="bgcolor"><span class="font10">8,727.59</span></td><td class="bgcolor"><span class="font10">4.54%</span></td><td class="bgcolor"><span class="font10">64,160.00</span></td><td class="lastbgcolor"><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">10年第1季</span></td><td class="dotborder"><span class="font10">76,851.00</span></td><td class="dotborder"><span class="font10">8,348.62</span></td><td class="dotborder"><span class="font10">4.26%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">09年年度</span></td><td class="bgcolor"><span class="font10">80,122.00</span></td><td class="bgcolor"><span class="font10">8,007.79</span></td><td class="bgcolor"><span class="font10">-14.58%</span></td><td class="bgcolor"><span class="font10">64,160.00</span></td><td class="lastbgcolor"><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">09年前3季</span></td><td class="dotborder"><span class="font10">68,438.00</span></td><td class="dotborder"><span class="font10">9,374.91</span></td><td class="dotborder"><span class="font10">-5.72%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">09年中期</span></td><td class="bgcolor"><span class="font10">64,525.00</span></td><td class="bgcolor"><span class="font10">9,943.43</span></td><td class="bgcolor"><span class="font10">21.11%</span></td><td class="bgcolor"><span class="font10">64,160.00</span></td><td class="lastbgcolor"><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">09年第1季</span></td><td class="dotborder"><span class="font10">78,145.00</span></td><td class="dotborder"><span class="font10">8,210.38</span></td><td class="dotborder"><span class="font10">3.53%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">08年年度</span></td><td class="bgcolor"><span class="font10">80,900.00</span></td><td class="bgcolor"><span class="font10">7,930.78</span></td><td class="bgcolor"><span class="font10">7.64%</span></td><td class="bgcolor"><span class="font10">64,160.00</span></td><td class="lastbgcolor"><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">08年前3季</span></td><td class="dotborder"><span class="font10">87,081.00</span></td><td class="dotborder"><span class="font10">7,367.85</span></td><td class="dotborder"><span class="font10">0.39%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">08年中期</span></td><td class="bgcolor"><span class="font10">87,417.00</span></td><td class="bgcolor"><span class="font10">7,339.53</span></td><td class="bgcolor"><span class="font10">-6.80%</span></td><td class="bgcolor"><span class="font10">64,160.00</span></td><td class="lastbgcolor"><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">08年第1季</span></td><td class="dotborder"><span class="font10">81,469.00</span></td><td class="dotborder"><span class="font10">7,875.39</span></td><td class="dotborder"><span class="font10">13.00%</span></td><td class="dotborder"><span class="font10">64,160.00</span></td><td><span class="font10">64,160.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">07年年度</span></td><td class="bgcolor"><span class="font10">46,028.00</span></td><td class="bgcolor"><span class="font10">6,969.67</span></td><td class="bgcolor"><span class="font10">-34.05%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">32,080.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">07年前3季</span></td><td class="dotborder"><span class="font10">30,355.00</span></td><td class="dotborder"><span class="font10">10,568.28</span></td><td class="dotborder"><span class="font10">22.46%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">32,080.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">07年中期</span></td><td class="bgcolor"><span class="font10">37,173.00</span></td><td class="bgcolor"><span class="font10">8,629.92</span></td><td class="bgcolor"><span class="font10">-4.49%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">32,080.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">07年第1季</span></td><td class="dotborder"><span class="font10">35,505.00</span></td><td class="dotborder"><span class="font10">9,035.35</span></td><td class="dotborder"><span class="font10">1.48%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">32,080.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">06年年度</span></td><td class="bgcolor"><span class="font10">36,032.00</span></td><td class="bgcolor"><span class="font10">8,903.20</span></td><td class="bgcolor"><span class="font10">13.37%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">15,054.71</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">06年前3季</span></td><td class="dotborder"><span class="font10">40,849.00</span></td><td class="dotborder"><span class="font10">7,853.31</span></td><td class="dotborder"><span class="font10">7.13%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">13,450.71</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">06年中期</span></td><td class="bgcolor"><span class="font10">43,760.00</span></td><td class="bgcolor"><span class="font10">7,330.90</span></td><td class="bgcolor"><span class="font10">6.73%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">13,450.71</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">06年第1季</span></td><td class="dotborder"><span class="font10">46,705.00</span></td><td class="dotborder"><span class="font10">6,868.64</span></td><td class="dotborder"><span class="font10">1.55%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">13,450.71</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">05年年度</span></td><td class="bgcolor"><span class="font10">47,428.00</span></td><td class="bgcolor"><span class="font10">6,763.94</span></td><td class="bgcolor"><span class="font10">-0.34%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">13,450.71</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">05年前3季</span></td><td class="dotborder"><span class="font10">47,269.00</span></td><td class="dotborder"><span class="font10">6,786.69</span></td><td class="dotborder"><span class="font10">3.08%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">05年中期</span></td><td class="bgcolor"><span class="font10">48,727.00</span></td><td class="bgcolor"><span class="font10">6,583.62</span></td><td class="bgcolor"><span class="font10">1.94%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">05年第1季</span></td><td class="dotborder"><span class="font10">49,671.00</span></td><td class="dotborder"><span class="font10">6,458.50</span></td><td class="dotborder"><span class="font10">2.04%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">04年年度</span></td><td class="bgcolor"><span class="font10">50,683.00</span></td><td class="bgcolor"><span class="font10">6,329.54</span></td><td class="bgcolor"><span class="font10">3.23%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">04年前3季</span></td><td class="dotborder"><span class="font10">52,321.00</span></td><td class="dotborder"><span class="font10">6,131.38</span></td><td class="dotborder"><span class="font10">0.17%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">04年中期</span></td><td class="bgcolor"><span class="font10">52,408.00</span></td><td class="bgcolor"><span class="font10">6,121.20</span></td><td class="bgcolor"><span class="font10">2.56%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">04年第1季</span></td><td class="dotborder"><span class="font10">53,748.00</span></td><td class="dotborder"><span class="font10">5,968.59</span></td><td class="dotborder"><span class="font10">0.99%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">03年年度</span></td><td class="bgcolor"><span class="font10">54,282.00</span></td><td class="bgcolor"><span class="font10">5,909.88</span></td><td class="bgcolor"><span class="font10">-0.80%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">03年前3季</span></td><td class="dotborder"><span class="font10">53,848.00</span></td><td class="dotborder"><span class="font10">5,957.51</span></td><td class="dotborder"><span class="font10">1.65%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">03年中期</span></td><td class="bgcolor"><span class="font10">54,735.00</span></td><td class="bgcolor"><span class="font10">5,860.97</span></td><td class="bgcolor"><span class="font10">3.85%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">03年第1季</span></td><td class="dotborder"><span class="font10">56,840.00</span></td><td class="dotborder"><span class="font10">5,643.91</span></td><td class="dotborder"><span class="font10">1.57%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">02年年度</span></td><td class="bgcolor"><span class="font10">57,735.00</span></td><td class="bgcolor"><span class="font10">5,556.42</span></td><td class="bgcolor"><span class="font10">0.59%</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">02年前3季</span></td><td class="dotborder"><span class="font10">58,075.00</span></td><td class="dotborder"><span class="font10">5,523.89</span></td><td class="dotborder"><span class="font10">0.56%</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">02年中期</span></td><td class="bgcolor"><span class="font10">58,399.00</span></td><td class="bgcolor"><span class="font10">5,493.24</span></td><td class="bgcolor"><span class="font10">-</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">01年年度</span></td><td class="dotborder"><span class="font10">63,012.00</span></td><td class="dotborder"><span class="font10">5,091.09</span></td><td class="dotborder"><span class="font10">-</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="bgcolor"><span class="font10">00年年度</span></td><td class="bgcolor"><span class="font10">65,785.00</span></td><td class="bgcolor"><span class="font10">4,876.49</span></td><td class="bgcolor"><span class="font10">-</span></td><td class="bgcolor"><span class="font10">32,080.00</span></td><td class="lastbgcolor"><span class="font10">9,750.00</span></td></tr><tr align="center"><td class="dotborder"><span class="font10">00年中期</span></td><td class="dotborder"><span class="font10">57,420.00</span></td><td class="dotborder"><span class="font10">5,586.90</span></td><td class="dotborder"><span class="font10">-</span></td><td class="dotborder"><span class="font10">32,080.00</span></td><td><span class="font10">9,750.00</span></td></tr>
+							<tr>
+								<td height="1" colspan="8" bgcolor="#CFCFCF"></td>
+							</tr>
+						</table>
+						<!--后加 -->
+
+						<div class="clear"></div>
+						<div id="box4">
+							
+<!--个股 -->
+<div class="addbox03">
+	<div class="font1a">个股行业资讯及市场传闻</div>
+	<div class="addbg03">
+		<p class="label2" id="tagname_gghy1" onmouseover="SwitchNewsTags('gghy',1,4)">个股资讯</p><p class="label1" id="tagname_gghy2" onmouseover="SwitchNewsTags('gghy',2,4)">股吧精华</p><p class="label1" id="tagname_gghy3" onmouseover="SwitchNewsTags('gghy',3,4)">行业新闻</p><p class="label1" id="tagname_gghy4" onmouseover="SwitchNewsTags('gghy',4,4)" style="border-right:1px solid #9A9899">市场传闻</p>
+		<p id="labelgghy1" class="hexunShow" style="float:right; padding-top:5px;"><a href="http://ggzx.stock.hexun.com/more.jsp?t=0&amp;k=000687" target="_blank">更多&gt;&gt;</a></p>
+		<p id="labelgghy2" class="hexunHidden" style="float:right; padding-top:5px;"><a href="http://guba.hexun.com" target="_blank">更多&gt;&gt;</a></p>
+		<p id="labelgghy3" class="hexunHidden" style="float:right; padding-top:5px;"><a href="http://ggzx.stock.hexun.com/more.jsp?t=2&s=0&k=1350" target="_blank">更多&gt;&gt;</a></p>
+		<p id="labelgghy4" class="hexunHidden" style="float:right; padding-top:5px;"><a href="http://stock.hexun.com/qiuzheng/" target="_blank">更多&gt;&gt;</a></p>
+	</div>
+	<div id="gghy1" class="hexunShow">
+		<div class="addtext03">
+			<ul>
+				<li><span>05-17</span><a href="http://stock.hexun.com/2013-05-17/154218996.html" target='_blank' title='保定天鹅(000687):周五沪深两市上市公司公告精编'>保定天鹅:周五沪深两市上市公司公告精编</a></li><li><span>05-17</span><a href="http://stock.hexun.com/2013-05-17/154209148.html" target='_blank' title='保定天鹅股份有限公司2012年年度股东大会决议公告'>保定天鹅股份有限公司2012年年度股东大..</a></li><li><span>05-17</span><a href="http://stock.hexun.com/2013-05-17/154237742.html" target='_blank' title='保定天鹅：2013年05月17日最新提示 关联交易变更调整人事变动 (000687)'>保定天鹅：2013年05月17日最新提示 关..</a></li><li><span>05-16</span><a href="http://stock.hexun.com/2013-05-16/154237739.html" target='_blank' title='保定天鹅：2013年05月16日最新提示 召开股东大会 (000687)'>保定天鹅：2013年05月16日最新提示 召..</a></li><li><span>05-15</span><a href="http://stock.hexun.com/2013-05-15/154123681.html" target='_blank' title='保定天鹅股份有限公司关于召开2012年年度股东大会的提示性公告'>保定天鹅股份有限公司关于召开2012年年..</a></li><li><span>05-14</span><a href="http://stock.hexun.com/2013-05-14/154074736.html" target='_blank' title='保定天鹅(000687):主力资金净卖占比前十'>保定天鹅:主力资金净卖占比前十</a></li><li><span>05-08</span><a href="http://news.hexun.com/2013-05-08/153874813.html" target='_blank' title='保定天鹅(000687):今日提醒'>保定天鹅:今日提醒</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="gghy2" class="hexunHidden">
+		<div class="addtext03">
+			<ul>
+				<li><span>05-19</span><a href="http://guba.hexun.com/600804,guba,18474043.html" target="_blank">这只股票刚刚启动，又遭特停。</a></li><li><span>05-19</span><a href="http://guba.hexun.com/300078,guba,18473911.html" target="_blank">中瑞思创新一代RFID特种标签批量写码机问世</a></li><li><span>05-19</span><a href="http://guba.hexun.com/601899,guba,18473792.html" target="_blank">紫金矿业有点悬</a></li><li><span>05-18</span><a href="http://guba.hexun.com/600221,guba,18473560.html" target="_blank">海南航空------------------------------(600221)</a></li><li><span>05-19</span><a href="http://guba.hexun.com/600804,guba,18473623.html" target="_blank">最新公告“ 此股 ”重大利好消息提前泄密</a></li><li><span>05-18</span><a href="http://guba.hexun.com/300127,guba,18473509.html" target="_blank">磁性材料论坛</a></li><li><span>05-18</span><a href="http://guba.hexun.com/d/18473436,guba.html" target="_blank">新的上涨主力军</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="gghy3" class="hexunHidden">
+		<div class="addtext03">
+			<ul>
+				<li><span>05-17</span><a href="http://stock.hexun.com/2013-05-17/154221875.html" target="_blank">财苑看市：量能放大 逢低做多</a></li><li><span>05-17</span><a href="http://stock.hexun.com/2013-05-17/154220798.html" target="_blank">第一创业：基础原料波动 下游需求下滑</a></li><li><span>05-17</span><a href="http://stock.hexun.com/2013-05-17/154220751.html" target="_blank">长阳后哪些板块最安全</a></li><li><span>05-17</span><a href="http://news.hexun.com/2013-05-17/154220683.html" target="_blank">从1－4月宏观数据看钢铁市场走势时间</a></li><li><span>05-17</span><a href="http://house.hexun.com/2013-05-17/154219182.html" target="_blank">金融地产带动沪指涨1.21%</a></li><li><span>05-17</span><a href="http://news.hexun.com/2013-05-17/154204954.html" target="_blank">去产能或持续至2016年</a></li><li><span>05-16</span><a href="http://futures.hexun.com/2013-05-16/154198140.html" target="_blank">渤化聚氯乙烯竞买销售计划公告（2013..</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="gghy4" class="hexunHidden">
+		<div class="addtext03">
+			<ul>
+				<li><span>05-13</span><a href="http://hk.stock.hexun.com/2013-05-13/154058329.html" target="_blank">传AirAsia X 7月大马上市筹3亿美元</a></li><li><span>05-13</span><a href="http://stock.hexun.com/2013-05-13/154055670.html" target="_blank">传前海未来数周出让首批土地 概念股有望集体爆发</a></li><li><span>05-13</span><a href="http://hk.stock.hexun.com/2013-05-13/154053748.html" target="_blank">传前海数周内出让首批地皮</a></li><li><span>05-13</span><a href="http://hk.stock.hexun.com/2013-05-13/154053001.html" target="_blank">传前海未来数周出让首批土地 深圳国际逆市上涨</a></li><li><span>05-13</span><a href="http://hk.stock.hexun.com/2013-05-13/154053288.html" target="_blank">传中银监副主席蔡鄂生卸任</a></li><li><span>05-13</span><a href="http://hk.stock.hexun.com/2013-05-13/154051056.html" target="_blank">传东航(00670.HK)设廉航捷星香港受国泰(00293.HK)..</a></li><li><span>05-13</span><a href="http://hk.stock.hexun.com/2013-05-13/154044987.html" target="_blank">《新股消息》银证(06881.HK)再获大户入飞 传配售录..</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!--个股 -->
+<!--公司 -->
+<div class="addbox03" style=" float:right">
+	<div class="font1a">公司公告及公司重大事项</div>
+	<div class="addbg03">
+		<p class="label2" id="tagname_gsgg1" onmouseover="SwitchNewsTags('gsgg',1,3)">公司摘要</p>
+		<p class="label1" id="tagname_gsgg2" onmouseover="SwitchNewsTags('gsgg',2,3)">公告全文(下载)</p>
+		<p class="label1" id="tagname_gsgg3" onmouseover="SwitchNewsTags('gsgg',3,3)" style="border-right:1px solid #9A9899">报告期报告</p>
+		<p id="labelgsgg1" class="hexunShow" style="float:right; padding-top:5px;"><a href="http://stockdata.stock.hexun.com/2009_ggzy_000687.shtml" target="_blank">更多&gt;&gt;</a></p>
+		<p id="labelgsgg2" class="hexunHidden" style="float:right; padding-top:5px;"><a href="http://stockdata.stock.hexun.com/2009_ggqw_000687.shtml" target="_blank">更多&gt;&gt;</a></p>
+		<p id="labelgsgg3" class="hexunHidden" style="float:right; padding-top:5px;"><a href="http://stockdata.stock.hexun.com/2009_bgqbg_000687.shtml" target="_blank">更多&gt;&gt;</a></p>
+	</div>
+	<div id="gsgg1" class="hexunShow">
+		<div class="addtext03">
+			<ul>
+				<li><span>05-17</span><a href="/2009_ggzydetail_000687_62499641.shtml" target="_blank">保定天鹅：2012年年度股东大会决议</a></li><li><span>05-14</span><a href="/2009_ggzydetail_000687_62489801.shtml" target="_blank">保定天鹅：召开2012年年度股东大会的提示</a></li><li><span>05-07</span><a href="/2009_ggzydetail_000687_62464853.shtml" target="_blank">保定天鹅：非公开发行股票解除限售提示</a></li><li><span>04-27</span><a href="/2009_ggzydetail_000687_62438088.shtml" target="_blank">保定天鹅：华西证券关于公司年度保荐工作报告</a></li><li><span>04-26</span><a href="/2009_ggzydetail_000687_62431659.shtml" target="_blank">保定天鹅：2012年年度报告主要财务指标及分配预案</a></li><li><span>04-26</span><a href="/2009_ggzydetail_000687_62431720.shtml" target="_blank">保定天鹅：召开2012年度股东大会通知</a></li><li><span>04-26</span><a href="/2009_ggzydetail_000687_62431854.shtml" target="_blank">保定天鹅：2013年一季度报告主要财务指标</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="gsgg2" class="hexunHidden">
+		<div class="addtext03">
+			<ul>
+				<li><span>05-17</span><a href='http://download.hexun.com/ftp/all_stockdata_2009/all/062\499\62499602.PDF' target='_blank'>保定天鹅2012年度股东大会的法律意见书</a></li><li><span>05-17</span><a href='http://download.hexun.com/ftp/all_stockdata_2009/all/062\499\62499603.PDF' target='_blank'>保定天鹅2012年年度股东大会决议公告</a></li><li><span>05-17</span><a href='http://download.hexun.com/ftp/all_stockdata_2009/all/062\499\62499604.PDF' target='_blank'>保定天鹅第六届监事会第一次会议决议公告</a></li><li><span>05-17</span><a href='http://download.hexun.com/ftp/all_stockdata_2009/all/062\499\62499605.PDF' target='_blank'>保定天鹅第六届董事会第一次会议决议公告</a></li><li><span>05-17</span><a href='http://download.hexun.com/ftp/all_stockdata_2009/all/062\499\62499606.PDF' target='_blank'>保定天鹅关于对公司聘任高管人员的独立董事意见</a></li><li><span>05-14</span><a href='http://download.hexun.com/ftp/all_stockdata_2009/all/062\489\62489785.PDF' target='_blank'>保定天鹅关于召开2012年年度股东大会的提示性公...</a></li><li><span>05-07</span><a href='http://download.hexun.com/ftp/all_stockdata_2009/all/062\464\62464807.PDF' target='_blank'>保定天鹅关于非公开发行股票解除限售提示性公告</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="gsgg3" class="hexunHidden">
+		<div class="addtext03">
+			<ul>
+				<li><span>04-26</span><a href="http://download.hexun.com/Txtdata/stock_detail_62431682.shtml" target="_blank">保定天鹅：2012年年度报告摘要</a></li><li><span>04-26</span><a href="http://download.hexun.com/Txtdata/stock_detail_62431687.shtml" target="_blank">保定天鹅：2012年年度报告</a></li><li><span>04-26</span><a href="http://download.hexun.com/Txtdata/stock_detail_62431694.shtml" target="_blank">保定天鹅：2013年第一季度报告正文</a></li><li><span>04-26</span><a href="http://download.hexun.com/Txtdata/stock_detail_62431695.shtml" target="_blank">保定天鹅：2013年第一季度报告全文</a></li><li><span>10-31</span><a href="http://download.hexun.com/Txtdata/stock_detail_61739513.shtml" target="_blank">保定天鹅：2012年第三季度报告正文</a></li><li><span>10-31</span><a href="http://download.hexun.com/Txtdata/stock_detail_61739517.shtml" target="_blank">保定天鹅：2012年第三季度报告全文</a></li><li><span>08-30</span><a href="http://download.hexun.com/Txtdata/stock_detail_61505370.shtml" target="_blank">保定天鹅：2012年半年度报告摘要</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!--公司 -->
+						</div>
+						<!--后加页面 -->
+					</div>
+					<!-- zaiyaocontent end -->
+				</div>
+				<div class="clear"></div>
+			</div> <!-- gegu_content end -->
+			<!-- footer --><div class="clear"></div>
+			<div><link rel="stylesheet" type="text/css" href="http://img.hexun.com/news/2010/foot2010.css" />
+<div id="foot2010">
+<div class="link">
+<a target="_blank" href="http://cvs.hexun.com/feedback/support.htm" id="hexunUserSuggest">和讯恭候您的意见</a> - 
+<a target="_blank" href="http://corp.hexun.com/contact/index.html">联系我们</a> - 
+<a target="_blank" href="http://corp.hexun.com/default/index.html">关于我们</a> - 
+<a target="_blank" href="http://corp.hexun.com/adcenter/index.html">广告服务</a>
+<script language="javascript">
+(function(){
+if((/^[http:\/\/]*news\.hexun\.com(\/|\/index\.html)*$/).test(window.location.href))
+document.write('<span style="padding-left:18px;">执行主编：姜洪桥</span>');
+})();
+</script>
+
+</div>
+<div class="copyright">
+本站郑重声明：和讯公司系政府批准的证券投资咨询机构[ZX0005]。所载文章、数据仅供参考，使用前请核实，风险自负。<br />Copyright&copy; 和讯网 和讯信息科技有限公司 All Rights Reserved 版权所有 复制必究
+</div>
+</div>
+<script src="http://img.hexun.com/js/inc_2010.js?date=201002041519"></script>
+<script src="http://utrack.hexun.com/track/track_hx.js"></script>
+<script src="http://news.hexun.com/js/count.js?date=201203051100"></script>
+<script src="http://login.tool.hexun.com/OtherInterFace/login_2010_Style02.aspx" type="text/javascript" charset="gb2312"></script>
+<script language="javascript">
+if(document.getElementById("shilu")!=null)
+{
+document.getElementById("shilu").style.width="710px";
+}
+</script>
+
+<!---temp count by zb 2011-05-30--->
+<script type="text/javascript">
+function coutLinkFrom(strId,mark,isId,p){
+  var obj = null;
+  if(isId) {
+  if(!document.getElementById(strId)) return;
+  obj = document.getElementById(strId);
+  }
+  else {
+     var parent = (typeof p!='undefined' && document.getElementById(p))?document.getElementById(p):document;
+     var arr = parent.getElementsByTagName('*');
+ var classesObj = [];
+ for(var i=0,l=arr.length;i<l;i++) {
+   if(arr[i].className && arr[i].className == strId) classesObj.push(arr[i]);
+ }
+ if(classesObj.length>=1) obj = classesObj[0];
+  }
+  if(obj==null) return;
+  var alist = obj.getElementsByTagName('a');
+  var len = alist.length;
+  for(var i=0;i<len;i++) {
+    if(alist[i].href) {
+   alist[i].href = (alist[i].href.indexOf('?')!=-1)?(alist[i].href+'&'+mark):(alist[i].href+'?'+mark);
+}
+  }
+}
+coutLinkFrom('jjjxmod','fromfunds=jjjx',false,'mainleft');
+coutLinkFrom('yued','fromfunds=tjxd',true);
+</script>
+
+<!--分享start-->
+<script type="text/javascript">
+(function(){
+  var reg = /^[http:\/\/\w|\w\.*\w|\w]+\.hexun\.com(\/|(\?[^\/]+)|\/index.html|\/index\-[\w]+.html)*$/;
+   if(!reg.test(window.location.href)) {
+    document.write('\x3Cscript type="text/javascript" src="http://img.hexun.com/base/version/hx_base.min1.1.js">\x3C/script>'+'\x3Cscript type="text/javascript" src="http://img.hexun.com/share/hxShare2011_bd.js">\x3C/script><link href="http://img.hexun.com/share/hxShare2011_bd.css" type="text/css" rel="stylesheet" />');
+    if(window.attachEvent) window.attachEvent('onload',function() {hxShare2011('');});
+	if(window.addEventListener) window.addEventListener('load',function(){hxShare2011('');},false);
+	
+  }
+})();
+</script>
+<!--分享over-->
+<script type="text/javascript">
+(function(){
+	//全站通发广告
+	var reg=/\/\d{9}(_\d+)?.(html|html\?\w*)$/;		
+	if(reg.test(location.href)){
+	    function allPages(){
+		    var script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = 'http://itv.hexun.com/lbi-html/ly/2011/allPages/tempAd.js?r='+Math.random();
+			document.body.appendChild(script);	
+		}
+		if(window.attachEvent) window.attachEvent('onload',function() {allPages()});
+		if(window.addEventListener) window.addEventListener('load',function(){allPages()},false);
+		//document.write('<script type="text/javascript" src="http://itv.hexun.com/lbi-html/ly/2011/allPages/tempAd.js"><\/script>');
+	}
+})()
+</script>
+<script type="text/javascript" src="http://img.hexun.com/app/js/TB.main.js?20130514"></script></div>
+			<!-- footer end -->
+			<div class="clear"></div>
+		</div>
+	</body>
+		<!--google 统计-->
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2167933-20']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!--2012-10-15-->
+<!--<script type="text/javascript" src="http://60.28.251.182/adtrack.js"></script> -->
+
+		<!--end google 统计-->
+</html>
