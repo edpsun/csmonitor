@@ -15,6 +15,9 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.gmail.edpsun.hystock.inbound.InboundContext;
+import com.gmail.edpsun.hystock.inbound.collect.InboundCollector.Quarter;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring/app-beans.xml" })
 public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringContextTests {
@@ -23,10 +26,38 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
 
     @Test
     @Transactional
-    @Rollback(false)
-    public void testCollect() {
+    @Rollback(true)
+    public void testCollectUpdateAll() {
+        InboundContext ctx = new InboundContext();
         URL url = this.getClass().getClassLoader().getResource("own.EBK");
-        collector.collect(url.getFile());
+        ctx.setEbk(url.getFile());
+        ctx.setQuarter(Quarter.valueOf("2019-01"));
+        int c = collector.process(ctx);
+        assertEquals(3, c);
+    }
+
+    @Test
+    @Transactional
+    @Rollback(false)
+    public void testCollectNoUpdate() {
+        InboundContext ctx = new InboundContext();
+        URL url = this.getClass().getClassLoader().getResource("own.EBK");
+        ctx.setEbk(url.getFile());
+        ctx.setQuarter(Quarter.valueOf("2010-01"));
+        int c = collector.process(ctx);
+        assertEquals(0, c);
+    }
+
+    @Test
+    @Transactional
+    @Rollback(false)
+    public void testCollectNoUpdate2() {
+        InboundContext ctx = new InboundContext();
+        URL url = this.getClass().getClassLoader().getResource("own.EBK");
+        ctx.setEbk(url.getFile());
+        ctx.setQuarter(Quarter.valueOf("2013-01"));
+        int c = collector.process(ctx);
+        assertEquals(0, c);
     }
 
     @Test

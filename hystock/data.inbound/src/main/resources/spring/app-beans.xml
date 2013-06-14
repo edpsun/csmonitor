@@ -45,7 +45,7 @@
                 </prop>
                 <prop key="hibernate.show_sql">false</prop>
                 <!-- <prop key="hibernate.hbm2ddl.auto"></prop> -->
-                <!--  -->
+                <!-- -->
                 <prop key="hibernate.jdbc.batch_size">20</prop>
             </props>
         </property>
@@ -61,6 +61,9 @@
 
     <bean id="inboundCollector"
         class="com.gmail.edpsun.hystock.inbound.collect.InboundCollector">
+    </bean>
+
+    <bean id="selector" class="com.gmail.edpsun.hystock.select.Selector">
     </bean>
 
 </beans>

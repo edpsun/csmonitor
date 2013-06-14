@@ -72,7 +72,6 @@ public class HexunParser implements Parser {
         String[] quarters = _holderStatLine.split("<tr");
         int i = 0;
         for (String q : quarters) {
-
             if (q.indexOf("<span class=\"font10\">") == -1) {
                 continue;
             }

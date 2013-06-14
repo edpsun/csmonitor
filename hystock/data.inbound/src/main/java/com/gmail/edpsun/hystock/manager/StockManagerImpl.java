@@ -32,8 +32,7 @@ public class StockManagerImpl implements StockManager {
         }
 
         // save holder stat
-        List<HolderStat> exists = holderStatDao.query(String.format(" from HolderStat as hs where hs.stockId = '%s' ",
-                stock.getId()));
+        List<HolderStat> exists = getHolderStats(stock.getId());
         List<HolderStat> doneList = new ArrayList<HolderStat>();
 
         List<HolderStat> list = stock.getHolderStats();
@@ -46,5 +45,12 @@ public class StockManagerImpl implements StockManager {
                 doneList.add(hs);
             }
         }
+    }
+
+    @Override
+    public List<HolderStat> getHolderStats(String id) {
+        List<HolderStat> exists = holderStatDao.query(String.format(" from HolderStat as hs "
+                + "where hs.stockId = '%s' order by hs.year desc, hs.quarter desc", id));
+        return exists;
     }
 }

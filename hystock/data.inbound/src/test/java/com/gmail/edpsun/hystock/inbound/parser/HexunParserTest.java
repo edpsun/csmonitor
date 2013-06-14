@@ -30,7 +30,7 @@ public class HexunParserTest {
         assertEquals("保定天鹅", stock.getName());
 
         List<HolderStat> holderStats = stock.getHolderStats();
-        assertEquals(47, holderStats.size());
+        assertEquals(43, holderStats.size());
 
         assertEquals(2013, holderStats.get(0).getYear());
         assertEquals(1, holderStats.get(0).getQuarter());
@@ -42,8 +42,8 @@ public class HexunParserTest {
         assertEquals(75736, holderStats.get(0).getTotalShare());
         assertEquals(75736, holderStats.get(0).getCirculatingShare());
 
-        assertEquals(2000, holderStats.get(46).getYear());
-        assertEquals(2, holderStats.get(46).getQuarter());
-        assertEquals("000687", holderStats.get(46).getStockId());
+        assertEquals(2002, holderStats.get(42).getYear());
+        assertEquals(3, holderStats.get(42).getQuarter());
+        assertEquals("000687", holderStats.get(42).getStockId());
     }
 }
