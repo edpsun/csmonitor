@@ -9,4 +9,6 @@ public interface StockManager {
     void save(Stock stock);
 
     List<HolderStat> getHolderStats(String id);
+
+    Stock getStock(String id, boolean loadCascade);
 }

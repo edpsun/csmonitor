@@ -40,9 +40,9 @@ public class StockDaoTest extends AbstractTransactionalJUnit4SpringContextTests 
         HolderStat hs = new HolderStat();
         hs.setStockId(id);
         hs.setYear(2013);
-        hs.setQuarter(3);
+        hs.setQuarter(4);
 
-        assertEquals(2, list.size());
+        assertEquals(1, list.size());
         assertTrue(list.contains(hs));
 
         list = holderStatDao.query(" from HolderStat as hs where hs.stockId = " + "'600123xx'");
@@ -70,6 +70,7 @@ public class StockDaoTest extends AbstractTransactionalJUnit4SpringContextTests 
         stockDao.add(st);
 
         HolderStat stat = new HolderStat();
+        stat.setId("" + new Date().getTime());
         stat.setStockId("600123");
         stat.setYear(2013);
         stat.setQuarter(4);

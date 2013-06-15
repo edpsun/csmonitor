@@ -53,4 +53,14 @@ public class StockManagerImpl implements StockManager {
                 + "where hs.stockId = '%s' order by hs.year desc, hs.quarter desc", id));
         return exists;
     }
+
+    @Override
+    public Stock getStock(String id, boolean loadCascade) {
+        Stock st = stockDao.findById(id);
+        if (st != null && loadCascade) {
+            List<HolderStat> exists = getHolderStats(st.getId());
+            st.setHolderStats(exists);
+        }
+        return st;
+    }
 }

@@ -3,3 +3,4 @@
  
  
  mvn clean compile exec:java -Dexec.mainClass=com.gmail.edpsun.hystock.select.Main  -Dexec.args="-a -s q1 -ebk ./src/test/resources/own.EBK"
+ 
