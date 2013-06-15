@@ -33,7 +33,7 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
         ctx.setEbk(url.getFile());
         ctx.setQuarter(Quarter.valueOf("2019-01"));
         int c = collector.process(ctx);
-        assertEquals(3, c);
+        assertEquals(4, c);
     }
 
     @Test
@@ -64,7 +64,7 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
     public void testGetStockList() {
         URL url = this.getClass().getClassLoader().getResource("own.EBK");
         List<String> list = collector.getStockList(url.getFile());
-        assertEquals(3, list.size());
+        assertEquals(4, list.size());
         assertTrue(list.contains("002010"));
         assertTrue(list.contains("600114"));
         assertTrue(list.contains("000687"));

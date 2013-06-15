@@ -11,6 +11,7 @@ public class ChainManager {
     public Chain getChain() {
         ArrayList<Activity> list = new ArrayList<Activity>();
         list.add(new HolderDataCalculatorActivity());
+        list.add(new HolderDataAnalyzerActivity());
         return getChain(list);
     }
 

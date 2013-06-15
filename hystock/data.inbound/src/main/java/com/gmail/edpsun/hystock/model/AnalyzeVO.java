@@ -3,189 +3,221 @@
  */
 package com.gmail.edpsun.hystock.model;
 
+import java.util.ArrayList;
+
 /**
  * @author esun
- * @version JavaTools_version
- * Create Date:May 2, 2011 10:43:54 PM
+ * @version JavaTools_version Create Date:May 2, 2011 10:43:54 PM
  */
 public class AnalyzeVO implements Comparable<AnalyzeVO> {
 
-	public AnalyzeVO(String c) {
-		this.code = c;
-	}
+    public AnalyzeVO(String c) {
+        this.code = c;
+    }
 
-	public static AnalyzeVO getClone(AnalyzeVO v) {
-		AnalyzeVO avo = new AnalyzeVO(v.getCode(), v.getLevel(), v.getSublevel(), v.getHolderUpQNum(),
-				v.getHolderChange(), v.getAverageAmountUpQNum(), v.getAverageAmountChange());
+    public static AnalyzeVO getClone(AnalyzeVO v) {
+        AnalyzeVO avo = new AnalyzeVO(v.getCode(), v.getLevel(), v.getSublevel(), v.getHolderUpQNum(),
+                v.getHolderChange(), v.getAverageAmountUpQNum(), v.getAverageAmountChange());
 
-		return avo;
-	}
+        return avo;
+    }
 
-	/**
-	 * @param code
-	 * @param level
-	 * @param sublevel
-	 * @param holderUpQNum
-	 * @param holderChange
-	 * @param averageAmountUpQNum
-	 * @param averageAmountChange
-	 */
-	private AnalyzeVO(String code, String level, String sublevel, int holderUpQNum, float holderChange,
-			int averageAmountUpQNum, float averageAmountChange) {
-		super();
-		this.code = code;
-		this.level = level;
-		this.sublevel = sublevel;
-		this.holderUpQNum = holderUpQNum;
-		this.holderChange = holderChange;
-		this.averageAmountUpQNum = averageAmountUpQNum;
-		this.averageAmountChange = averageAmountChange;
-	}
+    /**
+     * @param code
+     * @param level
+     * @param sublevel
+     * @param holderUpQNum
+     * @param holderChange
+     * @param averageAmountUpQNum
+     * @param averageAmountChange
+     */
+    private AnalyzeVO(String code, String level, String sublevel, int holderUpQNum, float holderChange,
+            int averageAmountUpQNum, float averageAmountChange) {
+        super();
+        this.code = code;
+        this.level = level;
+        this.sublevel = sublevel;
+        this.holderUpQNum = holderUpQNum;
+        this.holderChange = holderChange;
+        this.averageAmountUpQNum = averageAmountUpQNum;
+        this.averageAmountChange = averageAmountChange;
+    }
 
-	String code = null;
-	String level = null;
-	String sublevel = "";
+    String code = null;
+    String level = null;
+    String sublevel = "";
 
-	int holderUpQNum = 0;
-	int averageAmountUpQNum = 0;
+    int holderUpQNum = 0;
+    int averageAmountUpQNum = 0;
 
-	float holderChange = 1.0f;
-	float averageAmountChange = 1.0f;
+    float holderChange = 1.0f;
+    float averageAmountChange = 1.0f;
 
-	public String getCode() {
-		return code;
-	}
+    ArrayList<String> tags = new ArrayList<String>();
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public String getLevel() {
-		return level;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public void setLevel(String level) {
-		this.level = level;
-	}
+    public String getLevel() {
+        return level;
+    }
 
-	/**
-	 * @return the sublevel
-	 */
-	public String getSublevel() {
-		return sublevel;
-	}
+    public void setLevel(String level) {
+        this.level = level;
+    }
 
-	/**
-	 * @param sublevel the sublevel to set
-	 */
-	public void setSublevel(String sublevel) {
-		this.sublevel = sublevel;
-	}
+    /**
+     * @return the sublevel
+     */
+    public String getSublevel() {
+        return sublevel;
+    }
 
-	/**
-	 * @return the holderUpQNum
-	 */
-	public int getHolderUpQNum() {
-		return holderUpQNum;
-	}
+    /**
+     * @param sublevel
+     *            the sublevel to set
+     */
+    public void setSublevel(String sublevel) {
+        this.sublevel = sublevel;
+    }
 
-	/**
-	 * @param holderUpQNum the holderUpQNum to set
-	 */
-	public void setHolderUpQNum(int holderUpQNum) {
-		this.holderUpQNum = holderUpQNum;
-	}
+    /**
+     * @return the holderUpQNum
+     */
+    public int getHolderUpQNum() {
+        return holderUpQNum;
+    }
 
-	/**
-	 * @return the averageAmountUpQNum
-	 */
-	public int getAverageAmountUpQNum() {
-		return averageAmountUpQNum;
-	}
+    /**
+     * @param holderUpQNum
+     *            the holderUpQNum to set
+     */
+    public void setHolderUpQNum(int holderUpQNum) {
+        this.holderUpQNum = holderUpQNum;
+    }
 
-	/**
-	 * @param averageAmountUpQNum the averageAmountUpQNum to set
-	 */
-	public void setAverageAmountUpQNum(int averageAmountUpQNum) {
-		this.averageAmountUpQNum = averageAmountUpQNum;
-	}
+    /**
+     * @return the averageAmountUpQNum
+     */
+    public int getAverageAmountUpQNum() {
+        return averageAmountUpQNum;
+    }
 
-	/**
-	 * @return the holderChange
-	 */
-	public float getHolderChange() {
-		return holderChange;
-	}
+    /**
+     * @param averageAmountUpQNum
+     *            the averageAmountUpQNum to set
+     */
+    public void setAverageAmountUpQNum(int averageAmountUpQNum) {
+        this.averageAmountUpQNum = averageAmountUpQNum;
+    }
 
-	/**
-	 * @param holderChange the holderChange to set
-	 */
-	public void setHolderChange(float holderChange) {
-		this.holderChange = holderChange;
-	}
+    /**
+     * @return the holderChange
+     */
+    public float getHolderChange() {
+        return holderChange;
+    }
 
-	/**
-	 * @return the averageAmountChange
-	 */
-	public float getAverageAmountChange() {
-		return averageAmountChange;
-	}
+    /**
+     * @param holderChange
+     *            the holderChange to set
+     */
+    public void setHolderChange(float holderChange) {
+        this.holderChange = holderChange;
+    }
 
-	/**
-	 * @param averageAmountChange the averageAmountChange to set
-	 */
-	public void setAverageAmountChange(float averageAmountChange) {
-		this.averageAmountChange = averageAmountChange;
-	}
+    /**
+     * @return the averageAmountChange
+     */
+    public float getAverageAmountChange() {
+        return averageAmountChange;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == this) {
-			return true;
-		}
+    /**
+     * @param averageAmountChange
+     *            the averageAmountChange to set
+     */
+    public void setAverageAmountChange(float averageAmountChange) {
+        this.averageAmountChange = averageAmountChange;
+    }
 
-		if (!(obj instanceof AnalyzeVO)) {
-			return false;
-		}
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
 
-		AnalyzeVO vo = (AnalyzeVO) obj;
+        if (!(obj instanceof AnalyzeVO)) {
+            return false;
+        }
 
-		return code.equals(vo.getCode());
-	}
+        AnalyzeVO vo = (AnalyzeVO) obj;
 
-	@Override
-	public int hashCode() {
-		return (code).hashCode();
-	}
+        return code.equals(vo.getCode());
+    }
 
-	@Override
-	public int compareTo(AnalyzeVO vo) {
+    @Override
+    public int hashCode() {
+        return (code).hashCode();
+    }
 
-		int p = level.compareTo(vo.getLevel());
-		if (p != 0) {
-			return p;
-		}
+    @Override
+    public int compareTo(AnalyzeVO vo) {
+        int p = level.compareTo(vo.getLevel());
+        if (p != 0) {
+            return p;
+        }
 
-		Float hc1 = new Float(holderChange);
-		Float hc11 = new Float(vo.getHolderChange());
-		p = hc1.compareTo(hc11);
-		if (p != 0) {
-			return p;
-		}
+        Float hc1 = new Float(holderChange);
+        Float hc11 = new Float(vo.getHolderChange());
+        p = hc1.compareTo(hc11);
+        if (p != 0) {
+            return p;
+        }
 
-		return sublevel.compareTo(vo.getSublevel());
-	}
+        return sublevel.compareTo(vo.getSublevel());
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Code: ").append(code);
-		sb.append(" Level: ").append(level);
-		sb.append(" SubLevel: ").append(sublevel);
-		sb.append(" HolderChange: [" + holderUpQNum + "]").append(holderChange);
-		sb.append(" AverageAmountChange: [" + averageAmountUpQNum + "]").append(averageAmountChange);
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Code: ").append(code);
+        sb.append(" Level: ").append(level);
+        sb.append(" SubLevel: ").append(sublevel);
+        sb.append(" HolderChange: [" + holderUpQNum + "]").append(holderChange);
+        sb.append(" AverageAmountChange: [" + averageAmountUpQNum + "]").append(averageAmountChange);
 
-		return sb.toString();
-	}
+        if (tags != null) {
+            sb.append("<br>Tags:");
+            for (String string : tags) {
+                sb.append(string + ",");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    public void addTag(String tag) {
+        if (tags == null) {
+            tags = new ArrayList<String>();
+        }
+
+        if (!tags.contains(tag)) {
+            tags.add(tag);
+        }
+    }
+
+    public String getTags() {
+        StringBuilder sb = new StringBuilder();
+        for (String tag : tags) {
+            sb.append(tag).append(", ");
+        }
+        return sb.toString();
+    }
 
 }

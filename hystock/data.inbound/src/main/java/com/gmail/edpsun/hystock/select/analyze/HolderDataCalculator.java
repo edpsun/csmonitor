@@ -31,7 +31,7 @@ public class HolderDataCalculator {
 
         Float[] amountChanges = new Float[holderStats.size()];
         for (int i = 0; i < holderStats.size(); i++) {
-            amountChanges[i] = new Float(NumberUtils.createFloat(holderStats.get(i).getDelta()));
+            amountChanges[i] = holderStats.get(i).getDeltaInFloat();
         }
 
         VO vo = MathTool.calcDataSeriesMTThresholder(amountChanges, THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE,

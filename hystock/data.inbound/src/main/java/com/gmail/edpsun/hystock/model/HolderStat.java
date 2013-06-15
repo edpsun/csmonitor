@@ -7,11 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.math.NumberUtils;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
@@ -110,6 +112,10 @@ public class HolderStat {
         this.averageHolding = averageHolding;
     }
 
+    public Float getDeltaInFloat() {
+        return new Float(NumberUtils.createFloat(getDelta()));
+    }
+
     public String getDelta() {
         return delta;
     }
@@ -138,5 +144,13 @@ public class HolderStat {
     @Override
     public String toString() {
         return new ReflectionToStringBuilder(this).toString();
+    }
+
+    @Transient
+    String template = "  [-] %d-%d | %15s(A) | %15s(C) | %15s(H) | %15s(A) | %15s(D) ";
+
+    public String toFormattedString() {
+        return String.format(template, getYear(), getQuarter(), getTotalShare(), getCirculatingShare(), getHolderNum(),
+                getAverageHolding(), getDelta() + "%");
     }
 }

@@ -33,22 +33,29 @@ public class Selector extends AbstractProcessor {
                 System.out.println("[" + count
                         + "]=============================================================================");
 
-                if (!process(id)) {
+                if (!process(id, ctx)) {
                     fail++;
                 } else {
                     Thread.currentThread().sleep(10);
                 }
             } catch (Exception ex) {
+                fail++;
                 LOGGER.error("[Error] id: " + id, ex);
             }
         }
-        return 0;
+
+        HTMLReporter reporter = new HTMLReporter();
+        reporter.exportReport(ctx);
+
+        LOGGER.info("==========================================================" + "\n# Total  : " + count + "\n"
+                + "# Failure: " + fail);
+        return count;
     }
 
-    boolean process(String id) {
+    boolean process(String id, InboundContext globalCtx) {
         Stock stock = stockManger.getStock(id, true);
         if (stock == null) {
-            LOGGER.error("Cannot find stock id :" + id);
+            LOGGER.error("Cannot find stock id :" + id + "  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             return false;
         }
 
@@ -58,6 +65,7 @@ public class Selector extends AbstractProcessor {
         InboundContext ctx = new InboundContext();
         ctx.setStock(stock);
         ctx.setAnalyzeVO(new AnalyzeVO(id));
+        ctx.put(InboundContext.PARAM_GLOBAL_CONTEXT, globalCtx);
 
         try {
             chain.execute(ctx);
