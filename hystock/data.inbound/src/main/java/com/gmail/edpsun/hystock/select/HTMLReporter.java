@@ -65,7 +65,7 @@ public class HTMLReporter {
                     sinaId = "sh" + stock.getId();
                 } else {
                     exportListID = "0";
-                    sinaId = "zh" + stock.getId();
+                    sinaId = "sz" + stock.getId();
                 }
                 exportListID += analyzeVO.getCode();
 

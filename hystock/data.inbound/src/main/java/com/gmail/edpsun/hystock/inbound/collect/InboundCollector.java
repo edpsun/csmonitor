@@ -53,7 +53,7 @@ public class InboundCollector extends AbstractProcessor {
                 if (!processStock(id)) {
                     fail++;
                 } else {
-                    Thread.currentThread().sleep(random.nextInt(300));
+                    Thread.currentThread().sleep(random.nextInt(1000));
                 }
             } catch (Exception ex) {
                 LOGGER.error("[Error] id: " + id, ex);
