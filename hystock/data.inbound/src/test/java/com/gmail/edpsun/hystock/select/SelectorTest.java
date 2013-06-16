@@ -37,7 +37,7 @@ public class SelectorTest extends AbstractTransactionalJUnit4SpringContextTests 
             System.out.println(stockCtx.getStock().getId() + "->" + stockCtx.getAnalyzeVO().getTags());
         }
 
-        assertEquals(3, globalCtx.getChosenList().size());
+        assertEquals(2, globalCtx.getChosenList().size());
     }
 
     @Test
