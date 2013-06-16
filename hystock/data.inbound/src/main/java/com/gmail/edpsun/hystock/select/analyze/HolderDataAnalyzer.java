@@ -20,8 +20,8 @@ public class HolderDataAnalyzer {
 
     static float THRESHOLDER_HOLDER_CHANGE_RATE = Float.parseFloat(System.getProperty("THRESHOLDER_HOLDER_CHANGE_RATE",
             "0.85f"));
-    static int THRESHOLDER_HOLDER_QNUM = Integer.parseInt(System.getProperty("THRESHOLDER_HOLDER_QNUM", "2"));
-    static int THRESHOLDER_AVG_AMOUNT_QNUM = Integer.parseInt(System.getProperty("THRESHOLDER_AVG_AMOUNT_QNUM", "5"));
+    static int THRESHOLDER_HOLDER_QNUM = Integer.parseInt(System.getProperty("THRESHOLDER_HOLDER_QNUM", "3"));
+    static int THRESHOLDER_AVG_AMOUNT_QNUM = Integer.parseInt(System.getProperty("THRESHOLDER_AVG_AMOUNT_QNUM", "8"));
     static float TRESHOLDER_CANNON = Float.parseFloat(System.getProperty("TRESHOLDER_CANNON", "30f"));
 
     static {
