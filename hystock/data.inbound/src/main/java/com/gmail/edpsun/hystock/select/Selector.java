@@ -1,5 +1,6 @@
 package com.gmail.edpsun.hystock.select;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -27,6 +28,8 @@ public class Selector extends AbstractProcessor {
         int count = 0;
         int fail = 0;
 
+        List<Exception> exceptions = new ArrayList<Exception>();
+
         for (String id : list) {
             try {
                 count++;
@@ -40,6 +43,7 @@ public class Selector extends AbstractProcessor {
                 }
             } catch (Exception ex) {
                 fail++;
+                exceptions.add(ex);
                 LOGGER.error("[Error] id: " + id, ex);
             }
         }
@@ -47,8 +51,15 @@ public class Selector extends AbstractProcessor {
         HTMLReporter reporter = new HTMLReporter();
         reporter.exportReport(ctx);
 
+        if (exceptions.size() > 0) {
+            LOGGER.info("==========================================================\n Exceptions:");
+            int p = 0;
+            for (Exception exception : exceptions) {
+                LOGGER.error("-> " + (++p) + "[-] process exceptoin", exception);
+            }
+        }
         LOGGER.info("==========================================================" + "\n# Total  : " + count + "\n"
-                + "# Failure: " + fail);
+                + "# Failure: " + fail + "\n# Selected: " + ctx.getChosenList().size());
         return count;
     }
 

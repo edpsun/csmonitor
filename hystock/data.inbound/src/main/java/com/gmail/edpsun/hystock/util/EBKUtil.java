@@ -18,7 +18,7 @@ public class EBKUtil {
             String line = null;
             while ((line = br.readLine()) != null) {
                 line = line.trim();
-                if (line.length() == 0) {
+                if (line.length() == 0 || line.indexOf("999999") > -1 || line.indexOf("399001") > -1) {
                     continue;
                 }
 

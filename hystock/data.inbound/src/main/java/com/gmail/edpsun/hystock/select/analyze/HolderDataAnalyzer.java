@@ -12,10 +12,28 @@ import com.gmail.edpsun.hystock.model.HolderStat;
 public class HolderDataAnalyzer {
     static int LEVEL_BASE = 5;
     static int LEVEL_STEP = -1;
-    static float THRESHOLDER_HOLDER_CHANGE_RATE = 0.85f;
-    static int THRESHOLDER_HOLDER_QNUM = 2;
-    static int THRESHOLDER_AVG_AMOUNT_QNUM = 5;
-    static float TRESHOLDER_CANNON = 30;
+
+    // static float THRESHOLDER_HOLDER_CHANGE_RATE = 0.85f;
+    // static int THRESHOLDER_HOLDER_QNUM = 2;
+    // static int THRESHOLDER_AVG_AMOUNT_QNUM = 5;
+    // static float TRESHOLDER_CANNON = 30f;
+
+    static float THRESHOLDER_HOLDER_CHANGE_RATE = Float.parseFloat(System.getProperty("THRESHOLDER_HOLDER_CHANGE_RATE",
+            "0.85f"));
+    static int THRESHOLDER_HOLDER_QNUM = Integer.parseInt(System.getProperty("THRESHOLDER_HOLDER_QNUM", "2"));
+    static int THRESHOLDER_AVG_AMOUNT_QNUM = Integer.parseInt(System.getProperty("THRESHOLDER_AVG_AMOUNT_QNUM", "5"));
+    static float TRESHOLDER_CANNON = Float.parseFloat(System.getProperty("TRESHOLDER_CANNON", "30f"));
+
+    static {
+        System.out.println(String.format("Analyzer   - %-50s" + " - Value(%s): %s", "THRESHOLDER_HOLDER_CHANGE_RATE",
+                "0.85f", THRESHOLDER_HOLDER_CHANGE_RATE));
+        System.out.println(String.format("Analyzer   - %-50s" + " - Value(%s): %s", "THRESHOLDER_HOLDER_QNUM", "2",
+                THRESHOLDER_HOLDER_QNUM));
+        System.out.println(String.format("Analyzer   - %-50s" + " - Value(%s): %s", "THRESHOLDER_AVG_AMOUNT_QNUM", "5",
+                THRESHOLDER_AVG_AMOUNT_QNUM));
+        System.out.println(String.format("Analyzer   - %-50s" + " - Value(%s): %s", "TRESHOLDER_CANNON", "30f",
+                TRESHOLDER_CANNON));
+    }
 
     public boolean analyze(InboundContext ctx) throws Exception {
         AnalyzeVO avo = ctx.getAnalyzeVO();

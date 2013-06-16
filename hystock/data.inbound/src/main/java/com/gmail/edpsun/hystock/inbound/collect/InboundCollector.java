@@ -49,6 +49,7 @@ public class InboundCollector extends AbstractProcessor {
 
             try {
                 count++;
+                LOGGER.info("[" + count + "] id: " + id + "-------------------------------------------");
                 if (!processStock(id)) {
                     fail++;
                 } else {
@@ -85,7 +86,6 @@ public class InboundCollector extends AbstractProcessor {
         LOGGER.debug(url);
         boolean ret = false;
         try {
-            LOGGER.info("[Start] id: " + id + "-------------------------------------------");
             String content = dataRetriever.getData(url);
             Stock stock = hexunParser.parse(content);
             stockManger.save(stock);

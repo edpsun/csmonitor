@@ -46,4 +46,57 @@ public class HexunParserTest {
         assertEquals(3, holderStats.get(42).getQuarter());
         assertEquals("000687", holderStats.get(42).getStockId());
     }
+
+    @Test
+    public void testParseInvalidDelta() throws Exception {
+        URL url = this.getClass().getClassLoader().getResource("2009_cgjzd_002027.shtml");
+
+        String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
+        Stock stock = p.parse(content);
+        assertEquals("002027", stock.getId());
+        assertEquals("七喜控股", stock.getName());
+
+        List<HolderStat> holderStats = stock.getHolderStats();
+        assertEquals(32, holderStats.size());
+
+        HolderStat stat = new HolderStat();
+        stat.setYear(2004);
+        stat.setQuarter(03);
+        stat.setId("002027");
+        assertFalse(holderStats.contains(stat));
+
+        stat.setYear(2010);
+        stat.setQuarter(01);
+        stat.setId("002027");
+        assertFalse(holderStats.contains(stat));
+
+        stat.setYear(2010);
+        stat.setQuarter(02);
+        stat.setId("002027");
+        assertFalse(holderStats.contains(stat));
+
+    }
+
+    @Test
+    public void testParserQuarter() {
+        int[] qs = p.parseReportDate("12年年度");
+        assertEquals(2012, qs[0]);
+        assertEquals(04, qs[1]);
+
+        qs = p.parseReportDate("12年前3季");
+        assertEquals(2012, qs[0]);
+        assertEquals(03, qs[1]);
+
+        qs = p.parseReportDate("12年中期");
+        assertEquals(2012, qs[0]);
+        assertEquals(02, qs[1]);
+
+        qs = p.parseReportDate("05年第2季");
+        assertEquals(2005, qs[0]);
+        assertEquals(02, qs[1]);
+
+        qs = p.parseReportDate("12年第1季");
+        assertEquals(2012, qs[0]);
+        assertEquals(01, qs[1]);
+    }
 }

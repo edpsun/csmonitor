@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.stereotype.Component;
 
 import com.gmail.edpsun.hystock.model.HolderStat;
@@ -104,7 +105,15 @@ public class HexunParser implements Parser {
                 hs.setAverageHolding(parseInt(avg));
                 hs.setTotalShare(parseInt(totalShare));
                 hs.setCirculatingShare(parseInt(circulating));
-                hs.setDelta(delta.replace("%", ""));
+
+                delta = delta.replace("%", "");
+                delta = delta.replace(",", "");
+                float fdelta = NumberUtils.createFloat(delta);
+                if (fdelta < -70 || fdelta > 300) {
+
+                    continue;
+                }
+                hs.setDelta(delta);
 
                 hs.setStockId(id);
                 hs.setId(id + ":" + hs.getYear() + ":" + hs.getQuarter());
@@ -119,16 +128,18 @@ public class HexunParser implements Parser {
 
     private static final String Q1 = "年第1季";
     private static final String Q2 = "年中期";
+    private static final String Q2s = "年第2季";
     private static final String Q3 = "年前3季";
     private static final String Q4 = "年年度";
-    private static final String[] REPORT_QS = new String[] { Q1, Q2, Q3, Q4 };
+    private static final String[] REPORT_QS = new String[] { Q1, Q2, Q2s, Q3, Q4 };
+    private static final int[] REPORT_QS_NUM = new int[] { 1, 2, 2, 3, 4 };
 
-    private int[] parseReportDate(String r) {
+    int[] parseReportDate(String r) {
         int year = -1;
         int quarter = -1;
         for (int i = 0; i < REPORT_QS.length; i++) {
             if (r.indexOf(REPORT_QS[i]) > -1) {
-                quarter = i + 1;
+                quarter = REPORT_QS_NUM[i];
                 year = Integer.parseInt(r.replace(REPORT_QS[i], ""));
                 if (year < 90) {
                     year += 2000;

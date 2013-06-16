@@ -2,15 +2,19 @@
 
 #home dir
 target_dir="target"
-release_home="${target_dir}/release"
-rm -rf ${release_home}
-mkdir -p ${release_home}
+app_link="/export/tools/hystock/release"
+release_home="${app_link}_`date +%Y_%m_%d-%H_%M_%S`"
+
+# remove old link
+mkdir -p "${release_home}"
+rm -f "${app_link}" && ln -s "${release_home}" "${app_link}"
 
 # compile
-mvn clean install
+mvn clean install || exit 1
+
 # dependency 
-mvn dependency:copy-dependencies -DoutputDirectory=${release_home}/lib -DincludeScope=runtime
-set -x
+mvn dependency:copy-dependencies -DoutputDirectory=${release_home}/lib -DincludeScope=runtime || exit 1
+
 # main jar
 cp ${target_dir}/*.jar  ${release_home}/lib
 
@@ -50,14 +54,20 @@ do
     fi
 done
 
-echo $CLASSPATH
+#echo $CLASSPATH
 EOF
 
 cp /tmp/$$.sh ${release_home}/hyget.sh 
 cp /tmp/$$.sh ${release_home}/hyreport.sh
 
-echo 'java -cp "$CLASSPATH" com.gmail.edpsun.hystock.inbound.Main $@' >> ${release_home}/hyget.sh
-echo 'java -cp "$CLASSPATH" com.gmail.edpsun.hystock.select.Main $@' >> ${release_home}/hyreport.sh
+echo 'java -cp "$CLASSPATH" ${HY_OPT} com.gmail.edpsun.hystock.inbound.Main $@' >> ${release_home}/hyget.sh
+echo 'java -cp "$CLASSPATH" ${HY_OPT} com.gmail.edpsun.hystock.select.Main $@' >> ${release_home}/hyreport.sh
+
+
+chmod 755 ${release_home}/hyget.sh
+chmod 755 ${release_home}/hyreport.sh
 
 echo ${release_home}/hyget.sh
 echo ${release_home}/hyreport.sh
+
+cp ./readme.txt ${release_home}

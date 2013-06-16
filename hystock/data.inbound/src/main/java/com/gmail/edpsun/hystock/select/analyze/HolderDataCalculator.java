@@ -17,9 +17,28 @@ import com.gmail.edpsun.hystock.util.MathTool.VO;
  * @version JavaTools_version Create Date:May 1, 2011 4:40:32 PM
  */
 public class HolderDataCalculator {
-    static float THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE = 0.05f;
-    static float THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE = -6f;
-    static int THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES = 2;
+    // static float THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE = 0.05f;
+    // static float THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE = -6f;
+    // static int THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES = 2;
+
+    static float THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE = Float.parseFloat(System.getProperty(
+            "THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE", "0.05f"));
+
+    static float THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE = Float.parseFloat(System.getProperty(
+            "THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE", "-6f"));
+
+    static int THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES = Integer.parseInt(System.getProperty(
+            "THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES", "2"));
+
+    static {
+        System.out.println(String.format("Calculator - %-50s" + " - Value(%s): %s",
+                "THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE", "0.05f", THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE));
+        System.out.println(String.format("Calculator - %-50s" + " - Value(%s): %s",
+                "THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE", "-6f",
+                THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE));
+        System.out.println(String.format("Calculator - %-50s" + " - Value(%s): %s",
+                "THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES", "2", THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES));
+    }
 
     public void analyze(InboundContext ctx) throws Exception {
         calcHolderAmount(ctx);

@@ -74,7 +74,7 @@ public class HTMLReporter {
                 sb.append(analyzeVO).append("<br>\n");
                 System.out.println(sb.toString());
 
-                sb.append("<br> <a target=\"_blank\"  href=\"" + String.format(sina_url, sinaId) + "\">Tecent</a>\n");
+                sb.append("<br> <a target=\"_blank\"  href=\"" + String.format(sina_url, sinaId) + "\">Sina</a>\n");
                 sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(tecent_url, stock.getId())
                         + "\">Tecent</a>\n");
                 sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(hexun, stock.getId())
