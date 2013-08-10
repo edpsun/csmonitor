@@ -21,3 +21,6 @@ netstat -ntl|grep 1527 && exit 0
 
 cd /data/depot/derby/hystock
 startNetworkServer -h 0.0.0.0 &
+
+$('.stdiv').hide();
+$('li:contains("2013-2")').parents('.stdiv').show();

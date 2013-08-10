@@ -40,7 +40,8 @@ public class StockManagerImpl implements StockManager {
             if (exists.contains(hs) || doneList.contains(hs)) {
                 LOGGER.debug("[Skip] Existing holder stat object: " + hs);
             } else {
-                LOGGER.info(String.format("Saving : %s %s %s", hs.getStockId(), hs.getYear(), hs.getQuarter()));
+                LOGGER.info(String.format("Saving : %s %s %s - %s", hs.getStockId(), hs.getYear(), hs.getQuarter(),
+                        stock.getName()));
                 holderStatDao.add(hs);
                 doneList.add(hs);
             }
