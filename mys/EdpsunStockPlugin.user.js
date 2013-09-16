@@ -11,6 +11,9 @@
         if($('.ed_link_class').length > 0){
             return;
         }
+        $('tr[id$="sh000001"]').css("border-bottom","solid red");
+        $('tr[id$="sz399001"]').css("border-top","solid red");
+
         var link_a = "http://stockdata.stock.hexun.com/2009_cgjzd_";
         var link_b = "http://f10.eastmoney.com/f10_v2/ShareholderResearch.aspx?code="
         $('.du-sd-item').each(function(){
