@@ -16,6 +16,7 @@
 
         var link_a = "http://stockdata.stock.hexun.com/2009_cgjzd_";
         var link_b = "http://f10.eastmoney.com/f10_v2/ShareholderResearch.aspx?code="
+        var link_c = "http://stock.finance.qq.com/corp1/stk_holder_count.php?zqdm="
         $('.du-sd-item').each(function(){
             var first_th = $(this).find('th:first');
             var id = first_th.find('a:first').text();
@@ -37,8 +38,12 @@
             first_th.append(aa);
 
             var ab = $('<a class="ed_link_class"></a>').attr('href', link_b + vid).attr("target","_blank").text('E').attr('style', 'padding-left: 5px;padding-right: 5px;');
-
             first_th.append(ab);
+            
+            var ac = $('<a class="ed_link_class"></a>').attr('href', link_c + id + '.shtml').attr("target","_blank").text('Q').attr('style', 'padding-left: 5px;padding-right: 5px;');
+            first_th.append(ac);
+
+            
         });
     }
 
