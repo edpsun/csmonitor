@@ -40,7 +40,7 @@
             var ab = $('<a class="ed_link_class"></a>').attr('href', link_b + vid).attr("target","_blank").text('E').attr('style', 'padding-left: 5px;padding-right: 5px;');
             first_th.append(ab);
             
-            var ac = $('<a class="ed_link_class"></a>').attr('href', link_c + id + '.shtml').attr("target","_blank").text('Q').attr('style', 'padding-left: 5px;padding-right: 5px;');
+            var ac = $('<a class="ed_link_class"></a>').attr('href', link_c + id).attr("target","_blank").text('Q').attr('style', 'padding-left: 5px;padding-right: 5px;');
             first_th.append(ac);
 
             
