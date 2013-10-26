@@ -66,7 +66,8 @@ public class HolderDataCalculator {
             holderNums[i] = new Float(holderStats.get(i).getHolderNum());
         }
 
-        VO vo = MathTool.calcDataSeriesUp(holderNums, THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE);
+        VO vo = MathTool.calcDataSeriesUp(holderNums, THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE,
+                THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES);
         ctx.getAnalyzeVO().setHolderChange(vo.getChange());
         ctx.getAnalyzeVO().setHolderUpQNum(vo.getQNum());
     }

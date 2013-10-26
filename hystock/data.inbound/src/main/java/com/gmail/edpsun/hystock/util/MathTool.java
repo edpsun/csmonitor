@@ -34,27 +34,26 @@ public class MathTool {
         return vo;
     }
 
-    public static VO calcDataSeriesUp(Float[] data, float ignoreRate) {
+    public static VO calcDataSeriesUp(Float[] data, float ignoreRate, int ignoreTimes) {
         if (data == null || data.length == 0) {
             return new VO(0, 0f);
         }
 
         Float current = data[0];
         int continuousNum = 0;
-
+        int exception = 0;
         for (int i = 1; i < data.length; i++) {
-            if (current.compareTo(data[i]) < 0) {// current < data [i]
+            if (current.compareTo(data[i]) <= 0) {// current < data [i]
                 continuousNum++;
                 current = data[i];
-            } else {// current >= data [i]
-                if (i == 1) {
-                    Float deltaRate = (current - data[i]) / data[i];
-                    if (deltaRate < ignoreRate) {
-                        continue;
-                    }
+            } else {// current > data [i]
+                Float deltaRate = (current - data[i]) / data[i];
+                if (deltaRate < ignoreRate && exception < ignoreTimes) {
+                    exception++;
+                    continue;
+                }else {
+                    break;
                 }
-
-                break;
             }
         }
 
