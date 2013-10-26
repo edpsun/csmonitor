@@ -14,8 +14,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.gmail.edpsun.hystock.inbound.InboundContext;
-import com.gmail.edpsun.hystock.inbound.collect.InboundCollector;
-import com.gmail.edpsun.hystock.inbound.collect.InboundCollector.Quarter;
 import com.gmail.edpsun.hystock.intf.Processor;
 
 public class Main {

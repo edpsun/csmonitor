@@ -13,7 +13,6 @@ import org.apache.commons.cli.ParseException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.gmail.edpsun.hystock.inbound.collect.InboundCollector;
 import com.gmail.edpsun.hystock.inbound.collect.InboundCollector.Quarter;
 import com.gmail.edpsun.hystock.intf.Processor;
 
@@ -25,19 +24,24 @@ public class Main {
         quarter.setRequired(true);
         quarter.setLongOpt("quarter");
 
+        Option parser = OptionBuilder.withArgName("Parser Q or H").hasArg().withDescription("specify the site/parser")
+                .create("p");
+        parser.setLongOpt("parser");
+
         Option ebkfile = OptionBuilder.withArgName("file").hasArg().withDescription("TDX ebk file").create("ebk");
         ebkfile.setRequired(true);
 
         Options options = new Options();
         options.addOption(quarter);
         options.addOption(ebkfile);
+        options.addOption(parser);
 
         // create the parser
-        CommandLineParser parser = new BasicParser();
+        CommandLineParser cparser = new BasicParser();
         CommandLine line = null;
         try {
             // parse the command line arguments
-            line = parser.parse(options, args);
+            line = cparser.parse(options, args);
         } catch (ParseException exp) {
             printUsage(options);
             throw new RuntimeException(exp);
@@ -50,6 +54,10 @@ public class Main {
 
         if (line.hasOption("ebk")) {
             inboundCtx.setEbk(line.getOptionValue("ebk"));
+        }
+
+        if (line.hasOption("p")) {
+            inboundCtx.setParser(line.getOptionValue("p"));
         }
         return inboundCtx;
     }

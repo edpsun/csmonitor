@@ -182,6 +182,7 @@ public class HTMLReporter {
         sb.append("<button type=\"button\" id=\"cleanButton\">Reset</button>").append("\n");
         sb.append("<button type=\"button\" id=\"exportButton\">Export</button>").append("\n");
         sb.append("<button type=\"button\" id=\"showPicButton\">ShowPic</button>").append("\n");
+        sb.append("<button type=\"button\" id=\"anyFilterButton\">AnyFilter</button>").append("\n");
 
         return sb.toString();
     }

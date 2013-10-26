@@ -23,7 +23,20 @@ import com.gmail.edpsun.hystock.inbound.collect.InboundCollector.Quarter;
 public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     InboundCollector collector;
-
+    
+    @Test
+    @Transactional
+    @Rollback(true)
+    public void testCollectUpdateAllTecent() {
+        InboundContext ctx = new InboundContext();
+        URL url = this.getClass().getClassLoader().getResource("own.EBK");
+        ctx.setEbk(url.getFile());
+        ctx.setQuarter(Quarter.valueOf("2019-01"));
+        ctx.setParser("Q");
+        int c = collector.process(ctx);
+        assertEquals(4, c);
+    }
+    
     @Test
     @Transactional
     @Rollback(true)

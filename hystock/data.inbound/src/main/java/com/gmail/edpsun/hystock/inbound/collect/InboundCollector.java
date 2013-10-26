@@ -1,16 +1,11 @@
 package com.gmail.edpsun.hystock.inbound.collect;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Resource;
 
 import org.apache.commons.lang.Validate;
-import org.apache.commons.lang.time.DateUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -31,6 +26,9 @@ public class InboundCollector extends AbstractProcessor {
     @Resource(name = "hexunParser")
     Parser hexunParser;
 
+    @Resource(name = "tecentParser")
+    Parser tecentParser;
+
     @Autowired
     DataRetriever dataRetriever;
 
@@ -38,6 +36,9 @@ public class InboundCollector extends AbstractProcessor {
     public int process(InboundContext ctx) {
         LOGGER.info("start collecting. Path: " + ctx.getEbk());
         List<String> list = getStockList(ctx.getEbk());
+
+        Parser parser = getParser(ctx);
+        LOGGER.info("Parser: " + parser.getClass().getCanonicalName());
 
         Random random = new Random();
         int count = 0;
@@ -50,7 +51,7 @@ public class InboundCollector extends AbstractProcessor {
             try {
                 count++;
                 LOGGER.info("[" + count + "] id: " + id + "-------------------------------------------");
-                if (!processStock(id)) {
+                if (!processStock(id, parser)) {
                     fail++;
                 } else {
                     Thread.currentThread().sleep(random.nextInt(1000));
@@ -63,6 +64,18 @@ public class InboundCollector extends AbstractProcessor {
         LOGGER.info("==========================================================" + "\n# Total  : " + count + "\n"
                 + "# Failure: " + fail);
         return count;
+    }
+
+    private Parser getParser(InboundContext ctx) {
+        Parser p = hexunParser;
+        if (ctx.getParser() != null) {
+            if ("Q".equals(ctx.getParser())) {
+                p = tecentParser;
+            } else if ("H".equals(ctx.getParser())) {
+                p = hexunParser;
+            }
+        }
+        return p;
     }
 
     boolean isNeedProcess(String id, Quarter quarter) {
@@ -81,13 +94,13 @@ public class InboundCollector extends AbstractProcessor {
         }
     }
 
-    private boolean processStock(String id) {
-        String url = hexunParser.getTargetURL(id);
+    private boolean processStock(String id, Parser parser) {
+        String url = parser.getTargetURL(id);
         LOGGER.debug(url);
         boolean ret = false;
         try {
             String content = dataRetriever.getData(url);
-            Stock stock = hexunParser.parse(content);
+            Stock stock = parser.parse(content);
             stockManger.save(stock);
             ret = true;
         } catch (Exception ex) {

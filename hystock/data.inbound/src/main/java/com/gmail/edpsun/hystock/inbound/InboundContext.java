@@ -9,6 +9,7 @@ import com.gmail.edpsun.hystock.model.Stock;
 import com.gmail.edpsun.tools.chain.impl.ContextImpl;
 
 public class InboundContext extends ContextImpl {
+    public static final String PARAM_PARSER = "parser";
     public static final String PARAM_QUARTER = "quarter";
     public static final String PARAM_EBK = "ebk";
     public static final String PARAM_KEEP_ALL = "keep_all";
@@ -17,6 +18,14 @@ public class InboundContext extends ContextImpl {
     public static final String PARAM_ANALYZE_VO = "analyzeVO";
     public static final String PARAM_GLOBAL_CONTEXT = "GLOBAL_CONTEXT";
     public static final String PARAM_CHOSEN_LIST = "CHOSEN_LIST";
+
+    public String getParser() {
+        return (String) get(PARAM_PARSER);
+    }
+
+    public void setParser(String parser) {
+        put(PARAM_PARSER, parser);
+    }
 
     public Stock getStock() {
         return (Stock) get(PARAM_STOCK);
