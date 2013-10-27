@@ -148,6 +148,7 @@ function doAnyFilter() {
             $('li:contains("' + str + '")').parents('.stdiv').show();
             $('.stdiv:contains("' + str + '")').show();
         }
+        $('#total').text("Current Total:" +  $('.stdiv:visible').size());
     }
 }
 
