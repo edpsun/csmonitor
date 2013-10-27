@@ -153,6 +153,21 @@ function doAnyFilter() {
 }
 
 function toggleStockList(event) {
+    var elid;
+    var exportList="";
+    var markList="";
+    var tipList="";
+
+    $('.stdiv:visible').each(function() {
+        var div = $(this);
+        elid = div.attr('elid');
+        exportList = exportList + elid + '<br>';
+
+        markList = markList + "0" + elid + '=7<br>';
+        tipList = tipList + "0" + elid + '=Tags:' + div.attr('tags')
+                + "#$hCRate:" + div.attr('hCRate') + "#$hQnum:" + div.attr('hQnum') + "<br>";
+    });
+
     $('#listdiv').html(
             exportList + "<br> <br> <br> <br> " + markList + "<br><br>"
                     + tipList);
