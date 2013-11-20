@@ -13,8 +13,8 @@
     <file path="/rbst.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1382350490094" ignored="false" />
     <file path="/test_adder.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1382343424790" ignored="false" />
     <file path="/temp.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1382347023165" ignored="false" />
-    <file path="/wc_monitor.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1383992699906" ignored="false" />
-    <file path="/wc.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1383990827124" ignored="false" />
+    <file path="/wc_monitor.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1384961388756" ignored="false" />
+    <file path="/wc.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1384961150500" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +37,7 @@
       <file leaf-file-name="wc_monitor.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="60" selection-start="622" selection-end="622" vertical-scroll-proportion="0.6366723">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/t.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="6" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
+            <state line="39" column="4" selection-start="856" selection-end="856" vertical-scroll-proportion="0.8726655">
               <folding />
             </state>
           </provider>
@@ -61,10 +52,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="httprequest.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httprequest.rb">
+      <file leaf-file-name="wc.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wc.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="6" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.0">
+            <state line="88" column="12" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/t.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="6" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -79,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wc.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wc.rb">
+      <file leaf-file-name="httprequest.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httprequest.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="24" selection-start="782" selection-end="792" vertical-scroll-proportion="0.0">
+            <state line="67" column="6" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -189,10 +189,10 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="recentsLimit" value="5" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Ruby.wc">
     <configuration default="false" name="t" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
@@ -433,7 +433,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5769854" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26439393" sideWeight="0.6012966" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2689394" sideWeight="0.6012966" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -595,14 +595,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wc.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="24" selection-start="782" selection-end="792" vertical-scroll-proportion="0.0">
+        <state line="88" column="12" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="60" selection-start="622" selection-end="622" vertical-scroll-proportion="0.6366723">
+        <state line="39" column="4" selection-start="856" selection-end="856" vertical-scroll-proportion="0.8726655">
           <folding />
         </state>
       </provider>

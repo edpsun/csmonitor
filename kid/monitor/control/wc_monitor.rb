@@ -33,6 +33,13 @@ class WcMonitor
     @can_switch
   end
 
+  def shutdown_pc
+    puts '-----------[shutdown]------------'
+    cmd = 'sleep 10; sudo halt -p'
+    puts cmd
+    IO.popen(cmd)
+  end
+
   def switch
     if @can_switch == false
       return

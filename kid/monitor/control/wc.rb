@@ -10,7 +10,11 @@ puts 'init the monitor control. State:' + $monitor.enabled.to_s
 
 def get_res(msg='', req)
   %{
-<html><body>
+<html>
+  <head>
+    <title>监控小朋友</title>
+  </head>
+<body>
 <center>
       <img src="http://#{req.host}:9000/?action=stream" />
 </center>
@@ -25,6 +29,7 @@ def get_res(msg='', req)
     ($monitor.can_switch && $monitor.enabled )?
       "<td style=\"font-family:verdana;font-size:150%;color:red\"><a href=\"/action?t=switch\">切换摄像头</a></td>":""
   }
+  <td style="font-family:verdana;font-size:150%;color:red"><a href="/action?t=shutdown_pc">电脑关机</a></td>
 
 </tr>
 </table>
@@ -78,6 +83,11 @@ action_proc = lambda do |req, resp|
     $monitor.enabled=true
     sleep(2)
     msg ='切换完成!'
+  elsif type == 'shutdown_pc'
+    $monitor.stop
+    $monitor.shutdown_pc
+    sleep(2)
+    msg ='电脑关机完成!'
   end
 
   resp['Content-Type'] = get_content_type
