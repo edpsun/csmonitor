@@ -3,6 +3,8 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/t.rb" line="0" />
     <bookmark url="file://$PROJECT_DIR$/test/rbst_test.rb" line="0" />
+    <bookmark url="file://$PROJECT_DIR$/tt.rb" line="18" />
+    <bookmark url="file://$PROJECT_DIR$/tt.rb" line="13" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6519c8ed-055b-4837-8eec-e9d98d6c024c" name="Default" comment="" />
@@ -10,11 +12,12 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/t.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1382356574930" ignored="false" />
     <file path="/rbst_test.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1382349158580" ignored="false" />
-    <file path="/rbst.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1382350490094" ignored="false" />
+    <file path="/rbst.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1385213722484" ignored="false" />
     <file path="/test_adder.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1382343424790" ignored="false" />
     <file path="/temp.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1382347023165" ignored="false" />
     <file path="/wc_monitor.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1384961388756" ignored="false" />
-    <file path="/wc.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1384961150500" ignored="false" />
+    <file path="/wc.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1385218120796" ignored="false" />
+    <file path="/tt.rb" changelist="6519c8ed-055b-4837-8eec-e9d98d6c024c" time="1385214337682" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +37,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="wc_monitor.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="wc_monitor.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="4" selection-start="856" selection-end="856" vertical-scroll-proportion="0.8726655">
+            <state line="69" column="5" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,24 +50,6 @@
         <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/kernel.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="1571" column="8" selection-start="69334" selection-end="69334" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wc.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wc.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="12" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/t.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="6" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -88,6 +73,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="t.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/t.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="6" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tt.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tt.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="64" selection-start="385" selection-end="402" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wc.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wc.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="73" selection-start="2919" selection-end="2919" vertical-scroll-proportion="0.234375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -101,10 +113,11 @@
         <option value="$PROJECT_DIR$/report_date_retriever.rb" />
         <option value="/usr/local/rvm/gems/ruby-1.9.3-p429/gems/test-unit-2.5.5/sample/test_adder.rb" />
         <option value="$PROJECT_DIR$/test/rbst_test.rb" />
-        <option value="$PROJECT_DIR$/rbst.rb" />
         <option value="$PROJECT_DIR$/t.rb" />
-        <option value="$PROJECT_DIR$/wc.rb" />
+        <option value="$PROJECT_DIR$/rbst.rb" />
+        <option value="$PROJECT_DIR$/tt.rb" />
         <option value="$PROJECT_DIR$/wc_monitor.rb" />
+        <option value="$PROJECT_DIR$/wc.rb" />
       </list>
     </option>
   </component>
@@ -189,10 +202,10 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Ruby.wc">
     <configuration default="false" name="t" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
@@ -247,36 +260,6 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="test_get_data" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
-      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
-      <module name="rbst" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/test" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/rbst_test.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_get_data" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="wc" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="rbst" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -318,6 +301,28 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/wc_monitor.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="tt" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="rbst" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/tt.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
@@ -402,17 +407,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Ruby.t" />
       <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.rbst_test" />
-      <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_get_data" />
-      <item index="3" class="java.lang.String" itemvalue="Ruby.wc" />
-      <item index="4" class="java.lang.String" itemvalue="Ruby.wc_monitor" />
+      <item index="2" class="java.lang.String" itemvalue="Ruby.wc" />
+      <item index="3" class="java.lang.String" itemvalue="Ruby.wc_monitor" />
+      <item index="4" class="java.lang.String" itemvalue="Ruby.tt" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Ruby.wc" />
-        <item index="1" class="java.lang.String" itemvalue="Ruby.wc_monitor" />
-        <item index="2" class="java.lang.String" itemvalue="Ruby.t" />
-        <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.rbst_test" />
-        <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_get_data" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.tt" />
+        <item index="2" class="java.lang.String" itemvalue="Ruby.wc_monitor" />
+        <item index="3" class="java.lang.String" itemvalue="Ruby.t" />
+        <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.rbst_test" />
       </list>
     </recent_temporary>
   </component>
@@ -433,11 +438,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5769854" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2689394" sideWeight="0.6012966" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28257576" sideWeight="0.5769854" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42301458" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42211837" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -511,13 +516,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/t.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="24" selection-end="65" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/rvm/rubies/ruby-1.9.3-p429/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.3316062" />
@@ -574,11 +572,6 @@
         <state line="1732" column="8" selection-start="71862" selection-end="71862" vertical-scroll-proportion="0.04573171" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbst.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="39" selection-start="420" selection-end="420" vertical-scroll-proportion="0.04573171" />
-      </provider>
-    </entry>
     <entry file="file:///usr/local/rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httprequest.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="6" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.0">
@@ -593,16 +586,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wc.rb">
+    <entry file="file://$PROJECT_DIR$/rbst.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="12" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0">
+        <state line="14" column="26" selection-start="319" selection-end="320" vertical-scroll-proportion="0.36585367">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tt.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="64" selection-start="385" selection-end="402" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="4" selection-start="856" selection-end="856" vertical-scroll-proportion="0.8726655">
+        <state line="69" column="5" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="73" selection-start="2919" selection-end="2919" vertical-scroll-proportion="0.234375">
           <folding />
         </state>
       </provider>

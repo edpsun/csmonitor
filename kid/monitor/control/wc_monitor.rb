@@ -51,4 +51,21 @@ class WcMonitor
       @current_device ='0'
     end
   end
+
+  def check_snapshot_ok?(host, port, uri)
+    require 'net/http'
+    site = Net::HTTP.new(host, port)
+
+    ret = true
+    begin
+      response = site.get2(uri);
+      puts response.code
+      if response.code != '200'
+        ret = false
+      end
+    rescue Exception
+      ret = false
+    end
+    ret
+  end
 end
