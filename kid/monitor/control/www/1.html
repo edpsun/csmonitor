@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <script type="text/javascript" src="/js/jquery.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+      var audio = $('#audio');
+      audio[0].load();
+      audio[0].play();
+    });
+ </script>
+  
+</head>
+<body>
+
+<audio src="/a.wav" controls="controls" id="audio">
+Your browser does not support the audio element.
+</audio>
+
+
+</body>
+</html>
