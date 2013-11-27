@@ -1,8 +1,12 @@
 class WcMonitor
-  attr_accessor :enabled, :current_device, :can_switch
+  attr_accessor :enabled, :current_device, :can_switch, :is_in_alarm
   def initialize
     @enabled = false
+    @is_in_alarm =false
 
+    require 'pathname'
+    @current_path = Pathname.new(__FILE__).parent.realpath
+    puts @current_path
     if can_switch()
       @current_device='1'
     else
@@ -11,14 +15,18 @@ class WcMonitor
   end
 
   def start
+    @is_in_alarm =false
     cmd = 'mjpg_streamer -i "input_uvc.so -d /dev/video' +@current_device+ ' -f 30" -o "output_http.so -w /usr/www -p  9000"'
     puts cmd
     IO.popen(cmd)
-    #exec('mjpg_streamer -i "input_uvc.so -d /dev/video0 -f 30" -o "output_http.so -w /usr/www -p  9000"')
+
+    java_cmd = "/export/tools/jdk/bin/java -cp #{@current_path}/kidalarm.jar com.hylps.alarm.KidAlarm"
+    IO.popen(java_cmd)
   end
 
   def stop
      system('pkill -2 mjpg_streamer')
+     system('kill -9 `ps -ef |grep java |grep kidalarm |awk \'{print $2}\'`')
   end
 
   def can_switch

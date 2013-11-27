@@ -158,17 +158,16 @@ heart_beat_proc = lambda do |req, resp|
   end
 end
 
-$is_in_alarm=false
 check_alarm_proc = lambda do |req, resp|
   $host = req.host
   type = req.query["t"]
   if (type == 'set')
     v = req.query['val']
-    $is_in_alarm = (v=='true')
-    resp.body='Set_' + $is_in_alarm.to_s
+    $monitor.is_in_alarm = (v=='true')
+    resp.body='Set_' + $monitor.is_in_alarm.to_s
   elsif (type == 'get')
     resp['Content-Type'] = get_content_type
-    if($is_in_alarm)
+    if($monitor.is_in_alarm)
       resp.status= 404
       resp.body = 'In Alarm'
     else

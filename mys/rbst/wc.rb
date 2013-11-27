@@ -16,26 +16,46 @@ def get_check_code
   <script type="text/javascript" src="/js/jquery.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      setInterval('hearbeat()',15000);
+      setInterval('hearbeat()',5000);
     });
 
+    var count = 0;
     function hearbeat(){
-      $.ajax({
-        url: "/heart_beat",
-        success: function( data ) {
-          if ($('#stream_img img').size() == 0 ){
-             $('#stream_img').empty();
-             img = $('<img src="http://#{$host}:#{$monitor_port}/?action=stream" />');
-             $('#stream_img').append(img);
+      count++;
+      var pp = count % 3;
+      if(pp == 0){
+        $.ajax({
+          url: "/heart_beat",
+          success: function( data ) {
+            if ($('#stream_img img').size() == 0 ){
+               $('#stream_img').empty();
+               img = $('<img src="http://#{$host}:#{$monitor_port}/?action=stream" />');
+               $('#stream_img').append(img);
+            }
+          },
+          error: function(){
+            $('#stream_img').empty();
+            p = $('<p style="font-family:verdana;font-size:250%;color:blue">监控出现问题了, 有可能其他人点击关闭监控了. </p><br>' +
+            '<p style="font-family:verdana;font-size:250%;color:blue">请检查 1.尝试重新启动, 先点 关闭监控, 再点 启动监控 2. 电脑的电源是不是接通了?? </p>');
+            $('#stream_img').append(p);
           }
-        },
-        error: function(){
-          $('#stream_img').empty();
-          p = $('<p style="font-family:verdana;font-size:250%;color:red">监控出现问题了, 有可能其他人点击关闭监控了. </p><br>' +
-          '<p style="font-family:verdana;font-size:250%;color:red">请检查 1.尝试重新启动, 先点 关闭监控, 再点 启动监控 2. 电脑的电源是不是接通了?? </p>');
-          $('#stream_img').append(p);
-        }
-      });
+        });
+      }else{
+        $.ajax({
+          url: "/check_alarm?t=get",
+          success: function( data ) {
+            $('body').attr('style','background: white');
+          },
+           statusCode: {
+             404: function() {
+                     $('body').attr('style','background: red');
+                     var audio = $('#audio');
+                     audio[0].load();
+                     audio[0].play();
+             }
+           }
+        });
+      }
     }
   </script>
   }
@@ -87,6 +107,11 @@ def get_res(msg='', req)
 
 <p style="font-family:verdana;font-size:150%;color:red"> #{msg} </p>
 
+<div style="display:none">
+<audio src="/a.wav" controls="controls" id="audio">
+    Your browser does not support the audio element.
+</audio>
+<div>
 </body></html>
 }
 end
@@ -131,9 +156,24 @@ heart_beat_proc = lambda do |req, resp|
   else
     resp.body = 'OK'
   end
+end
 
-
-
+check_alarm_proc = lambda do |req, resp|
+  $host = req.host
+  type = req.query["t"]
+  if (type == 'set')
+    v = req.query['val']
+    $monitor.is_in_alarm = (v=='true')
+    resp.body='Set_' + $monitor.is_in_alarm.to_s
+  elsif (type == 'get')
+    resp['Content-Type'] = get_content_type
+    if($monitor.is_in_alarm)
+      resp.status= 404
+      resp.body = 'In Alarm'
+    else
+      resp.body = 'No Alarm'
+    end
+  end
 end
 
 action_proc = lambda do |req, resp|
@@ -188,11 +228,13 @@ end
 action = HTTPServlet::ProcHandler.new(action_proc)
 start = HTTPServlet::ProcHandler.new(start_proc)
 heart_beat = HTTPServlet::ProcHandler.new(heart_beat_proc)
+check_alarm =  HTTPServlet::ProcHandler.new(check_alarm_proc)
 
 s = HTTPServer.new(:Port => $control_port, DocumentRoot: File.join(Dir.pwd, "/www"))
 s.mount("/start", start)
 s.mount("/action", action)
 s.mount("/heart_beat", heart_beat)
+s.mount("/check_alarm", check_alarm)
 
 trap("INT") { s.shutdown }
 s.start
