@@ -10,7 +10,7 @@ import com.hylps.util.HTTPDataRetriever;
 
 public class FingerPrintAnalyzer {
     private static final String HOST = System.getProperty("MONITOR_HOST", "localhost");
-    private static final String ALARM_URL = "http://" + HOST + ":2000/check_alarm?t=set&val=";
+    private static final String ALARM_URL = "http://" + HOST + ":2000/action?name=set_alarm&val=";
     private static final String ALARM_THRESHOLD = System.getProperty("ALARM_THRESHOLD", "3");
 
     private final BlockingQueue<String> queue;
@@ -25,6 +25,7 @@ public class FingerPrintAnalyzer {
 
     public void analyze() {
         System.out.println(" - AlarmThreshold: " + alarmThreshold);
+        System.out.println(" - ALARM_URL     : " + ALARM_URL);
         Executor service = Executors.newSingleThreadExecutor();
         Runnable task = new Runnable() {
             @Override

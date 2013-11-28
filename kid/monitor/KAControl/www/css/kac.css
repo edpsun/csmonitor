@@ -1,0 +1,21 @@
+div#audio_div{
+    display: none;
+}
+
+div#main_div{
+    display: none;
+}
+
+
+div#image_div{
+    text-align: center;
+}
+
+.hide{
+    display: none;
+}
+
+button{
+    font-size:150%;
+    color:green;
+}

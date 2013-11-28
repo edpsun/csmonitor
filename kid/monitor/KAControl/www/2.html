@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <script type="text/javascript" src="/js/jquery.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+      //var audio = $('#audio');
+      //audio[0].load();
+      //audio[0].play();
+      
+      var button = document.getElementById('button');
+var audio = document.getElementById('audio');
+
+var onClick = function() {
+    alert('click');
+    audio.load();
+    setInterval('hearbeat()',5000);
+};
+
+button.addEventListener('click', onClick, false);
+
+
+
+    });
+ 
+ function hearbeat() {
+  audio.play();
+ }
+    
+ </script>
+  
+</head>
+<body>
+
+hi
+
+
+<button id='button'>bbbb</button>
+
+<audio src="/a.wav" controls="controls" id="audio">
+Your browser does not support the audio element.
+</audio>
+
+
+<div id='welcome_div'>
+    <table>
+        <tr>
+            <td align='center'><img src="image/welcome.jpg" width="500px"></td>
+            <td align='center'><button id='entry_btn'>进入</button></td>
+        </tr>
+    </table>
+</div>
+
+<div id='main_div'>
+    <div id='image_div'>snapshot here</div>
+    <div id='control_div'>
+        <table border="0" width='95%'>
+            <tr>
+                <td style="font-size:150%;color:green" id='current_status'>当前状态:</td>
+                <td align='center'><button id='start'>启动监控</button></td>
+                <td align='center'><button id='shutdown'>关闭监控</button></td>
+                <td align='center'><button id='switch_cam'>切换摄像头</button></td>
+                <td align='center'><button id='halt_pc'>电脑关机</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
