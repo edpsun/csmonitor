@@ -16,6 +16,7 @@ class WcProcMgr
 
   def monitor_proc
     lambda do |req, resp|
+      $host = req.host
       resp['Content-Type'] = get_content_type
       resp.body = WcMonitorView.get_view_monitor
     end
@@ -23,6 +24,7 @@ class WcProcMgr
 
   def action_proc
     lambda do |req, resp|
+      $host = req.host
       WcControlActionDispatcher.new().dispatch(req, resp)
     end
   end
