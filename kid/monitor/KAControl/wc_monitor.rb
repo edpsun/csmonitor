@@ -23,7 +23,7 @@ class WcMonitor
     puts cmd
     IO.popen(cmd)
 
-    java_cmd = "/export/tools/jdk/bin/java -cp #{@current_path}/kidalarm.jar -DALARM_THRESHOLD=6 com.hylps.alarm.KidAlarm"
+    java_cmd = "/export/tools/jdk/bin/java -cp #{@current_path}/kidalarm.jar -DALARM_THRESHOLD=6 com.hylps.alarm.KidAlarm 2>&1 >/tmp/KAJava.log"
     puts java_cmd
     IO.popen(java_cmd)
     @enabled = true
