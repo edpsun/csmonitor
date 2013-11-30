@@ -11,7 +11,7 @@ import com.hylps.util.HTTPDataRetriever;
 public class FingerPrintAnalyzer {
     private static final String HOST = System.getProperty("MONITOR_HOST", "localhost");
     private static final String ALARM_URL = "http://" + HOST + ":2000/action?name=set_alarm&val=";
-    private static final String ALARM_THRESHOLD = System.getProperty("ALARM_THRESHOLD", "3");
+    private static final String ALARM_THRESHOLD = System.getProperty("ALARM_THRESHOLD", "4");
 
     private final BlockingQueue<String> queue;
     private final ArrayList<String> footPrints = new ArrayList<String>();
@@ -50,9 +50,15 @@ public class FingerPrintAnalyzer {
 
     private void checkDiff() {
         int p = ImageAnalyzer.getInstance().hammingDistance(footPrints.get(0), footPrints.get(1));
-        System.out.println(" - Similarity factor: " + p);
+        
+        int p2 = 0;
+        if(footPrints.size() >= 3){
+            p2 =  ImageAnalyzer.getInstance().hammingDistance(footPrints.get(0), footPrints.get(2));
+        }
+        
+        System.out.println(" -> P1:" + p + "  P2:" + p2);
 
-        if (p >= alarmThreshold) {
+        if (p >= alarmThreshold || p2 >= alarmThreshold) {
             notifyAlarm(true);
         } else {
             notifyAlarm(false);
