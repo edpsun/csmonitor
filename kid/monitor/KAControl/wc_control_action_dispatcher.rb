@@ -63,4 +63,15 @@ class WcControlActionDispatcher < WcHTTPActionDispatcher
     data = {code: PROCESS_SUCC, msg: 'Alarm: '+ $monitor.is_in_alarm.to_s,is_alarm:$monitor.is_in_alarm}
     resp.body=data.to_json
   end
+
+  def process_fpt(req, resp)
+    v = req.query['val']
+    if (!v || v.to_i == 0)
+      data = {code: PROCESS_NOOP, msg: "Current FP Threshold: #{$monitor.fp_threshold}"}
+    else
+      $monitor.fp_threshold = v.to_i
+      data = {code: PROCESS_SUCC, msg: "NEW FP Threshold: #{$monitor.fp_threshold}"}
+    end
+    resp.body=data.to_json
+  end
 end

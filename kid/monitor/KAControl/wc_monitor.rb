@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 class WcMonitor
-  attr_accessor :enabled, :current_device, :can_switch, :is_in_alarm
+  attr_accessor :enabled, :current_device, :can_switch, :is_in_alarm, :fp_threshold
 
   def initialize
     @enabled = false
     @is_in_alarm =false
+    @fp_threshold=5
 
     require 'pathname'
     @current_path = Pathname.new(__FILE__).parent.realpath
@@ -23,7 +24,7 @@ class WcMonitor
     puts cmd
     IO.popen(cmd)
 
-    java_cmd = "/export/tools/jdk/bin/java -cp #{@current_path}/kidalarm.jar -DALARM_THRESHOLD=5 com.hylps.alarm.KidAlarm 2>&1 >/tmp/KAJava.log"
+    java_cmd = "/export/tools/jdk/bin/java -cp #{@current_path}/kidalarm.jar -DALARM_THRESHOLD=#{@fp_threshold} com.hylps.alarm.KidAlarm 2>&1 >/tmp/KAJava.log"
     puts java_cmd
     IO.popen(java_cmd)
     @enabled = true

@@ -20,6 +20,7 @@ function bind_button_events() {
     $('#shutdown').click(shutdown_monitor);
     $('#switch_cam').click(switch_cam);
     $('#halt_pc').click(halt_pc);
+    $('#volume').click(toggle_volume);
 }
 
 function handle_server_failure(){
@@ -212,11 +213,24 @@ function check_already_running(){
 
 function alarm() {
     $('body').attr('style','background: red');
-    audio.play();
+    if(volume){
+        audio.play();
+    }
 }
 
 function cancel_alarm(){
     $('body').attr('style','background: white');
     audio.pause();
+}
+
+var volume = true;
+function toggle_volume(){
+    if(volume){
+        volume =false;
+        $('#volume').text('开启声音');
+    }else{
+        volume = true;
+        $('#volume').text('立刻静音');
+    }
 }
 

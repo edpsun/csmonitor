@@ -35,6 +35,7 @@ class WcMonitorView
                 <table border="0" width='95%'>
                     <tr>
                         <td style="font-size:150%;color:green" id='current_status'>当前状态:</td>
+                        <td align='center'><button id='volume' style="font-size:350%;">立刻静音</button></td>
                         <td align='center'><button id='start'>启动监控</button></td>
                         <td align='center'><button id='shutdown'>关闭监控</button></td><% cs = ($monitor.can_switch ? '':'hide')%>
                         <td align='center' class='<%=cs%>' ><button id='switch_cam'>切换摄像头</button></td>
