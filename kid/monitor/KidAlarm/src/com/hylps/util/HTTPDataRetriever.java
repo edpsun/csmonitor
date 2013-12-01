@@ -1,25 +1,39 @@
 package com.hylps.util;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class HTTPDataRetriever {
-    public static void getUrl(String url) {
+
+    public static String getUrl(String url) {
         HttpURLConnection httpConnection = null;
 
-        InputStream in = null;
+        StringBuilder response = new StringBuilder();
+        BufferedReader br = null;
         try {
             URL _url = new URL(url);
             httpConnection = (HttpURLConnection) _url.openConnection();
-            in = httpConnection.getInputStream();
-        } catch (Exception ex) {
+
+            InputStream in = httpConnection.getInputStream();
+            br = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                response.append(line);
+                response.append('\n');
+            }
+        } catch (Throwable ex) {
             throw new RuntimeException("Getting data error. URL: " + url, ex);
         } finally {
-            if (in != null) {
+            if (br != null) {
                 try {
-                    in.close();
+                    br.close();
                 } catch (IOException e) {
                     // ignore
                 }
@@ -28,5 +42,6 @@ public class HTTPDataRetriever {
                 httpConnection.disconnect();
             }
         }
+        return response.toString();
     }
 }

@@ -25,7 +25,7 @@ public class ImageFingerPringRetriever {
     public void start() {
         System.out.println(" - URL           : " + SNAPSHOT_URL);
         System.out.println(" - Interval      : " + interval);
-        ScheduledExecutorService service = Executors.newScheduledThreadPool(2);
+        service = Executors.newScheduledThreadPool(2);
         Runnable task = new Runnable() {
             @Override
             public void run() {
@@ -35,7 +35,7 @@ public class ImageFingerPringRetriever {
                     queue.put(s);
                     System.out.println(" - Get one snapshot: " + s);
                 } catch (Throwable e) {
-                    System.err.println("Error while running task to get image finger print.");
+                    System.err.println("Error while running task to get image finger print." + e.getMessage());
                 }
             }
         };
