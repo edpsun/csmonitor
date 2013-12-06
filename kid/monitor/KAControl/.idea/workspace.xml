@@ -29,7 +29,7 @@
       <file leaf-file-name="wc_monitor.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="96" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="1410">
+            <state line="26" column="96" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="1410">
               <folding />
             </state>
           </provider>
@@ -38,7 +38,7 @@
       <file leaf-file-name="wc_proc_mgr.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wc_proc_mgr.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="660">
+            <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -47,7 +47,7 @@
       <file leaf-file-name="wc_control_action_dispatcher.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wc_control_action_dispatcher.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="0" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.5164319" vertical-offset="720" max-vertical-offset="1425">
+            <state line="3" column="6" selection-start="87" selection-end="87" vertical-scroll-proportion="0.07042254" vertical-offset="0" max-vertical-offset="1425">
               <folding />
             </state>
           </provider>
@@ -515,20 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="96" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wc_proc_mgr.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/date.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="864" column="8" selection-start="29654" selection-end="29654" vertical-scroll-proportion="0.0" vertical-offset="12747" max-vertical-offset="22740">
@@ -536,9 +522,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wc_proc_mgr.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="96" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wc_control_action_dispatcher.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.5164319" vertical-offset="720" max-vertical-offset="1425">
+        <state line="3" column="6" selection-start="87" selection-end="87" vertical-scroll-proportion="0.07042254" vertical-offset="0" max-vertical-offset="1425">
           <folding />
         </state>
       </provider>

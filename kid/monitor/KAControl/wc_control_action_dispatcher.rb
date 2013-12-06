@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 require_relative 'wc_action_dispatcher'
 require 'json'
-requrie 'date'
+require 'date'
 
 class WcControlActionDispatcher < WcHTTPActionDispatcher
 
