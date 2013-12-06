@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 require_relative 'wc_action_dispatcher'
 require 'json'
+requrie 'date'
 
 class WcControlActionDispatcher < WcHTTPActionDispatcher
 
@@ -67,10 +68,21 @@ class WcControlActionDispatcher < WcHTTPActionDispatcher
   def process_fpt(req, resp)
     v = req.query['val']
     if (!v || v.to_i == 0)
+
+      if(!@not_auto_set_fpt)
+        d = Date.now
+        if d.hour > 17
+          $monitor.fp_threshold = 7
+        else
+          $monitor.fp_threshold = 4
+        end
+      end
+
       data = {code: PROCESS_NOOP, msg: "Current FP Threshold: #{$monitor.fp_threshold}",FPT:"#{$monitor.fp_threshold}"}
     else
       $monitor.fp_threshold = v.to_i
       data = {code: PROCESS_SUCC, msg: "NEW FP Threshold: #{$monitor.fp_threshold}"}
+      @not_auto_set_fpt = true
     end
     resp.body=data.to_json
   end
