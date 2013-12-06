@@ -3,6 +3,7 @@ require_relative 'wc_action_dispatcher'
 require 'json'
 require 'date'
 
+$auto_set_fpt=true
 class WcControlActionDispatcher < WcHTTPActionDispatcher
 
   def process_start(req, resp)
@@ -69,7 +70,7 @@ class WcControlActionDispatcher < WcHTTPActionDispatcher
     v = req.query['val']
     if (!v || v.to_i == 0)
 
-      if(!@not_auto_set_fpt)
+      if($auto_set_fpt)
         d = DateTime.now
         if d.hour > 17
           $monitor.fp_threshold = 7
@@ -82,7 +83,7 @@ class WcControlActionDispatcher < WcHTTPActionDispatcher
     else
       $monitor.fp_threshold = v.to_i
       data = {code: PROCESS_SUCC, msg: "NEW FP Threshold: #{$monitor.fp_threshold}"}
-      @not_auto_set_fpt = true
+      $auto_set_fpt = false
     end
     resp.body=data.to_json
   end

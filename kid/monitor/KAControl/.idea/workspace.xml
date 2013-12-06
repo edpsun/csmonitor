@@ -38,7 +38,7 @@
       <file leaf-file-name="wc_proc_mgr.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wc_proc_mgr.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+            <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -47,7 +47,7 @@
       <file leaf-file-name="wc_control_action_dispatcher.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wc_control_action_dispatcher.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="20" selection-start="1760" selection-end="1760" vertical-scroll-proportion="0.4600939" vertical-offset="786" max-vertical-offset="1425">
+            <state line="72" column="22" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.43661973" vertical-offset="801" max-vertical-offset="1440">
               <folding />
             </state>
           </provider>
@@ -301,8 +301,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Ruby.wc4ka" />
-        <item index="1" class="java.lang.String" itemvalue="Ruby.test" />
+        <item index="0" class="java.lang.String" itemvalue="Ruby.test" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.wc4ka" />
       </list>
     </recent_temporary>
   </component>
@@ -320,7 +320,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -332,11 +332,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -356,37 +356,108 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wc4ka.rb">
+    <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="76" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+        <state line="26" column="96" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_proc_mgr.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_control_action_dispatcher.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="20" selection-start="1760" selection-end="1760" vertical-scroll-proportion="0.0" vertical-offset="786" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/date.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="864" column="8" selection-start="29654" selection-end="29654" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="22740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="96" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_proc_mgr.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_control_action_dispatcher.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="20" selection-start="1760" selection-end="1760" vertical-scroll-proportion="0.0" vertical-offset="786" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/date.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="864" column="8" selection-start="29654" selection-end="29654" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="22740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="96" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_proc_mgr.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="22" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc_control_action_dispatcher.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="20" selection-start="1760" selection-end="1760" vertical-scroll-proportion="0.0" vertical-offset="786" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/date.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="864" column="8" selection-start="29654" selection-end="29654" vertical-scroll-proportion="0.0" vertical-offset="12747" max-vertical-offset="22740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wc4ka.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="76" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jk.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="210">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="210" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/kac.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="4" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="390">
-          <folding />
-        </state>
+        <state line="19" column="4" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="390" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/monitor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="3630">
-          <folding>
-            <marker date="1385782648843" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1385782648843" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1385782648843" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1385782648843" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="22" column="36" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="3630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_proc_mgr.rb">
@@ -405,23 +476,17 @@
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/string.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="655" column="8" selection-start="28079" selection-end="28079" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="26385">
-          <folding />
-        </state>
+        <state line="655" column="8" selection-start="28079" selection-end="28079" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="26385" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_action_dispatcher.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="22" selection-start="95" selection-end="99" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="555">
-          <folding />
-        </state>
+        <state line="3" column="22" selection-start="95" selection-end="99" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="555" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_monitor_view.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="80" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1065">
-          <folding />
-        </state>
+        <state line="37" column="80" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1065" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_monitor.rb">
@@ -463,56 +528,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_action_dispatcher.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="22" selection-start="95" selection-end="99" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
+        <state line="3" column="22" selection-start="95" selection-end="99" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/kac.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="4" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
+        <state line="19" column="4" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wc4ka.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="76" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
+        <state line="12" column="76" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jk.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="210">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="210" />
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/string.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="655" column="8" selection-start="28079" selection-end="28079" vertical-scroll-proportion="0.0" vertical-offset="9825" max-vertical-offset="26385">
-          <folding />
-        </state>
+        <state line="655" column="8" selection-start="28079" selection-end="28079" vertical-scroll-proportion="0.0" vertical-offset="9825" max-vertical-offset="26385" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/monitor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding>
-            <marker date="1385782648843" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1385782648843" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1385782648843" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1385782648843" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="22" column="36" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_monitor_view.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="80" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.7292645" vertical-offset="89" max-vertical-offset="1065">
-          <folding />
-        </state>
+        <state line="37" column="80" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.7292645" vertical-offset="89" max-vertical-offset="1065" />
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/date.rb">
@@ -538,7 +584,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wc_control_action_dispatcher.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="20" selection-start="1760" selection-end="1760" vertical-scroll-proportion="0.4600939" vertical-offset="786" max-vertical-offset="1425">
+        <state line="72" column="22" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.43661973" vertical-offset="801" max-vertical-offset="1440">
           <folding />
         </state>
       </provider>
