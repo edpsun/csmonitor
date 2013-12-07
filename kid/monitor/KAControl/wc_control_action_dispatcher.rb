@@ -75,7 +75,7 @@ class WcControlActionDispatcher < WcHTTPActionDispatcher
         if d.hour > 17
           $monitor.fp_threshold = 7
         else
-          $monitor.fp_threshold = 5
+          $monitor.fp_threshold = 4
         end
       end
 
