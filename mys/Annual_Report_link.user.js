@@ -2,7 +2,7 @@
 // @name        Annual Report Link
 // @namespace   https://edpsun.google.com/annual_report
 // @description Annual Report Link
-// @include     http://datainfo.hexun.com/wholemarket/html/cbcx.aspx
+// @include     http://datainfo.hexun.com/wholemarket/html/cbcx.aspx*
 // @require     http://code.jquery.com/jquery-1.9.0.min.js
 // @version     1.0
 // ==/UserScript==
