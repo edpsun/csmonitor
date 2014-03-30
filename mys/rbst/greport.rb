@@ -5,7 +5,7 @@ if ARGV.length == 1
 else
   file = '/export/tools/hystock/ebk/own.EBK'
 end
-puts "[INFO] Using file: #{file}"
+#puts "[INFO] Using file: #{file}"
 
 all= []
 File.open(file) do |file|
@@ -14,7 +14,7 @@ File.open(file) do |file|
       retriever = RBST::ReportInfoRetriever.new
       ret = retriever.get_report_info(line[1..-1].strip())
       #puts ret.join " - "
-      print  '.'
+      #print  '.'
       #puts "[#{ret}]"
       all << ret if ret.length > 0
     end

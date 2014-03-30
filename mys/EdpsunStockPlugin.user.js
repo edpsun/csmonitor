@@ -2,25 +2,34 @@
 // @name        EdpsunStockPlugin
 // @namespace   EdpsunStockPlugin
 // @description No
-// @include     http://stockapp.finance.qq.com/pstock/*
+// @include     http://stock.qq.com/i/*
 // @require     http://code.jquery.com/jquery-1.9.0.min.js
 // @version     1
 // ==/UserScript==
+    function GM_wait() {
+        if ($('#shStat').length == 0) {
+            window.setTimeout(GM_wait, 1000);
+        }
+        else {
+            enhance();
+        }
+    }
+    GM_wait();
+
 
     function add_link(){
-        if($('.ed_link_class').length > 0){
+        if($('.dt-body tr').length == 0){
             return;
         }
-        $('tr[id$="sh000001"]').css("border-bottom","solid red");
-        $('tr[id$="sz399001"]').css("border-top","solid red");
+        $('tr[data-symbol="sh000001"]').css("border-bottom","solid red");
+        $('tr[data-symbol="sz399001"]').css("border-top","solid red");
 
         var link_a = "http://stockdata.stock.hexun.com/2009_cgjzd_";
         var link_b = "http://f10.eastmoney.com/f10_v2/ShareholderResearch.aspx?code="
         var link_c = "http://stock.finance.qq.com/corp1/stk_holder_count.php?zqdm="
-        $('.du-sd-item').each(function(){
-            var first_th = $(this).find('th:first');
+        $('.dt-col0').each(function(){
+            var first_th = $(this);
             var id = first_th.find('a:first').text();
-
             if( id == '000001' || id == '399001'){
                 return;
             }
@@ -55,22 +64,31 @@
         $('.Nav').hide();
         $('#QQFooter').hide();  
     }
-    
-    var clean_button = $('<input name="clean_button" class="add" type="button" id="clean_button" value="clean" />');
-    clean_button.click(function(){clean_page();});
-    
-    var add_link_button = $('<input name="add_link_btn" class="add" type="button" id="add_link_btn" value="link" />');
-    add_link_button.click(function(){add_link();});
-    
-//    var dowork_button = $('<input name="dowork_button" class="add" type="button" id="dowork_button" value="do" />');
-//    dowork_button.click(function(){dowork();});
 
-//    var go_button = $('<input name="go_button" class="add" type="button" id="go_button" value="go" />');
-//    go_button.click(function(){gowork();});
+    function enhance()
+    {
+            var clean_button = $('<input name="clean_button" class="add" type="button" id="clean_button" value="clean" />');
+            clean_button.click(function(){clean_page();});
+            
+            var add_link_button = $('<input name="add_link_btn" class="add" type="button" id="add_link_btn" value="link" />');
+            add_link_button.click(function(){add_link();});
+            
+        //    var dowork_button = $('<input name="dowork_button" class="add" type="button" id="dowork_button" value="do" />');
+        //    dowork_button.click(function(){dowork();});
+        
+        //    var go_button = $('<input name="go_button" class="add" type="button" id="go_button" value="go" />');
+        //    go_button.click(function(){gowork();});
+        
+        
+            var button_area = $("#shStat");
+            button_area.empty();
+            button_area.append(add_link_button);
+            button_area.append(clean_button);
+        
 
-    var button_area = $("#ad-nav");
-    button_area.empty();
-    button_area.append(add_link_button);
-    button_area.append(clean_button);
-//    button_area.append(dowork_button);
-//    button_area.append(go_button);
+        //    button_area.append(dowork_button);
+        //    button_area.append(go_button);
+    
+    }
+    
+    
