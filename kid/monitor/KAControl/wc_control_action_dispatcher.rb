@@ -73,9 +73,9 @@ class WcControlActionDispatcher < WcHTTPActionDispatcher
       if($auto_set_fpt)
         d = DateTime.now
         if d.hour > 17
-          $monitor.fp_threshold = 4
+          $monitor.fp_threshold = 3
         else
-          $monitor.fp_threshold = 4
+          $monitor.fp_threshold = 3
         end
       end
 
