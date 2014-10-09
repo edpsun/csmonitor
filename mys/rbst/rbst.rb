@@ -8,7 +8,7 @@ module RBST
     end
 
     def get_url(id)
-      '/wholemarket/html/cbpl.aspx?Ndate=2013-12-31&code=' + id
+      '/wholemarket/html/cbpl.aspx?Ndate=2014-06-30&code=' + id
     end
 
     def get_content(uri)
