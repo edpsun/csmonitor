@@ -244,13 +244,13 @@ today = today.substr(0,10);
                 line.addClass('hasReport');
             }
             
-            var aa = $('<a class="ed_link_class"></a>').attr('href', link_a + id + '.shtml').attr("target","_blank").text('H').attr('style', 'padding-left: 5px;padding-right: 5px;');
+            var aa = $('<a class="ed_link_class"></a>').attr('href', link_a + id + '.shtml').attr("target","_blank").text('H').attr('style', 'padding-left: 5px;padding-right: 5px;').attr('title', reportTimeList[id]);
             first_th.append(aa);
 
-            var ab = $('<a class="ed_link_class"></a>').attr('href', link_b + vid).attr("target","_blank").text('E').attr('style', 'padding-left: 5px;padding-right: 5px;');
+            var ab = $('<a class="ed_link_class"></a>').attr('href', link_b + vid).attr("target","_blank").text('E').attr('style', 'padding-left: 5px;padding-right: 5px;').attr('title', reportTimeList[id]);
             first_th.append(ab);
             
-            var ac = $('<a class="ed_link_class"></a>').attr('href', link_c + id).attr("target","_blank").text('Q').attr('style', 'padding-left: 5px;padding-right: 5px;');
+            var ac = $('<a class="ed_link_class"></a>').attr('href', link_c + id).attr("target","_blank").text('Q').attr('style', 'padding-left: 5px;padding-right: 5px;').attr('title', reportTimeList[id]);
             first_th.append(ac);
         });
     }
