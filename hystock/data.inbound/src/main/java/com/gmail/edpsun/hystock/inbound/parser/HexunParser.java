@@ -22,12 +22,10 @@ public class HexunParser implements Parser {
             + ".*<span class=\"font10\">(.*)</span>" + ".*<span class=\"font10\">(.*)</span>.*";
     Pattern holderStatPattern = Pattern.compile(holderStatLine);
 
-    @Override
     public String getTargetURL(String id) {
         return String.format("http://stockdata.stock.hexun.com/2009_cgjzd_%s.shtml", id);
     }
 
-    @Override
     public Stock parse(String content) {
         if (content == null) {
             throw new RuntimeException("Content is null from Hexun.");

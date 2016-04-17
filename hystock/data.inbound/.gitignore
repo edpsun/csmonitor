@@ -2,3 +2,6 @@
 /.project
 /target
 /bin
+.DS_Store
+.idea/
+data.inbound.iml

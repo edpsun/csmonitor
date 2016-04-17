@@ -2,6 +2,10 @@ package com.gmail.edpsun.hystock.inbound.collect;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.annotation.Resource;
 
@@ -32,7 +36,6 @@ public class InboundCollector extends AbstractProcessor {
     @Autowired
     DataRetriever dataRetriever;
 
-    @Override
     public int process(InboundContext ctx) {
         LOGGER.info("start collecting. Path: " + ctx.getEbk());
         List<String> list = getStockList(ctx.getEbk());
@@ -40,30 +43,26 @@ public class InboundCollector extends AbstractProcessor {
         Parser parser = getParser(ctx);
         LOGGER.info("Parser: " + parser.getClass().getCanonicalName());
 
-        Random random = new Random();
-        int count = 0;
-        int fail = 0;
-        for (String id : list) {
-            if (!isNeedProcess(id, ctx.getQuarter())) {
-                continue;
-            }
+        ExecutorService executorService = Executors.newFixedThreadPool(ctx.getThreadNumber());
 
-            try {
-                count++;
-                LOGGER.info("[" + count + "] id: " + id + "-------------------------------------------");
-                if (!processStock(id, parser)) {
-                    fail++;
-                } else {
-                    Thread.currentThread().sleep(random.nextInt(1000));
-                }
-            } catch (Exception ex) {
-                LOGGER.error("[Error] id: " + id, ex);
-            }
+        AtomicInteger totalCounter = new AtomicInteger();
+        AtomicInteger failureCounter = new AtomicInteger();
+
+        for (String id : list) {
+            executorService.submit(new Collector(id, ctx, totalCounter, failureCounter));
         }
 
-        LOGGER.info("==========================================================" + "\n# Total  : " + count + "\n"
-                + "# Failure: " + fail);
-        return count;
+        try {
+            executorService.shutdown();
+            executorService.awaitTermination(10000000, TimeUnit.HOURS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        LOGGER.info("==========================================================" + "\n# Total  : " + totalCounter.get() + "\n"
+                + "# Failure: " + failureCounter.get());
+
+        return totalCounter.get();
     }
 
     private Parser getParser(InboundContext ctx) {
@@ -148,6 +147,40 @@ public class InboundCollector extends AbstractProcessor {
 
         public void setQuarter(int quarter) {
             this.quarter = quarter;
+        }
+    }
+
+    class Collector implements Runnable {
+        private String id;
+        private InboundContext ctx;
+
+        private AtomicInteger totalCounter;
+        private AtomicInteger failureCounter;
+
+        public Collector(String id, InboundContext ctx, AtomicInteger totalCounter, AtomicInteger failureCounter) {
+            this.id = id;
+            this.ctx = ctx;
+            this.totalCounter = totalCounter;
+            this.failureCounter = failureCounter;
+        }
+
+        public void run() {
+            if (!isNeedProcess(id, ctx.getQuarter())) {
+                return;
+            }
+
+            Random random = new Random();
+            try {
+                int count = totalCounter.getAndIncrement();
+                LOGGER.info("[" + count + "] id: " + id + "-------------------------------------------");
+                if (!processStock(id, getParser(ctx))) {
+                    failureCounter.getAndIncrement();
+                } else {
+                    Thread.currentThread().sleep(random.nextInt(1000));
+                }
+            } catch (Exception ex) {
+                LOGGER.error("[Error] id: " + id, ex);
+            }
         }
     }
 }

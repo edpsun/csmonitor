@@ -33,6 +33,7 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
         ctx.setEbk(url.getFile());
         ctx.setQuarter(Quarter.valueOf("2019-01"));
         ctx.setParser("Q");
+        ctx.setThreadNumber(2);
         int c = collector.process(ctx);
         assertEquals(4, c);
     }
@@ -45,6 +46,7 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
         URL url = this.getClass().getClassLoader().getResource("own.EBK");
         ctx.setEbk(url.getFile());
         ctx.setQuarter(Quarter.valueOf("2019-01"));
+        ctx.setThreadNumber(2);
         int c = collector.process(ctx);
         assertEquals(4, c);
     }
@@ -57,6 +59,7 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
         URL url = this.getClass().getClassLoader().getResource("own.EBK");
         ctx.setEbk(url.getFile());
         ctx.setQuarter(Quarter.valueOf("2010-01"));
+        ctx.setThreadNumber(2);
         int c = collector.process(ctx);
         assertEquals(0, c);
     }
@@ -69,6 +72,7 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
         URL url = this.getClass().getClassLoader().getResource("own.EBK");
         ctx.setEbk(url.getFile());
         ctx.setQuarter(Quarter.valueOf("2013-01"));
+        ctx.setThreadNumber(2);
         int c = collector.process(ctx);
         assertEquals(0, c);
     }

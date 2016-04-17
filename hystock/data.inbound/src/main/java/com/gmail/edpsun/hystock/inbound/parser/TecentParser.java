@@ -22,12 +22,10 @@ public class TecentParser implements Parser {
     String holderStatLine = "<tdclass=\"nobor_l\">(.*)</td><td>(.*)</td><td>(.*)</td><td>(.*)</td><td>(.*)</td>";
     Pattern holderStatPattern = Pattern.compile(holderStatLine);
 
-    @Override
     public String getTargetURL(String id) {
         return String.format("http://stock.finance.qq.com/corp1/stk_holder_count.php?zqdm=%s", id);
     }
 
-    @Override
     public Stock parse(String content) {
         if (content == null) {
             throw new RuntimeException("Content is null from Tecent.");

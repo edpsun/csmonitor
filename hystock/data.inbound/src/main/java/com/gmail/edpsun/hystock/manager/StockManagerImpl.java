@@ -48,14 +48,12 @@ public class StockManagerImpl implements StockManager {
         }
     }
 
-    @Override
     public List<HolderStat> getHolderStats(String id) {
         List<HolderStat> exists = holderStatDao.query(String.format(" from HolderStat as hs "
                 + "where hs.stockId = '%s' order by hs.year desc, hs.quarter desc", id));
         return exists;
     }
 
-    @Override
     public Stock getStock(String id, boolean loadCascade) {
         Stock st = stockDao.findById(id);
         if (st != null && loadCascade) {

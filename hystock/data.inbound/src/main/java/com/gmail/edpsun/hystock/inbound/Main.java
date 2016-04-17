@@ -31,10 +31,15 @@ public class Main {
         Option ebkfile = OptionBuilder.withArgName("file").hasArg().withDescription("TDX ebk file").create("ebk");
         ebkfile.setRequired(true);
 
+        Option threadNumber = OptionBuilder.withArgName("thread number").hasArg().withDescription("Thread Number").create("t");
+        threadNumber.setRequired(true);
+        threadNumber.setLongOpt("threadNumber");
+
         Options options = new Options();
         options.addOption(quarter);
         options.addOption(ebkfile);
         options.addOption(parser);
+        options.addOption(threadNumber);
 
         // create the parser
         CommandLineParser cparser = new BasicParser();
@@ -59,6 +64,11 @@ public class Main {
         if (line.hasOption("p")) {
             inboundCtx.setParser(line.getOptionValue("p"));
         }
+
+        if (line.hasOption("t")) {
+            inboundCtx.setThreadNumber(Integer.valueOf(line.getOptionValue("t")));
+        }
+
         return inboundCtx;
     }
 

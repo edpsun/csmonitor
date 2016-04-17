@@ -19,22 +19,18 @@ public class MemReportDaoImpl implements MemReportDao {
         this.sessionFactory = sessionFactory;
     }
 
-    @Override
     public void save(MemReport report) {
         sessionFactory.getCurrentSession().save(report);
     }
 
-    @Override
     public void update(MemReport report) {
         sessionFactory.getCurrentSession().update(report);
     }
 
-    @Override
     public void delete(MemReport report) {
         sessionFactory.getCurrentSession().delete(report);
     }
 
-    @Override
     public MemReport findByMemReportId(String id) {
         return (MemReport) sessionFactory.getCurrentSession().get(
                 MemReport.class, id);

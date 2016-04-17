@@ -45,7 +45,6 @@ public class HTMLReporter {
             bww.write(total.toString());
 
             Collections.sort(ctx.getChosenList(), new Comparator<InboundContext>() {
-                @Override
                 public int compare(InboundContext o1, InboundContext o2) {
                     return o1.getAnalyzeVO().compareTo(o2.getAnalyzeVO());
                 }

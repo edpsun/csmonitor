@@ -21,19 +21,16 @@ public abstract class AbstractDaoImpl<T> implements IDao<T> {
     }
 
     @Transactional
-    @Override
     public void add(Object object) {
         getCurrentSession().save(object);
     }
 
     @Transactional
-    @Override
     public void delete(String id) {
         getCurrentSession().delete(findById(id));
     }
 
     @Transactional
-    @Override
     public void update(Object object) {
         getCurrentSession().update(object);
     }

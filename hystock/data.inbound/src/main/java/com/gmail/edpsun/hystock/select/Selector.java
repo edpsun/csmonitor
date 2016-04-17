@@ -20,7 +20,6 @@ public class Selector extends AbstractProcessor {
     @Autowired
     StockManager stockManger;
 
-    @Override
     public int process(InboundContext ctx) {
         LOGGER.info("start processing. Path: " + ctx.getEbk());
         List<String> list = EBKUtil.getStockList(ctx.getEbk());

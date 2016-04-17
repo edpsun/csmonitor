@@ -9,13 +9,11 @@ import com.gmail.edpsun.hystock.model.Stock;
 
 @Repository(value = "stockDao")
 public class StockDao extends AbstractDaoImpl<Stock> {
-    @Override
     public List<Stock> query(String queryString) {
         return getCurrentSession().createQuery(queryString).list();
     }
 
     @Transactional()
-    @Override
     public Stock findById(String id) {
         return (Stock) getCurrentSession().get(Stock.class, id);
     }

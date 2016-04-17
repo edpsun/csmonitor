@@ -18,6 +18,7 @@ public class InboundContext extends ContextImpl {
     public static final String PARAM_ANALYZE_VO = "analyzeVO";
     public static final String PARAM_GLOBAL_CONTEXT = "GLOBAL_CONTEXT";
     public static final String PARAM_CHOSEN_LIST = "CHOSEN_LIST";
+    public static final String PARAM_THREAD_NUMBER = "THREAD_NUMBER";
 
     public String getParser() {
         return (String) get(PARAM_PARSER);
@@ -74,6 +75,12 @@ public class InboundContext extends ContextImpl {
     public void setAnalyzeVO(AnalyzeVO analyzeVO) {
         put(PARAM_ANALYZE_VO, analyzeVO);
     }
+
+    public Integer getThreadNumber() {
+        return (Integer) get(PARAM_THREAD_NUMBER);
+    }
+
+    public void setThreadNumber(Integer threadNumber){ put(PARAM_THREAD_NUMBER,threadNumber); };
 
     public List<InboundContext> getChosenList() {
         List<InboundContext> list = (List<InboundContext>) get(InboundContext.PARAM_CHOSEN_LIST);
