@@ -81,9 +81,10 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
     public void testGetStockList() {
         URL url = this.getClass().getClassLoader().getResource("own.EBK");
         List<String> list = collector.getStockList(url.getFile());
+
         assertEquals(4, list.size());
         assertTrue(list.contains("002010"));
         assertTrue(list.contains("600114"));
-        assertTrue(list.contains("000687"));
+        assertTrue(list.contains("000713"));
     }
 }

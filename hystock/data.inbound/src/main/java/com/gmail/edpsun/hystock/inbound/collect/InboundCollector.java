@@ -48,6 +48,7 @@ public class InboundCollector extends AbstractProcessor {
         AtomicInteger totalCounter = new AtomicInteger();
         AtomicInteger failureCounter = new AtomicInteger();
 
+        int pp=0;
         for (String id : list) {
             executorService.submit(new Collector(id, ctx, totalCounter, failureCounter));
         }

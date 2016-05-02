@@ -34,7 +34,7 @@ public class SelectorTest extends AbstractTransactionalJUnit4SpringContextTests 
         int p = selector.process(globalCtx);
 
         for (InboundContext stockCtx : globalCtx.getChosenList()) {
-            System.out.println(stockCtx.getStock().getId() + "->" + stockCtx.getAnalyzeVO().getTags());
+            System.out.println(stockCtx.getStock().getId() + "-->" + stockCtx.getAnalyzeVO().getTags());
         }
 
         assertEquals(1, globalCtx.getChosenList().size());
