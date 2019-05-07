@@ -32,7 +32,7 @@ public class DebugTest extends AbstractTransactionalJUnit4SpringContextTests {
         URL url = this.getClass().getClassLoader().getResource("test.EBK");
         ctx.setEbk(url.getFile());
         ctx.setQuarter(Quarter.valueOf("2019-01"));
-        ctx.setParser("Q");
+        ctx.setParser("H");
         ctx.setThreadNumber(2);
         int c = collector.process(ctx);
         assertEquals(1, c);
