@@ -35,5 +35,4 @@ public class AppTest extends AbstractJUnit4SpringContextTests {
         r1.setName("Ed");
         dao.save(r1);
     }
-
 }

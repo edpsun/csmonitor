@@ -1,7 +1,6 @@
 package com.gmail.edpsun.hystock.inbound.parser;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,7 +25,7 @@ public class HexunParser implements Parser {
         return String.format("http://stockdata.stock.hexun.com/2009_cgjzd_%s.shtml", id);
     }
 
-    public Stock parse(String content) {
+    public Stock parse(String id, String name, String content) {
         if (content == null) {
             throw new RuntimeException("Content is null from Hexun.");
         }
@@ -129,8 +128,8 @@ public class HexunParser implements Parser {
     private static final String Q2s = "年第2季";
     private static final String Q3 = "年前3季";
     private static final String Q4 = "年年度";
-    private static final String[] REPORT_QS = new String[] { Q1, Q2, Q2s, Q3, Q4 };
-    private static final int[] REPORT_QS_NUM = new int[] { 1, 2, 2, 3, 4 };
+    private static final String[] REPORT_QS = new String[]{Q1, Q2, Q2s, Q3, Q4};
+    private static final int[] REPORT_QS_NUM = new int[]{1, 2, 2, 3, 4};
 
     int[] parseReportDate(String r) {
         int year = -1;
@@ -148,7 +147,7 @@ public class HexunParser implements Parser {
         if (year == -1 || quarter == -1) {
             throw new RuntimeException("[Error] Report Date parse failed. " + r);
         }
-        return new int[] { year, quarter };
+        return new int[]{year, quarter};
     }
 
     private int parseInt(String s) {

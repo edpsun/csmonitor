@@ -1,8 +1,8 @@
 package com.gmail.edpsun.hystock.inbound.collect;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-import java.io.File;
 import java.net.URL;
 import java.util.List;
 
@@ -19,11 +19,11 @@ import com.gmail.edpsun.hystock.inbound.InboundContext;
 import com.gmail.edpsun.hystock.inbound.collect.InboundCollector.Quarter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring/app-beans.xml" })
+@ContextConfiguration(locations = {"classpath:spring/app-beans.xml"})
 public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     InboundCollector collector;
-    
+
     @Test
     @Transactional
     @Rollback(true)
@@ -37,7 +37,7 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
         int c = collector.process(ctx);
         assertEquals(4, c);
     }
-    
+
     @Test
     @Transactional
     @Rollback(true)
@@ -86,5 +86,28 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
         assertTrue(list.contains("002010"));
         assertTrue(list.contains("600114"));
         assertTrue(list.contains("000713"));
+    }
+
+    @Test
+    public void testGetNameForSh() {
+        String actualName = collector.retrieveName("000959");
+        assertEquals("首钢股份", actualName);
+    }
+
+    @Test
+    public void testGetNameForSz() {
+        String actualName = collector.retrieveName("600036");
+        assertEquals("招商银行", actualName);
+    }
+
+    @Test
+    public void testGetNameForSzc() {
+        String actualName = collector.retrieveName("300027");
+        assertEquals("华谊兄弟", actualName);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testGetNameForInvalidId() {
+        String actualName = collector.retrieveName("invalid");
     }
 }

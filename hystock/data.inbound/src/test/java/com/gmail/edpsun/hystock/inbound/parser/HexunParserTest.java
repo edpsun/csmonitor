@@ -1,6 +1,7 @@
 package com.gmail.edpsun.hystock.inbound.parser;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import java.io.File;
 import java.net.URL;
@@ -25,7 +26,7 @@ public class HexunParserTest {
         URL url = this.getClass().getClassLoader().getResource("2009_cgjzd_000687.shtml");
 
         String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
-        Stock stock = p.parse(content);
+        Stock stock = p.parse(null, null, content);
         assertEquals("000687", stock.getId());
         assertEquals("保定天鹅", stock.getName());
 
@@ -52,7 +53,7 @@ public class HexunParserTest {
         URL url = this.getClass().getClassLoader().getResource("2009_cgjzd_002027.shtml");
 
         String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
-        Stock stock = p.parse(content);
+        Stock stock = p.parse(null, null, content);
         assertEquals("002027", stock.getId());
         assertEquals("七喜控股", stock.getName());
 

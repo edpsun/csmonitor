@@ -6,7 +6,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import javax.annotation.Resource;
 
 import org.apache.commons.lang.Validate;
@@ -23,6 +22,7 @@ import com.gmail.edpsun.hystock.util.EBKUtil;
 
 public class InboundCollector extends AbstractProcessor {
     public static Logger LOGGER = Logger.getLogger(InboundCollector.class);
+    private static final String URL_TO_GET_NAME = "https://hq.sinajs.cn/list=%s%s";
 
     @Autowired
     StockManager stockManger;
@@ -30,8 +30,8 @@ public class InboundCollector extends AbstractProcessor {
     @Resource(name = "hexunParser")
     Parser hexunParser;
 
-    @Resource(name = "tecentParser")
-    Parser tecentParser;
+    @Resource(name = "eastmoneyParser")
+    Parser eastmoneyParser;
 
     @Autowired
     DataRetriever dataRetriever;
@@ -48,7 +48,7 @@ public class InboundCollector extends AbstractProcessor {
         AtomicInteger totalCounter = new AtomicInteger();
         AtomicInteger failureCounter = new AtomicInteger();
 
-        int pp=0;
+        int pp = 0;
         for (String id : list) {
             executorService.submit(new Collector(id, ctx, totalCounter, failureCounter));
         }
@@ -60,8 +60,9 @@ public class InboundCollector extends AbstractProcessor {
             e.printStackTrace();
         }
 
-        LOGGER.info("==========================================================" + "\n# Total  : " + totalCounter.get() + "\n"
-                + "# Failure: " + failureCounter.get());
+        LOGGER.info(
+                "==========================================================" + "\n# Total  : " + totalCounter.get() + "\n"
+                        + "# Failure: " + failureCounter.get());
 
         return totalCounter.get();
     }
@@ -69,8 +70,8 @@ public class InboundCollector extends AbstractProcessor {
     private Parser getParser(InboundContext ctx) {
         Parser p = hexunParser;
         if (ctx.getParser() != null) {
-            if ("Q".equals(ctx.getParser())) {
-                p = tecentParser;
+            if ("E".equals(ctx.getParser())) {
+                p = eastmoneyParser;
             } else if ("H".equals(ctx.getParser())) {
                 p = hexunParser;
             }
@@ -99,14 +100,27 @@ public class InboundCollector extends AbstractProcessor {
         LOGGER.debug(url);
         boolean ret = false;
         try {
+            String name = retrieveName(id);
             String content = dataRetriever.getData(url);
-            Stock stock = parser.parse(content);
+            Stock stock = parser.parse(id, name, content);
             stockManger.save(stock);
             ret = true;
         } catch (Exception ex) {
             LOGGER.error("[Error] id: " + id, ex);
         }
         return ret;
+    }
+
+    /*PACKAGE*/ String retrieveName(String id) {
+        String stockIdPrefix = id.startsWith("6") ? "sh" : "sz";
+        String stockUrl = String.format(URL_TO_GET_NAME, stockIdPrefix, id);
+        String rawContent = dataRetriever.getData(stockUrl);
+
+        if (rawContent.indexOf("\"\"") > -1) {
+            throw new RuntimeException("cannot get stock name for " + id);
+        }
+
+        return rawContent.substring(rawContent.indexOf("=\"") + 2, rawContent.indexOf(","));
     }
 
     public List<String> getStockList(String path) {
