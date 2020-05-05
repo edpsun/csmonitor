@@ -24,19 +24,19 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
     @Autowired
     InboundCollector collector;
 
-    @Test
-    @Transactional
-    @Rollback(true)
-    public void testCollectUpdateAllTecent() {
-        InboundContext ctx = new InboundContext();
-        URL url = this.getClass().getClassLoader().getResource("own.EBK");
-        ctx.setEbk(url.getFile());
-        ctx.setQuarter(Quarter.valueOf("2019-01"));
-        ctx.setParser("H");
-        ctx.setThreadNumber(2);
-        int c = collector.process(ctx);
-        assertEquals(4, c);
-    }
+//    @Test
+//    @Transactional
+//    @Rollback(true)
+//    public void testCollectUpdateAllTecent() {
+//        InboundContext ctx = new InboundContext();
+//        URL url = this.getClass().getClassLoader().getResource("own.EBK");
+//        ctx.setEbk(url.getFile());
+//        ctx.setQuarter(Quarter.valueOf("2019-01"));
+//        ctx.setParser("H");
+//        ctx.setThreadNumber(2);
+//        int c = collector.process(ctx);
+//        assertEquals(4, c);
+//    }
 
     @Test
     @Transactional
@@ -45,7 +45,7 @@ public class InboundCollectorTest extends AbstractTransactionalJUnit4SpringConte
         InboundContext ctx = new InboundContext();
         URL url = this.getClass().getClassLoader().getResource("own.EBK");
         ctx.setEbk(url.getFile());
-        ctx.setQuarter(Quarter.valueOf("2019-01"));
+        ctx.setQuarter(Quarter.valueOf("2029-01"));
         ctx.setThreadNumber(2);
         int c = collector.process(ctx);
         assertEquals(4, c);

@@ -100,4 +100,14 @@ public class HexunParserTest {
         assertEquals(2012, qs[0]);
         assertEquals(01, qs[1]);
     }
+
+    @Test
+    public void testParseForInvalidStock() throws Exception {
+        URL url = this.getClass().getClassLoader().getResource("2009_cgjzd_000748.shtml");
+
+        String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
+        Stock stock = p.parse("000748", "Invalid", content);
+        assertEquals("000748", stock.getId());
+        assertEquals("Invalid", stock.getName());
+    }
 }

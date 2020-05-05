@@ -50,6 +50,7 @@ public class InboundCollector extends AbstractProcessor {
 
         int pp = 0;
         for (String id : list) {
+            LOGGER.info("  => Sub: " + id);
             executorService.submit(new Collector(id, ctx, totalCounter, failureCounter));
         }
 

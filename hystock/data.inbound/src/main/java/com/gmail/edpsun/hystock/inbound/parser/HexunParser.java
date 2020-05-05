@@ -30,6 +30,15 @@ public class HexunParser implements Parser {
             throw new RuntimeException("Content is null from Hexun.");
         }
 
+        if(content.indexOf("<iframe id=\"dayresearch\"")>-1){
+            //known because the stock has quit the market.
+            System.out.println("[Invalid] Stock @@@:" + id);
+            Stock invalidStock = new Stock();
+            invalidStock.setId(id);
+            invalidStock.setName(name);
+            return invalidStock;
+        }
+
         int start = content.indexOf("<div id=\"rightpart\">");
         int end = content.indexOf("</table>", start);
 

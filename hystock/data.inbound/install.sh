@@ -2,7 +2,7 @@
 
 #home dir
 target_dir="target"
-app_link="/Users/sunp/data/st/hystock/release"
+app_link="/data/data/st/st/hystock/release"
 release_home="${app_link}_`date +%Y_%m_%d-%H_%M_%S`"
 
 # remove old link
