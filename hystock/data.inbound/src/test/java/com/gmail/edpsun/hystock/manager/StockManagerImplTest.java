@@ -19,7 +19,7 @@ public class StockManagerImplTest extends AbstractTransactionalJUnit4SpringConte
 
     @Test
     public void testGetStock() {
-        String id = "000687";
+        String id = "000713";
         Stock stock = stockManger.getStock(id, false);
         assertNotNull(stock);
         assertEquals(id, stock.getId());
@@ -28,7 +28,7 @@ public class StockManagerImplTest extends AbstractTransactionalJUnit4SpringConte
 
     @Test
     public void testGetStockCascade() {
-        String id = "000687";
+        String id = "000713";
         Stock stock = stockManger.getStock(id, true);
         assertNotNull(stock);
         assertEquals(id, stock.getId());
@@ -37,7 +37,7 @@ public class StockManagerImplTest extends AbstractTransactionalJUnit4SpringConte
 
     @Test
     public void testGetNoStock() {
-        String id = "xx000687";
+        String id = "xx000713";
         Stock stock = stockManger.getStock(id, true);
         assertNull(stock);
     }

@@ -24,3 +24,20 @@ startNetworkServer -h 0.0.0.0 &
 
 $('.stdiv').hide();
 $('li:contains("2013-2")').parents('.stdiv').show();
+
+
+
+init db:
+open ij and create database:
+----
+connect 'jdbc:derby://127.0.0.1:1527/hystock;user=admin;password=admin123;create=true';
+connect 'jdbc:derby://127.0.0.1:1527/hystock-test;user=admin;password=admin123;create=true';
+
+
+create table STOCK(id varchar(32) primary key, name varchar(256), comment varchar(1024));
+
+create table memreport(id varchar(32) primary key, name varchar(256));
+
+create table HOLDER_STAT(id varchar(32) primary key, STOCK_ID varchar(32), FISCAL_YEAR int,
+QUARTER int,  TOTAL_SHARE BIGINT, CIRCULATING_SHARE BIGINT, HOLDER_NUM BIGINT, AVERAGE_HOLDING BIGINT, DELTA varchar(256) );
+
