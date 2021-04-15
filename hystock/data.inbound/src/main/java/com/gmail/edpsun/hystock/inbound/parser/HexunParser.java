@@ -1,15 +1,15 @@
 package com.gmail.edpsun.hystock.inbound.parser;
 
+import com.gmail.edpsun.hystock.inbound.collect.DataRetriever;
+import com.gmail.edpsun.hystock.model.HolderStat;
+import com.gmail.edpsun.hystock.model.Stock;
+import org.apache.commons.lang.math.NumberUtils;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.apache.commons.lang.math.NumberUtils;
-import org.springframework.stereotype.Component;
-
-import com.gmail.edpsun.hystock.model.HolderStat;
-import com.gmail.edpsun.hystock.model.Stock;
 
 @Component("hexunParser")
 public class HexunParser implements Parser {
@@ -21,6 +21,11 @@ public class HexunParser implements Parser {
             + ".*<span class=\"font10\">(.*)</span>" + ".*<span class=\"font10\">(.*)</span>.*";
     Pattern holderStatPattern = Pattern.compile(holderStatLine);
 
+    @Override
+    public String getEncoding() {
+        return DataRetriever.GBK;
+    }
+    
     public String getTargetURL(String id) {
         return String.format("http://stockdata.stock.hexun.com/2009_cgjzd_%s.shtml", id);
     }
@@ -30,7 +35,7 @@ public class HexunParser implements Parser {
             throw new RuntimeException("Content is null from Hexun.");
         }
 
-        if(content.indexOf("<iframe id=\"dayresearch\"")>-1){
+        if (content.indexOf("<iframe id=\"dayresearch\"") > -1) {
             //known because the stock has quit the market.
             System.out.println("[Invalid] Stock @@@:" + id);
             Stock invalidStock = new Stock();

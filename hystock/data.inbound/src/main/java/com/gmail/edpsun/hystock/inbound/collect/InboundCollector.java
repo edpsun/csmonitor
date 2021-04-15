@@ -1,17 +1,5 @@
 package com.gmail.edpsun.hystock.inbound.collect;
 
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-import javax.annotation.Resource;
-
-import org.apache.commons.lang.Validate;
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.gmail.edpsun.hystock.inbound.InboundContext;
 import com.gmail.edpsun.hystock.inbound.parser.Parser;
 import com.gmail.edpsun.hystock.intf.AbstractProcessor;
@@ -19,6 +7,17 @@ import com.gmail.edpsun.hystock.manager.StockManager;
 import com.gmail.edpsun.hystock.model.HolderStat;
 import com.gmail.edpsun.hystock.model.Stock;
 import com.gmail.edpsun.hystock.util.EBKUtil;
+import org.apache.commons.lang.Validate;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.annotation.Resource;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class InboundCollector extends AbstractProcessor {
     public static Logger LOGGER = Logger.getLogger(InboundCollector.class);
@@ -36,20 +35,21 @@ public class InboundCollector extends AbstractProcessor {
     @Autowired
     DataRetriever dataRetriever;
 
-    public int process(InboundContext ctx) {
+    @Override
+    public int process(final InboundContext ctx) {
         LOGGER.info("start collecting. Path: " + ctx.getEbk());
-        List<String> list = getStockList(ctx.getEbk());
+        final List<String> list = getStockList(ctx.getEbk());
 
-        Parser parser = getParser(ctx);
+        final Parser parser = getParser(ctx);
         LOGGER.info("Parser: " + parser.getClass().getCanonicalName());
 
-        ExecutorService executorService = Executors.newFixedThreadPool(ctx.getThreadNumber());
+        final ExecutorService executorService = Executors.newFixedThreadPool(ctx.getThreadNumber());
 
-        AtomicInteger totalCounter = new AtomicInteger();
-        AtomicInteger failureCounter = new AtomicInteger();
+        final AtomicInteger totalCounter = new AtomicInteger();
+        final AtomicInteger failureCounter = new AtomicInteger();
 
-        int pp = 0;
-        for (String id : list) {
+        final int pp = 0;
+        for (final String id : list) {
             LOGGER.info("  => Sub: " + id);
             executorService.submit(new Collector(id, ctx, totalCounter, failureCounter));
         }
@@ -57,7 +57,7 @@ public class InboundCollector extends AbstractProcessor {
         try {
             executorService.shutdown();
             executorService.awaitTermination(10000000, TimeUnit.HOURS);
-        } catch (InterruptedException e) {
+        } catch (final InterruptedException e) {
             e.printStackTrace();
         }
 
@@ -68,7 +68,7 @@ public class InboundCollector extends AbstractProcessor {
         return totalCounter.get();
     }
 
-    private Parser getParser(InboundContext ctx) {
+    private Parser getParser(final InboundContext ctx) {
         Parser p = hexunParser;
         if (ctx.getParser() != null) {
             if ("E".equals(ctx.getParser())) {
@@ -80,14 +80,14 @@ public class InboundCollector extends AbstractProcessor {
         return p;
     }
 
-    boolean isNeedProcess(String id, Quarter quarter) {
-        List<HolderStat> holderStats = stockManger.getHolderStats(id);
+    boolean isNeedProcess(final String id, final Quarter quarter) {
+        final List<HolderStat> holderStats = stockManger.getHolderStats(id);
         if (holderStats.size() == 0) {
             return true;
         }
 
-        int q = quarter.getYear() * 100 + quarter.getQuarter();
-        int q1 = holderStats.get(0).getYear() * 100 + holderStats.get(0).getQuarter();
+        final int q = quarter.getYear() * 100 + quarter.getQuarter();
+        final int q1 = holderStats.get(0).getYear() * 100 + holderStats.get(0).getQuarter();
 
         if (q > q1) {
             return true;
@@ -96,26 +96,26 @@ public class InboundCollector extends AbstractProcessor {
         }
     }
 
-    private boolean processStock(String id, Parser parser) {
-        String url = parser.getTargetURL(id);
+    private boolean processStock(final String id, final Parser parser) {
+        final String url = parser.getTargetURL(id);
         LOGGER.debug(url);
         boolean ret = false;
         try {
-            String name = retrieveName(id);
-            String content = dataRetriever.getData(url);
-            Stock stock = parser.parse(id, name, content);
+            final String name = retrieveName(id);
+            final String content = dataRetriever.getData(url, parser.getEncoding());
+            final Stock stock = parser.parse(id, name, content);
             stockManger.save(stock);
             ret = true;
-        } catch (Exception ex) {
+        } catch (final Exception ex) {
             LOGGER.error("[Error] id: " + id, ex);
         }
         return ret;
     }
 
-    /*PACKAGE*/ String retrieveName(String id) {
-        String stockIdPrefix = id.startsWith("6") ? "sh" : "sz";
-        String stockUrl = String.format(URL_TO_GET_NAME, stockIdPrefix, id);
-        String rawContent = dataRetriever.getData(stockUrl);
+    /*PACKAGE*/ String retrieveName(final String id) {
+        final String stockIdPrefix = id.startsWith("6") ? "sh" : "sz";
+        final String stockUrl = String.format(URL_TO_GET_NAME, stockIdPrefix, id);
+        final String rawContent = dataRetriever.getData(stockUrl);
 
         if (rawContent.indexOf("\"\"") > -1) {
             throw new RuntimeException("cannot get stock name for " + id);
@@ -124,7 +124,7 @@ public class InboundCollector extends AbstractProcessor {
         return rawContent.substring(rawContent.indexOf("=\"") + 2, rawContent.indexOf(","));
     }
 
-    public List<String> getStockList(String path) {
+    public List<String> getStockList(final String path) {
         return EBKUtil.getStockList(path);
     }
 
@@ -132,19 +132,19 @@ public class InboundCollector extends AbstractProcessor {
         private int year = -1;
         private int quarter = -1;
 
-        private Quarter(int year, int quarter) {
+        private Quarter(final int year, final int quarter) {
             super();
             this.year = year;
             this.quarter = quarter;
         }
 
-        public static Quarter valueOf(String q) {
+        public static Quarter valueOf(final String q) {
             Validate.notNull(q);
             try {
-                String[] s = q.split("-");
+                final String[] s = q.split("-");
                 return new Quarter(Integer.parseInt(s[0]), Integer.parseInt(s[1]));
-            } catch (Exception ex) {
-                String msg = "Valid quarter format is like 2013-01. While the passed in is: " + q;
+            } catch (final Exception ex) {
+                final String msg = "Valid quarter format is like 2013-01. While the passed in is: " + q;
                 throw new RuntimeException(msg, ex);
             }
         }
@@ -153,7 +153,7 @@ public class InboundCollector extends AbstractProcessor {
             return year;
         }
 
-        public void setYear(int year) {
+        public void setYear(final int year) {
             this.year = year;
         }
 
@@ -161,40 +161,41 @@ public class InboundCollector extends AbstractProcessor {
             return quarter;
         }
 
-        public void setQuarter(int quarter) {
+        public void setQuarter(final int quarter) {
             this.quarter = quarter;
         }
     }
 
     class Collector implements Runnable {
-        private String id;
-        private InboundContext ctx;
+        private final String id;
+        private final InboundContext ctx;
 
-        private AtomicInteger totalCounter;
-        private AtomicInteger failureCounter;
+        private final AtomicInteger totalCounter;
+        private final AtomicInteger failureCounter;
 
-        public Collector(String id, InboundContext ctx, AtomicInteger totalCounter, AtomicInteger failureCounter) {
+        public Collector(final String id, final InboundContext ctx, final AtomicInteger totalCounter, final AtomicInteger failureCounter) {
             this.id = id;
             this.ctx = ctx;
             this.totalCounter = totalCounter;
             this.failureCounter = failureCounter;
         }
 
+        @Override
         public void run() {
             if (!isNeedProcess(id, ctx.getQuarter())) {
                 return;
             }
 
-            Random random = new Random();
+            final Random random = new Random();
             try {
-                int count = totalCounter.getAndIncrement();
+                final int count = totalCounter.getAndIncrement();
                 LOGGER.info("[" + count + "] id: " + id + "-------------------------------------------");
                 if (!processStock(id, getParser(ctx))) {
                     failureCounter.getAndIncrement();
                 } else {
-                    Thread.currentThread().sleep(random.nextInt(1000));
+                    Thread.currentThread().sleep(random.nextInt(5000));
                 }
-            } catch (Exception ex) {
+            } catch (final Exception ex) {
                 LOGGER.error("[Error] id: " + id, ex);
             }
         }
