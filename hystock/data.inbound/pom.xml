@@ -146,6 +146,5 @@
             <artifactId>js-scriptengine</artifactId>
             <version>20.3.0</version>
         </dependency>
-
     </dependencies>
 </project>

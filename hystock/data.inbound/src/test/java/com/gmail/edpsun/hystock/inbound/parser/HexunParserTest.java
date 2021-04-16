@@ -1,17 +1,16 @@
 package com.gmail.edpsun.hystock.inbound.parser;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import com.gmail.edpsun.hystock.model.HolderStat;
+import com.gmail.edpsun.hystock.model.Stock;
+import org.apache.commons.io.FileUtils;
+import org.junit.Test;
 
 import java.io.File;
 import java.net.URL;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
-import org.junit.Test;
-
-import com.gmail.edpsun.hystock.model.HolderStat;
-import com.gmail.edpsun.hystock.model.Stock;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class HexunParserTest {
     HexunParser p = new HexunParser();
@@ -23,14 +22,14 @@ public class HexunParserTest {
 
     @Test
     public void testParse() throws Exception {
-        URL url = this.getClass().getClassLoader().getResource("2009_cgjzd_000687.shtml");
+        final URL url = getClass().getClassLoader().getResource("2009_cgjzd_000687.shtml");
 
-        String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
-        Stock stock = p.parse(null, null, content);
+        final String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
+        final Stock stock = p.parse(null, null, content);
         assertEquals("000687", stock.getId());
         assertEquals("保定天鹅", stock.getName());
 
-        List<HolderStat> holderStats = stock.getHolderStats();
+        final List<HolderStat> holderStats = stock.getHolderStats();
         assertEquals(43, holderStats.size());
 
         assertEquals(2013, holderStats.get(0).getYear());
@@ -50,17 +49,17 @@ public class HexunParserTest {
 
     @Test
     public void testParseInvalidDelta() throws Exception {
-        URL url = this.getClass().getClassLoader().getResource("2009_cgjzd_002027.shtml");
+        final URL url = getClass().getClassLoader().getResource("2009_cgjzd_002027.shtml");
 
-        String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
-        Stock stock = p.parse(null, null, content);
+        final String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
+        final Stock stock = p.parse(null, null, content);
         assertEquals("002027", stock.getId());
         assertEquals("七喜控股", stock.getName());
 
-        List<HolderStat> holderStats = stock.getHolderStats();
+        final List<HolderStat> holderStats = stock.getHolderStats();
         assertEquals(32, holderStats.size());
 
-        HolderStat stat = new HolderStat();
+        final HolderStat stat = new HolderStat();
         stat.setYear(2004);
         stat.setQuarter(03);
         stat.setId("002027");
@@ -75,7 +74,6 @@ public class HexunParserTest {
         stat.setQuarter(02);
         stat.setId("002027");
         assertFalse(holderStats.contains(stat));
-
     }
 
     @Test
@@ -103,10 +101,10 @@ public class HexunParserTest {
 
     @Test
     public void testParseForInvalidStock() throws Exception {
-        URL url = this.getClass().getClassLoader().getResource("2009_cgjzd_000748.shtml");
+        final URL url = getClass().getClassLoader().getResource("2009_cgjzd_000748.shtml");
 
-        String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
-        Stock stock = p.parse("000748", "Invalid", content);
+        final String content = FileUtils.readFileToString(new File(url.getFile()), "GB2312");
+        final Stock stock = p.parse("000748", "Invalid", content);
         assertEquals("000748", stock.getId());
         assertEquals("Invalid", stock.getName());
     }

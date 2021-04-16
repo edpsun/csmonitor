@@ -3,33 +3,28 @@
  */
 package com.gmail.edpsun.hystock.select;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import org.apache.commons.io.IOUtils;
-
 import com.gmail.edpsun.hystock.inbound.InboundContext;
 import com.gmail.edpsun.hystock.model.AnalyzeVO;
 import com.gmail.edpsun.hystock.model.HolderStat;
 import com.gmail.edpsun.hystock.model.Stock;
 import com.gmail.edpsun.hystock.util.HtmlUtils;
+import org.apache.commons.io.IOUtils;
+
+import java.io.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class HTMLReporter {
     static String tecent_url = "http://stockhtm.finance.qq.com/sstock/ggcx/%s.shtml";
     static String sina_url = "http://finance.sina.com.cn/realstock/company/%s/nc.shtml";
     static String hexun = "http://stockdata.stock.hexun.com/2009_cgjzd_%s.shtml";
+    static String jrj = "http://stock.jrj.com.cn/share,%s,gdhs.shtml";
     static String stdiv = "<div stockid=\"%s\" id=\"%d\" class=\"stdiv\" tags=\"%s\" hQnum=\"%d\" hCRate=\"%f\" elid=\"%s\" >";
 
-    public void exportReport(InboundContext ctx) {
+    public void exportReport(final InboundContext ctx) {
         BufferedWriter bww = null;
-        File file = new File(ctx.getSchema(), "report.html");
+        final File file = new File(ctx.getSchema(), "report.html");
 
         try {
             bww = new BufferedWriter(new FileWriter(file));
@@ -38,24 +33,25 @@ public class HTMLReporter {
             bww.write("\n\n");
             bww.write(getFilterHmtl());
 
-            StringBuilder total = new StringBuilder();
+            final StringBuilder total = new StringBuilder();
             total.append("<span id='total'></span>").append("\n");
             total.append("<br><br>").append("\n");
             total.append("<div id=\"listdiv\"></div><br><br>").append("\n");
             bww.write(total.toString());
 
             Collections.sort(ctx.getChosenList(), new Comparator<InboundContext>() {
-                public int compare(InboundContext o1, InboundContext o2) {
+                @Override
+                public int compare(final InboundContext o1, final InboundContext o2) {
                     return o1.getAnalyzeVO().compareTo(o2.getAnalyzeVO());
                 }
             });
 
-            StringBuilder sb = new StringBuilder();
+            final StringBuilder sb = new StringBuilder();
             int p = 0;
-            for (InboundContext stockCtx : ctx.getChosenList()) {
-                Stock stock = stockCtx.getStock();
-                AnalyzeVO analyzeVO = stockCtx.getAnalyzeVO();
-                String tags = analyzeVO.getTags();
+            for (final InboundContext stockCtx : ctx.getChosenList()) {
+                final Stock stock = stockCtx.getStock();
+                final AnalyzeVO analyzeVO = stockCtx.getAnalyzeVO();
+                final String tags = analyzeVO.getTags();
 
                 String exportListID = null;
                 String sinaId = null;
@@ -78,16 +74,18 @@ public class HTMLReporter {
                         + "\">Tecent</a>\n");
                 sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(hexun, stock.getId())
                         + "\">HeXun</a>\n");
+                sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(jrj, stock.getId())
+                        + "\">JinRongJie</a>\n");
 
                 sb.append("<hr><pre><ul>\n");
-                List<HolderStat> holderStats = stock.getHolderStats();
+                final List<HolderStat> holderStats = stock.getHolderStats();
                 int length = holderStats.size();
-                int LEN = 8;
+                final int LEN = 8;
                 if (length > LEN) {
-                    int aaNum = analyzeVO.getAverageAmountUpQNum();
-                    int hNum = analyzeVO.getHolderUpQNum();
+                    final int aaNum = analyzeVO.getAverageAmountUpQNum();
+                    final int hNum = analyzeVO.getHolderUpQNum();
 
-                    int maxQnum = hNum > aaNum ? hNum : aaNum;
+                    final int maxQnum = hNum > aaNum ? hNum : aaNum;
                     if (maxQnum > LEN) {
                         length = maxQnum;
                     } else {
@@ -111,20 +109,20 @@ public class HTMLReporter {
             bww.write(HtmlUtils.getFooter());
 
             copyJs(ctx.getSchema());
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         } finally {
             try {
                 bww.close();
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 // ignore
             }
         }
     }
 
-    private void copyJs(String _path) {
-        String jsDir = "js";
-        File path = new File(_path, jsDir);
+    private void copyJs(final String _path) {
+        final String jsDir = "js";
+        final File path = new File(_path, jsDir);
         if (!path.exists()) {
             path.mkdirs();
         }
@@ -132,28 +130,28 @@ public class HTMLReporter {
         copyIoToFile(jsDir + "/" + HtmlUtils.jqery, new File(path, HtmlUtils.jqery));
     }
 
-    private void copyIoToFile(String source, File targetPath) {
-        InputStream in = this.getClass().getClassLoader().getResourceAsStream(source);
+    private void copyIoToFile(final String source, final File targetPath) {
+        final InputStream in = getClass().getClassLoader().getResourceAsStream(source);
         FileOutputStream out = null;
         try {
             out = new FileOutputStream(targetPath);
             IOUtils.copy(in, out);
-        } catch (Exception e) {
+        } catch (final Exception e) {
             throw new RuntimeException("Error while copy js", e);
         } finally {
             try {
                 in.close();
-            } catch (IOException e) {
+            } catch (final IOException e) {
             }
             try {
                 out.close();
-            } catch (IOException e) {
+            } catch (final IOException e) {
             }
         }
     }
 
     private String getFilterHmtl() {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb = new StringBuilder();
         sb.append("<span title=\"ID\">ID:</span>").append("\n");
         sb.append("<input type=\"text\" name=\"stockid\" value=\"\"/>").append("\n");
         sb.append("<br>").append("\n");

@@ -32,6 +32,9 @@ public class InboundCollector extends AbstractProcessor {
     @Resource(name = "eastmoneyParser")
     Parser eastmoneyParser;
 
+    @Resource(name = "jinRongJieParser")
+    Parser jinRongJieParser;
+
     @Autowired
     DataRetriever dataRetriever;
 
@@ -75,6 +78,8 @@ public class InboundCollector extends AbstractProcessor {
                 p = eastmoneyParser;
             } else if ("H".equals(ctx.getParser())) {
                 p = hexunParser;
+            } else if ("J".equals(ctx.getParser())) {
+                p = jinRongJieParser;
             }
         }
         return p;

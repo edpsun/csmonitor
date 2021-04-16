@@ -1,16 +1,17 @@
 package com.gmail.edpsun.hystock.inbound.parser;
 
+import com.gmail.edpsun.hystock.model.HolderStat;
 import com.gmail.edpsun.hystock.model.Stock;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class JinRongJieParserTest {
     private JinRongJieParser underTest;
@@ -21,45 +22,43 @@ public class JinRongJieParserTest {
     }
 
     @Test
-    public void testParseForInvalidStock() throws Exception {
-        final URL url = getClass().getClassLoader().getResource("jrj_600036.response");
+    public void testParsing() throws IOException {
+        final URL url = getClass().getClassLoader().getResource("jrj_000687.response");
 
         final String content = FileUtils.readFileToString(new File(url.getFile()), "UTF-8");
 
-        System.out.println(content);
+        final Stock stock = underTest.parse("000687", "保定天鹅", content);
+        assertEquals("000687", stock.getId());
+        assertEquals("保定天鹅", stock.getName());
 
-        final Stock stock = underTest.parse("000748", "Invalid", content);
-//        assertEquals("000748", stock.getId());
-//        assertEquals("Invalid", stock.getName());
+        final List<HolderStat> holderStats = stock.getHolderStats();
+
+        final int index = 30;
+        assertEquals(2013, holderStats.get(index).getYear());
+        assertEquals(1, holderStats.get(index).getQuarter());
+        assertEquals("000687", holderStats.get(index).getStockId());
+
+        assertEquals(53463, holderStats.get(index).getHolderNum());
+        assertEquals(14166, holderStats.get(index).getAverageHolding());
+        assertEquals("-0.8431417", holderStats.get(index).getDelta());
+        assertEquals(75736, holderStats.get(index).getTotalShare());
+        assertEquals(75285, holderStats.get(index).getCirculatingShare());
+
+        assertEquals(2020, holderStats.get(1).getYear());
+        assertEquals(2, holderStats.get(1).getQuarter());
+        assertEquals("000687", holderStats.get(1).getStockId());
+
+        assertEquals(50, holderStats.size());
     }
 
     @Test
-    public void testJS() throws Exception {
-        final String jsStr = "function myFuc(param){return \"the param is:\"+param;}";//js脚本内容
-        System.out.println(jsObjFunc());
-    }
+    public void testParsing2() throws IOException {
+        final URL url = getClass().getClassLoader().getResource("jrj_300529.response");
 
-    public Object jsObjFunc() throws Exception {
-        final ScriptEngineManager sem = new ScriptEngineManager();
-        final ScriptEngine scriptEngine = sem.getEngineByName("graal.js");
+        final String content = FileUtils.readFileToString(new File(url.getFile()), "UTF-8");
 
-        final URL url = getClass().getClassLoader().getResource("jrj_600036.response");
-        final String content = FileUtils.readFileToString(new File(url.getFile()), StandardCharsets.UTF_8);
-
-        final String myJs = "function get_list(){return stockgudongList.data[0];}";
-
-        try {
-            scriptEngine.eval(content);
-            scriptEngine.eval(myJs);
-
-            final Invocable inv2 = (Invocable) scriptEngine;
-
-            System.out.println(inv2.invokeFunction("get_list"));
-            return null;
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        final Stock stock = underTest.parse("300529", "健帆生物", content);
+        System.out.println(stock);
     }
 
 }
