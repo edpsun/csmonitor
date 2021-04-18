@@ -20,6 +20,7 @@ public class HTMLReporter {
     static String sina_url = "http://finance.sina.com.cn/realstock/company/%s/nc.shtml";
     static String hexun = "http://stockdata.stock.hexun.com/2009_cgjzd_%s.shtml";
     static String jrj = "http://stock.jrj.com.cn/share,%s,gdhs.shtml";
+    static String snowball = "https://xueqiu.com/S/%s%s";
     static String stdiv = "<div stockid=\"%s\" id=\"%d\" class=\"stdiv\" tags=\"%s\" hQnum=\"%d\" hCRate=\"%f\" elid=\"%s\" >";
 
     public void exportReport(final InboundContext ctx) {
@@ -74,6 +75,10 @@ public class HTMLReporter {
                         + "\">Tecent</a>\n");
                 sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(hexun, stock.getId())
                         + "\">HeXun</a>\n");
+                sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(snowball,
+                        stock.getId().startsWith("6") ? "SH" : "SZ",
+                        stock.getId())
+                        + "\">Xueqiu</a>\n");
                 sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(jrj, stock.getId())
                         + "\">JinRongJie</a>\n");
 
