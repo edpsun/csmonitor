@@ -16,10 +16,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class HTMLReporter {
-    static String tecent_url = "http://stockhtm.finance.qq.com/sstock/ggcx/%s.shtml";
-    static String sina_url = "http://finance.sina.com.cn/realstock/company/%s/nc.shtml";
     static String hexun = "http://stockdata.stock.hexun.com/2009_cgjzd_%s.shtml";
     static String jrj = "http://stock.jrj.com.cn/share,%s,gdhs.shtml";
+    static String eastMoney = "http://f10.eastmoney.com/f10_v2/ShareholderResearch.aspx?code=%s%s";
     static String snowball = "https://xueqiu.com/S/%s%s";
     static String stdiv = "<div stockid=\"%s\" id=\"%d\" class=\"stdiv\" tags=\"%s\" hQnum=\"%d\" hCRate=\"%f\" elid=\"%s\" >";
 
@@ -70,9 +69,6 @@ public class HTMLReporter {
                 sb.append(analyzeVO).append("<br>\n");
                 System.out.println(sb.toString());
 
-                sb.append("<br> <a target=\"_blank\"  href=\"" + String.format(sina_url, sinaId) + "\">Sina</a>\n");
-                sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(tecent_url, stock.getId())
-                        + "\">Tecent</a>\n");
                 sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(hexun, stock.getId())
                         + "\">HeXun</a>\n");
                 sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(snowball,
@@ -81,6 +77,10 @@ public class HTMLReporter {
                         + "\">Xueqiu</a>\n");
                 sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(jrj, stock.getId())
                         + "\">JinRongJie</a>\n");
+                sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(eastMoney,
+                        stock.getId().startsWith("6") ? "sh" : "sz",
+                        stock.getId())
+                        + "\">EastMoney</a>\n");
 
                 sb.append("<hr><pre><ul>\n");
                 final List<HolderStat> holderStats = stock.getHolderStats();
