@@ -404,7 +404,7 @@ obj.style.display="block";
 	</dl>
 	<!--
   <dl>
-  	<dt class="dt_closed"><cache.ccf href="http://stockdata.stock.hexun.com/dynamic/default_2008.aspx?stockid=000687" target="_blank">旧版行情</cache.ccf></dt>
+  	<dt class="dt_closed"><a href="http://stockdata.stock.hexun.com/dynamic/default_2008.aspx?stockid=000687" target="_blank">旧版行情</a></dt>
   </dl>
   -->
 	<!--存放 url: stockid-->

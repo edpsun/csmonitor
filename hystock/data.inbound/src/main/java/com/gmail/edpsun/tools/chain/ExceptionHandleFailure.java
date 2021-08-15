@@ -15,7 +15,7 @@ public class ExceptionHandleFailure extends Error {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Initializes cache.ccf exception handling failure object.
+     * Initializes a exception handling failure object.
      *
      * @param msg message for the failure
      */
@@ -25,10 +25,10 @@ public class ExceptionHandleFailure extends Error {
     }
 
     /**
-     * Initializes cache.ccf exception handling failure object.
+     * Initializes a exception handling failure object.
      *
      * @param msg message for the failure
-     * @param t   throwable object
+     * @param t throwable object
      */
     public ExceptionHandleFailure(final String msg, final Throwable t) {
         super(msg, t);

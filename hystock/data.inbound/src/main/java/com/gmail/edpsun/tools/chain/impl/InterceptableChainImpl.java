@@ -53,7 +53,7 @@ public class InterceptableChainImpl extends ChainImpl {
     }
 
     /**
-     * Protection shallow copy to work on cache.ccf new list object and generate dynamic
+     * Protection shallow copy to work on a new list object and generate dynamic
      * proxy for each object in CLASSES_TO_PROXY array.
      *
      * @return prepared activity list.

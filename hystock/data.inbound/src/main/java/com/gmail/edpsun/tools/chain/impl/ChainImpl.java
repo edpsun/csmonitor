@@ -234,7 +234,7 @@ public class ChainImpl implements Chain, ErrorCallback {
     }
 
     /**
-     * Protection shallow copy to work on cache.ccf new list object.
+     * Protection shallow copy to work on a new list object.
      *
      * @return activity list
      */
@@ -295,7 +295,7 @@ public class ChainImpl implements Chain, ErrorCallback {
     }
 
     /**
-     * Dump the activities info for cache.ccf chain.
+     * Dump the activities info for a chain.
      *
      * @param isRecursive boolean to determine whether do it recursively
      * @return string
@@ -305,10 +305,10 @@ public class ChainImpl implements Chain, ErrorCallback {
     }
 
     /**
-     * Dump the activities info for cache.ccf chain.
+     * Dump the activities info for a chain.
      *
-     * @param chain       chain
-     * @param level       the level of current sub-chain
+     * @param chain chain
+     * @param level the level of current sub-chain
      * @param isRecursive boolean to determine whether do it recursively
      * @return string
      */

@@ -91,9 +91,9 @@ public class ActivityInvocationHandler implements InvocationHandler {
     /**
      * Call 'onException' callback for each intercepter when run into exception.
      *
-     * @param method    method name
-     * @param args      arguments passed into method
-     * @param throwable exception occurs when invoke cache.ccf chain.
+     * @param method method name
+     * @param args arguments passed into method
+     * @param throwable exception occurs when invoke a chain.
      */
     private void executeOnExceptionInterceptors(final Method method,
             final Object[] args, final Throwable throwable) {

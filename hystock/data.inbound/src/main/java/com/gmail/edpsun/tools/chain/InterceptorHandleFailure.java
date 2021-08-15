@@ -13,7 +13,7 @@ public class InterceptorHandleFailure extends Error {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Initializes cache.ccf intercepter handling failure object.
+     * Initializes a intercepter handling failure object.
      *
      * @param msg message for the failure
      */
@@ -22,10 +22,10 @@ public class InterceptorHandleFailure extends Error {
     }
 
     /**
-     * Initializes cache.ccf intercepter handling failure object.
+     * Initializes a intercepter handling failure object.
      *
      * @param msg message for the failure
-     * @param t   throwable object
+     * @param t throwable object
      */
     public InterceptorHandleFailure(final String msg, final Throwable t) {
         super(msg, t);

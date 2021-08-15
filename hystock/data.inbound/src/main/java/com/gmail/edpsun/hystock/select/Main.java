@@ -19,10 +19,10 @@ import com.gmail.edpsun.hystock.intf.Processor;
 public class Main {
 
     public static InboundContext initCLIOptions(String[] args) {
-        Option all = new Option("cache.ccf", "keep all stocks");
+        Option all = new Option("a", "keep all stocks");
 
         Option schema = OptionBuilder.withArgName("schema_name").hasArg()
-                .withDescription("schema name used to idenfied cache.ccf filtering").create("s");
+                .withDescription("schema name used to idenfied a filtering").create("s");
 
         schema.setRequired(true);
         schema.setLongOpt("schema");
@@ -55,7 +55,7 @@ public class Main {
             inboundCtx.setEbk(line.getOptionValue("ebk"));
         }
 
-        if (line.hasOption("cache.ccf")) {
+        if (line.hasOption("a")) {
             inboundCtx.setKeepAll(true);
         } else {
             inboundCtx.setKeepAll(false);
