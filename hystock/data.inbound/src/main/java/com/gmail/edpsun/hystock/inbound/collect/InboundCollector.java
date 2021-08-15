@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -35,8 +34,11 @@ public class InboundCollector extends AbstractProcessor {
     @Resource(name = "jinRongJieParser")
     Parser jinRongJieParser;
 
-    @Autowired
-    DataRetriever dataRetriever;
+    @Resource(name = "HTTPDataRetriever")
+    DataRetriever httpDataRetriever;
+
+    @Resource(name = "CacheWrapperDataRetriever")
+    DataRetriever cacheWrapperDataRetriever;
 
     @Override
     public int process(final InboundContext ctx) {
@@ -51,7 +53,6 @@ public class InboundCollector extends AbstractProcessor {
         final AtomicInteger totalCounter = new AtomicInteger();
         final AtomicInteger failureCounter = new AtomicInteger();
 
-        final int pp = 0;
         for (final String id : list) {
             LOGGER.info("  => Sub: " + id);
             executorService.submit(new Collector(id, ctx, totalCounter, failureCounter));
@@ -107,7 +108,7 @@ public class InboundCollector extends AbstractProcessor {
         boolean ret = false;
         try {
             final String name = retrieveName(id);
-            final String content = dataRetriever.getData(url, parser.getEncoding());
+            final String content = cacheWrapperDataRetriever.getData(url, parser.getEncoding());
             final Stock stock = parser.parse(id, name, content);
             stockManger.save(stock);
             ret = true;
@@ -120,7 +121,7 @@ public class InboundCollector extends AbstractProcessor {
     /*PACKAGE*/ String retrieveName(final String id) {
         final String stockIdPrefix = id.startsWith("6") ? "sh" : "sz";
         final String stockUrl = String.format(URL_TO_GET_NAME, stockIdPrefix, id);
-        final String rawContent = dataRetriever.getData(stockUrl);
+        final String rawContent = httpDataRetriever.getData(stockUrl);
 
         if (rawContent.indexOf("\"\"") > -1) {
             throw new RuntimeException("cannot get stock name for " + id);
@@ -191,14 +192,11 @@ public class InboundCollector extends AbstractProcessor {
                 return;
             }
 
-            final Random random = new Random();
             try {
                 final int count = totalCounter.getAndIncrement();
                 LOGGER.info("[" + count + "] id: " + id + "-------------------------------------------");
                 if (!processStock(id, getParser(ctx))) {
                     failureCounter.getAndIncrement();
-                } else {
-                    Thread.currentThread().sleep(random.nextInt(5000));
                 }
             } catch (final Exception ex) {
                 LOGGER.error("[Error] id: " + id, ex);

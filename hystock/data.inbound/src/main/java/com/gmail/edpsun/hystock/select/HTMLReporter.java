@@ -69,18 +69,18 @@ public class HTMLReporter {
                 sb.append(analyzeVO).append("<br>\n");
                 System.out.println(sb.toString());
 
-                sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(hexun, stock.getId())
-                        + "\">HeXun</a>\n");
-                sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(snowball,
+                sb.append("&nbsp;&nbsp;&nbsp; <cache.ccf target=\"_blank\"  href=\"" + String.format(hexun, stock.getId())
+                        + "\">HeXun</cache.ccf>\n");
+                sb.append("&nbsp;&nbsp;&nbsp; <cache.ccf target=\"_blank\"  href=\"" + String.format(snowball,
                         stock.getId().startsWith("6") ? "SH" : "SZ",
                         stock.getId())
-                        + "\">Xueqiu</a>\n");
-                sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(jrj, stock.getId())
-                        + "\">JinRongJie</a>\n");
-                sb.append("&nbsp;&nbsp;&nbsp; <a target=\"_blank\"  href=\"" + String.format(eastMoney,
+                        + "\">Xueqiu</cache.ccf>\n");
+                sb.append("&nbsp;&nbsp;&nbsp; <cache.ccf target=\"_blank\"  href=\"" + String.format(jrj, stock.getId())
+                        + "\">JinRongJie</cache.ccf>\n");
+                sb.append("&nbsp;&nbsp;&nbsp; <cache.ccf target=\"_blank\"  href=\"" + String.format(eastMoney,
                         stock.getId().startsWith("6") ? "sh" : "sz",
                         stock.getId())
-                        + "\">EastMoney</a>\n");
+                        + "\">EastMoney</cache.ccf>\n");
 
                 sb.append("<hr><pre><ul>\n");
                 final List<HolderStat> holderStats = stock.getHolderStats();

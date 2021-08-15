@@ -203,8 +203,8 @@ obj.style.display="block";
 			<a href="http://fblog.hexun.com/" target="_blank">财经博客</a></dd>
 	</dl>
 	<!--<dl id="zgmf">
-		<dt stadus="hidden" id="leftmenu_dt27"><a href="http://mf.hexun.com/" id="leftmenu_dt27_1" target="_blank">
-				智股魔方</a></dt>
+		<dt stadus="hidden" id="leftmenu_dt27"><cache.ccf href="http://mf.hexun.com/" id="leftmenu_dt27_1" target="_blank">
+				智股魔方</cache.ccf></dt>
 	</dl>-->
 	<dl>
 		<dt class="dt_closed" stadus="hidden" id="leftmenu_dt7">资金流向</dt>
@@ -388,7 +388,7 @@ obj.style.display="block";
 	</dl>
 	<!--
   <dl>
-  	<dt class="dt_closed"><a href="http://stockdata.stock.hexun.com/dynamic/default_2008.aspx?stockid=002027" target="_blank">旧版行情</a></dt>
+  	<dt class="dt_closed"><cache.ccf href="http://stockdata.stock.hexun.com/dynamic/default_2008.aspx?stockid=002027" target="_blank">旧版行情</cache.ccf></dt>
   </dl>
   -->
 	<!--存放 url: stockid-->

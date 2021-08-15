@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-@Service
+@Service("HTTPDataRetriever")
 public class HTTPDataRetriever implements DataRetriever {
     public static Logger LOGGER = Logger.getLogger(HTTPDataRetriever.class);
 
@@ -28,6 +28,8 @@ public class HTTPDataRetriever implements DataRetriever {
         try {
             final URL _url = new URL(url);
             httpConnection = (HttpURLConnection) _url.openConnection();
+            httpConnection.setConnectTimeout(15 * 1000);
+
             httpConnection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
 
             final InputStream in = httpConnection.getInputStream();

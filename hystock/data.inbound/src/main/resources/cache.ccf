@@ -1,0 +1,48 @@
+# DEFAULT CACHE REGION
+jcs.default=DC
+jcs.default.cacheattributes=org.apache.commons.jcs3.engine.CompositeCacheAttributes
+jcs.default.cacheattributes.MaxObjects=0
+jcs.default.cacheattributes.MemoryCacheName=org.apache.commons.jcs3.engine.memory.lru.LRUMemoryCache
+jcs.default.cacheattributes.UseMemoryShrinker=false
+jcs.default.cacheattributes.MaxMemoryIdleTimeSeconds=3600
+jcs.default.cacheattributes.ShrinkerIntervalSeconds=60
+jcs.default.elementattributes=org.apache.commons.jcs3.engine.ElementAttributes
+jcs.default.elementattributes.IsEternal=false
+jcs.default.elementattributes.MaxLife=21600
+jcs.default.elementattributes.IdleTime=1800
+jcs.default.elementattributes.IsSpool=true
+jcs.default.elementattributes.IsRemote=true
+jcs.default.elementattributes.IsLateral=true
+
+# PRE-DEFINED CACHE REGIONS
+jcs.region.stock=DC
+jcs.region.stock.cacheattributes=org.apache.commons.jcs3.engine.CompositeCacheAttributes
+jcs.region.stock.cacheattributes.MaxObjects=0
+jcs.region.stock.cacheattributes.DiskUsagePattern=UPDATE
+jcs.region.stock.cacheattributes.MemoryCacheName=org.apache.commons.jcs3.engine.memory.lru.LRUMemoryCache
+jcs.region.stock.cacheattributes.UseMemoryShrinker=false
+jcs.region.stock.cacheattributes.MaxMemoryIdleTimeSeconds=3600
+jcs.region.stock.cacheattributes.ShrinkerIntervalSeconds=60
+jcs.region.stock.cacheattributes.MaxSpoolPerRun=500
+jcs.region.stock.elementattributes=org.apache.commons.jcs3.engine.ElementAttributes
+jcs.region.stock.elementattributes.IsEternal=false
+jcs.region.stock.elementattributes.IsSpool=true
+jcs.region.stock.elementattributes.MaxLife=21600
+
+
+# AVAILABLE AUXILIARY CACHES
+jcs.auxiliary.DC=org.apache.commons.jcs3.auxiliary.disk.indexed.IndexedDiskCacheFactory
+jcs.auxiliary.DC.attributes=org.apache.commons.jcs3.auxiliary.disk.indexed.IndexedDiskCacheAttributes
+jcs.auxiliary.DC.attributes.DiskPath=/tmp/jcs_swap
+jcs.auxiliary.DC.attributes.MaxPurgatorySize=10000000
+jcs.auxiliary.DC.attributes.MaxKeySize=5000
+jcs.auxiliary.DC.attributes.OptimizeAtRemoveCount=300000
+jcs.auxiliary.DC.attributes.ShutdownSpoolTimeLimit=60
+jcs.auxiliary.DC.attributes.EventQueuePoolName=disk_cache_event_queue
+
+# Disk Cache Event Queue Pool
+thread_pool.disk_cache_event_queue.useBoundary=false
+thread_pool.disk_cache_event_queue.maximumPoolSize=15
+thread_pool.disk_cache_event_queue.minimumPoolSize=1
+thread_pool.disk_cache_event_queue.keepAliveTime=3500
+thread_pool.disk_cache_event_queue.startUpSize=1
