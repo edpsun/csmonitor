@@ -1,12 +1,12 @@
 package com.gmail.edpsun.hystock.inbound;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.gmail.edpsun.hystock.inbound.collect.InboundCollector.Quarter;
 import com.gmail.edpsun.hystock.model.AnalyzeVO;
 import com.gmail.edpsun.hystock.model.Stock;
 import com.gmail.edpsun.tools.chain.impl.ContextImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InboundContext extends ContextImpl {
     public static final String PARAM_PARSER = "parser";
@@ -19,6 +19,8 @@ public class InboundContext extends ContextImpl {
     public static final String PARAM_GLOBAL_CONTEXT = "GLOBAL_CONTEXT";
     public static final String PARAM_CHOSEN_LIST = "CHOSEN_LIST";
     public static final String PARAM_THREAD_NUMBER = "THREAD_NUMBER";
+
+    public static final String PARAM_SLEEP_TIME = "SLEEP_TIME";
 
     public String getParser() {
         return (String) get(PARAM_PARSER);
@@ -80,7 +82,21 @@ public class InboundContext extends ContextImpl {
         return (Integer) get(PARAM_THREAD_NUMBER);
     }
 
-    public void setThreadNumber(Integer threadNumber){ put(PARAM_THREAD_NUMBER,threadNumber); };
+    public void setThreadNumber(Integer threadNumber) {
+        put(PARAM_THREAD_NUMBER, threadNumber);
+    }
+
+    public Integer getSleepTime() {
+        if (!containsKey(PARAM_SLEEP_TIME)) {
+            return 15000;
+        } else {
+            return (Integer) get(PARAM_SLEEP_TIME);
+        }
+    }
+
+    public void setSleepTime(Integer SleepTime) {
+        put(PARAM_SLEEP_TIME, SleepTime);
+    }
 
     public List<InboundContext> getChosenList() {
         List<InboundContext> list = (List<InboundContext>) get(InboundContext.PARAM_CHOSEN_LIST);

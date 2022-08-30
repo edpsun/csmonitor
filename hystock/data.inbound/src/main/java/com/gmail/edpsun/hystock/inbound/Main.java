@@ -11,14 +11,12 @@ import java.io.File;
 
 public class Main {
     public static InboundContext initCLIOptions(final String[] args) {
-        final Option quarter = OptionBuilder.withArgName("quarter like 2013-01").hasArg()
-                .withDescription("update to the target quarter").create("q");
+        final Option quarter = OptionBuilder.withArgName("quarter like 2013-01").hasArg().withDescription("update to the target quarter").create("q");
 
         quarter.setRequired(true);
         quarter.setLongOpt("quarter");
 
-        final Option parser = OptionBuilder.withArgName("Parser Q or H").hasArg().withDescription("specify the site/parser")
-                .create("p");
+        final Option parser = OptionBuilder.withArgName("Parser Q or H").hasArg().withDescription("specify the site/parser").create("p");
         parser.setLongOpt("parser");
 
         final Option ebkfile = OptionBuilder.withArgName("file").hasArg().withDescription("TDX ebk file").create("ebk");
@@ -28,11 +26,16 @@ public class Main {
         threadNumber.setRequired(true);
         threadNumber.setLongOpt("threadNumber");
 
+        final Option sleepTime = OptionBuilder.withArgName("sleep time").hasArg().withDescription("Sleep time after processing one stock").create("s");
+        sleepTime.setRequired(true);
+        sleepTime.setLongOpt("sleepTime");
+
         final Options options = new Options();
         options.addOption(quarter);
         options.addOption(ebkfile);
         options.addOption(parser);
         options.addOption(threadNumber);
+        options.addOption(sleepTime);
 
         // create the parser
         final CommandLineParser cparser = new BasicParser();
@@ -60,6 +63,10 @@ public class Main {
 
         if (line.hasOption("t")) {
             inboundCtx.setThreadNumber(Integer.valueOf(line.getOptionValue("t")));
+        }
+
+        if(line.hasOption("s")){
+            inboundCtx.setSleepTime(Integer.valueOf(line.getOptionValue("s")));
         }
 
         return inboundCtx;

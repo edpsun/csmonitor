@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -176,14 +177,19 @@ public class InboundCollector extends AbstractProcessor {
         private final String id;
         private final InboundContext ctx;
 
+        private final Integer sleepTime;
+
         private final AtomicInteger totalCounter;
         private final AtomicInteger failureCounter;
+
+        private final Random random = new Random();
 
         public Collector(final String id, final InboundContext ctx, final AtomicInteger totalCounter, final AtomicInteger failureCounter) {
             this.id = id;
             this.ctx = ctx;
             this.totalCounter = totalCounter;
             this.failureCounter = failureCounter;
+            this.sleepTime = ctx.getSleepTime();
         }
 
         @Override
@@ -200,6 +206,14 @@ public class InboundCollector extends AbstractProcessor {
                 }
             } catch (final Exception ex) {
                 LOGGER.error("[Error] id: " + id, ex);
+            } finally {
+                try {
+                    final int millis = this.sleepTime + random.nextInt(30000);
+                    System.out.println("I am sleeping(millis):" + millis);
+                    Thread.sleep(millis);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }

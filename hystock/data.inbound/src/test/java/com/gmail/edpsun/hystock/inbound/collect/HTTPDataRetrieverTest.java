@@ -16,10 +16,10 @@ public class HTTPDataRetrieverTest {
 
     @Test
     public void testGetData2() {
-        final String s = dr.getData("http://stock.jrj.com.cn/action/gudong/getGudongListByCode.jspa?vname=stockgudongList&stockcode=600036&page=1&psize=20&order=desc&sort=enddate",
+        final String s = dr.getData("http://stock.jrj.com.cn/action/gudong/getGudongListByCode.jspa?vname=stockgudongList&stockcode=300438&page=1&psize=50&order=desc&sort=enddate",
                 HTTPDataRetriever.UTF_8);
         System.out.println(s);
-        assertTrue(s.indexOf("招商银行") > -1);
+        assertTrue(s.indexOf("鹏辉能源") > -1);
     }
 
 }
