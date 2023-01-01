@@ -45,6 +45,9 @@ public class HolderStat {
     @Column(name = "AVERAGE_HOLDING")
     private long averageHolding;
 
+    /**
+     * The avg holding change rate.
+     */
     @Column(name = "DELTA")
     private String delta;
 
@@ -147,7 +150,7 @@ public class HolderStat {
     }
 
     @Transient
-    String template = "  [-] %d-%d | %15s(A) | %15s(C) | %15s(H) | %15s(A) | %15s(D) ";
+    String template = "  [-] %d-%d | %15s(T) | %15s(C) | %15s(H) | %15s(A) | %15s(D) ";
 
     public String toFormattedString() {
         return String.format(template, getYear(), getQuarter(), getTotalShare(), getCirculatingShare(), getHolderNum(),

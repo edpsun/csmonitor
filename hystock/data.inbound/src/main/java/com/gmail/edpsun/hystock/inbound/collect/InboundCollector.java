@@ -1,6 +1,7 @@
 package com.gmail.edpsun.hystock.inbound.collect;
 
 import com.gmail.edpsun.hystock.inbound.InboundContext;
+import com.gmail.edpsun.hystock.inbound.parser.ContextAware;
 import com.gmail.edpsun.hystock.inbound.parser.Parser;
 import com.gmail.edpsun.hystock.intf.AbstractProcessor;
 import com.gmail.edpsun.hystock.manager.StockManager;
@@ -34,6 +35,9 @@ public class InboundCollector extends AbstractProcessor {
 
     @Resource(name = "jinRongJieParser")
     Parser jinRongJieParser;
+
+    @Resource(name = "tdxParser")
+    Parser tdxParser;
 
     @Resource(name = "HTTPDataRetriever")
     DataRetriever httpDataRetriever;
@@ -82,6 +86,11 @@ public class InboundCollector extends AbstractProcessor {
                 p = hexunParser;
             } else if ("J".equals(ctx.getParser())) {
                 p = jinRongJieParser;
+            } else if ("T".equals(ctx.getParser())) {
+                p = tdxParser;
+            }
+            if(p instanceof ContextAware){
+                ((ContextAware) p).setContext(ctx);
             }
         }
         return p;
@@ -208,7 +217,7 @@ public class InboundCollector extends AbstractProcessor {
                 LOGGER.error("[Error] id: " + id, ex);
             } finally {
                 try {
-                    final int millis = this.sleepTime + random.nextInt(30000);
+                    final int millis = this.sleepTime + random.nextInt(1000);
                     System.out.println("I am sleeping(millis):" + millis);
                     Thread.sleep(millis);
                 } catch (InterruptedException e) {

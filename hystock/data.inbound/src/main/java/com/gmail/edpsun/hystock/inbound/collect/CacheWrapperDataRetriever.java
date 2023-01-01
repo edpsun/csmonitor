@@ -30,13 +30,20 @@ public class CacheWrapperDataRetriever implements DataRetriever {
     @Resource(name = "HTTPDataRetriever")
     DataRetriever httpDataRetriever;
 
+    @Resource(name = "LocalFileReader")
+    DataRetriever localFileReader;
+
     @Override
     public String getData(final String url) {
         final String key = getKey(url);
         return cache.get(key, () -> {
             LOGGER.info("Retrieve data through HTTP...");
             sleep();
-            return httpDataRetriever.getData(url);
+            if (url.startsWith("file:")) {
+                return localFileReader.getData(url);
+            } else {
+                return httpDataRetriever.getData(url);
+            }
         });
     }
 
@@ -46,18 +53,23 @@ public class CacheWrapperDataRetriever implements DataRetriever {
         return cache.get(key, () -> {
             LOGGER.info("Retrieve data through HTTP...");
             sleep();
-            return httpDataRetriever.getData(url, encoding);
+            if (url.startsWith("file:")) {
+                return localFileReader.getData(url, encoding);
+            } else {
+                return httpDataRetriever.getData(url, encoding);
+            }
         });
     }
 
-    private void sleep(){
+    private void sleep() {
         //dirty code change to have sleep here.
         try {
-            Thread.currentThread().sleep(random.nextInt(5000));
+            Thread.currentThread().sleep(random.nextInt(1000));
         } catch (final InterruptedException e) {
             // ignore
         }
     }
+
     private String getKey(final String url) {
         final LocalDateTime now = LocalDateTime.now();
         return String.format("%s-%s", DigestUtils.md5DigestAsHex(url.getBytes()), dtf.format(now));

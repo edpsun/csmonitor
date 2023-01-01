@@ -16,7 +16,7 @@ public class Main {
         quarter.setRequired(true);
         quarter.setLongOpt("quarter");
 
-        final Option parser = OptionBuilder.withArgName("Parser Q or H").hasArg().withDescription("specify the site/parser").create("p");
+        final Option parser = OptionBuilder.withArgName("Parser Q/H/T").hasArg().withDescription("specify the site/parser").create("p");
         parser.setLongOpt("parser");
 
         final Option ebkfile = OptionBuilder.withArgName("file").hasArg().withDescription("TDX ebk file").create("ebk");

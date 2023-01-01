@@ -16,17 +16,15 @@ public class MathTool {
         Float sum = 0f;
         for (int i = 0; i < data.length; i++) {
             if (data[i] > thresholder) {
-                if (data[i] < 0.01) {
+                num++;
+                sum += data[i];
+            } else {
+                if (data[i] > 1) {
                     exception++;
                 }
                 if (exception > ignoreTimes) {
                     break;
                 }
-
-                num++;
-                sum += data[i];
-            } else {
-                break;
             }
         }
 

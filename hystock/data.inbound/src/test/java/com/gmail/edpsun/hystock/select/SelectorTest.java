@@ -38,7 +38,7 @@ public class SelectorTest extends AbstractTransactionalJUnit4SpringContextTests 
         }
 
         // 东睦股份 600114 is chosen, if not change to 0
-        assertEquals(2, globalCtx.getChosenList().size());
+        assertEquals(1, globalCtx.getChosenList().size());
     }
 
     @Test

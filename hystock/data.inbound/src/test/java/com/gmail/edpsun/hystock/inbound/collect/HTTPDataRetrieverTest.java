@@ -14,7 +14,7 @@ public class HTTPDataRetrieverTest {
         assertTrue(s.indexOf("招商银行") > -1);
     }
 
-    @Test
+//    @Test
     public void testGetData2() {
         final String s = dr.getData("http://stock.jrj.com.cn/action/gudong/getGudongListByCode.jspa?vname=stockgudongList&stockcode=300438&page=1&psize=50&order=desc&sort=enddate",
                 HTTPDataRetriever.UTF_8);

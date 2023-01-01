@@ -25,7 +25,7 @@ public class HolderDataCalculator {
             "THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE", "0.05f"));
 
     static float THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE = Float.parseFloat(System.getProperty(
-            "THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE", "-6f"));
+            "THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE", "6f"));
 
     static int THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES = Integer.parseInt(System.getProperty(
             "THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES", "2"));
@@ -34,7 +34,7 @@ public class HolderDataCalculator {
         System.out.println(String.format("Calculator - %-50s" + " - Value(%s): %s",
                 "THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE", "0.05f", THRESHOLDER_HOLDER_INCREASE_RATE_IGNORE));
         System.out.println(String.format("Calculator - %-50s" + " - Value(%s): %s",
-                "THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE", "-6f",
+                "THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE", "6f",
                 THRESHOLDER_AVG_AMOUNT_INCREASE_RATE_AS_INCREASE));
         System.out.println(String.format("Calculator - %-50s" + " - Value(%s): %s",
                 "THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES", "2", THRESHOLDER_AVG_AMOUNT_DECREASE_TIMES));
@@ -45,6 +45,11 @@ public class HolderDataCalculator {
         calcHolderNumber(ctx);
     }
 
+    /**
+     * This method is to stock number held by investors. Increasing is better.
+     * NOT USED NOW.
+     * @param ctx
+     */
     private void calcHolderAmount(InboundContext ctx) {
         List<HolderStat> holderStats = ctx.getStock().getHolderStats();
 
@@ -59,6 +64,10 @@ public class HolderDataCalculator {
         ctx.getAnalyzeVO().setAverageAmountUpQNum(vo.getQNum());
     }
 
+    /**
+     * This method is to prepare the stock holder number.
+     * @param ctx
+     */
     private void calcHolderNumber(InboundContext ctx) {
         List<HolderStat> holderStats = ctx.getStock().getHolderStats();
         Float[] holderNums = new Float[holderStats.size()];

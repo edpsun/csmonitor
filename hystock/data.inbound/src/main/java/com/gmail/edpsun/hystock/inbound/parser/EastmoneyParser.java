@@ -94,6 +94,7 @@ public class EastmoneyParser implements Parser {
         hs.setTotalShare(parseLong(totalShare) / 10000);
         hs.setCirculatingShare(parseLong(circulating) / 10000);
 
+        // use holder change rate to approximate the amount change delta.(negative of the holder change rate)
         final float fdelta = -NumberUtils.createFloat(delta);
         hs.setDelta("" + fdelta);
         hs.setStockId(stock.getId());

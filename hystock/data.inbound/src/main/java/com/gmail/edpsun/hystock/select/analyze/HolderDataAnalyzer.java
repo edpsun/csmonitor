@@ -81,7 +81,7 @@ public class HolderDataAnalyzer {
             if (quarterNum <= 1) {
                 return false;
             } else {
-                avo.addTag("(HolderNum--)=Q" + avo.getHolderUpQNum());
+                avo.addTag(String.format("(HolderNumberChangeRate %s < %s  Q: %s)", avo.getHolderChange(), THRESHOLDER_HOLDER_CHANGE_RATE, avo.getHolderUpQNum()));
                 avo.setSublevel("" + (LEVEL_BASE * 2 + avo.getHolderUpQNum() * LEVEL_STEP));
                 return true;
             }
@@ -96,17 +96,18 @@ public class HolderDataAnalyzer {
         int l = 0;
         if (avo.getHolderUpQNum() >= THRESHOLDER_HOLDER_QNUM) {
             isInclude = true;
-            avo.addTag("(HolderNum--)=Q" + avo.getHolderUpQNum());
+            avo.addTag(String.format("(HolderNumDecrease Q: %s)", avo.getHolderUpQNum()));
             avo.setSublevel("" + (LEVEL_BASE * 2 + avo.getHolderUpQNum() * LEVEL_STEP));
             l++;
         }
 
-        if (avo.getAverageAmountUpQNum() >= THRESHOLDER_AVG_AMOUNT_QNUM) {
-            isInclude = true;
-            avo.addTag("(AverageAmount++)=Q" + avo.getAverageAmountUpQNum());
-            avo.setSublevel("" + (LEVEL_BASE * 2 + avo.getAverageAmountUpQNum() * LEVEL_STEP));
-            l++;
-        }
+        // removed as being not useful
+//        if (avo.getAverageAmountUpQNum() >= THRESHOLDER_AVG_AMOUNT_QNUM) {
+//            isInclude = true;
+//            avo.addTag("(AverageAmount++)=Q" + avo.getAverageAmountUpQNum());
+//            avo.setSublevel("" + (LEVEL_BASE * 2 + avo.getAverageAmountUpQNum() * LEVEL_STEP));
+//            l++;
+//        }
 
         if (isInclude) {
             if (avo.getLevel() == null)

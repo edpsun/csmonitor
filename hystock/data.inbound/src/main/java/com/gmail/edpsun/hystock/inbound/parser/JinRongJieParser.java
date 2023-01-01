@@ -110,6 +110,7 @@ public class JinRongJieParser implements Parser {
         hs.setTotalShare(totalShare);
         hs.setCirculatingShare(circulatingShare);
 
+        // use holder change rate to approximate the amount change delta.(negative of the holder change rate)
         final float fdelta = -NumberUtils.createFloat(delta);
         hs.setDelta("" + fdelta);
         hs.setStockId(id);
